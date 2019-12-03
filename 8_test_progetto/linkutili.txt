@@ -3,3 +3,5 @@ https://stackoverflow.com/questions/23916566/html5-input-type-file-accept-image-
 
 Dropdown:
 https://www.html5rocks.com/en/tutorials/file/dndfiles/
+
+https://brianium.github.io/watermarkjs/
