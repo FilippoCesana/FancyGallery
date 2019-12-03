@@ -1,0 +1,20 @@
+img {
+  height: auto;
+  width: 78%;
+  box-shadow: 10px 10px 5px grey;
+}
+
+body {
+  padding-left: 2%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+canvas {
+  border: 1px solid black;
+  width: 90%;
+  margin: 5%;
+}
+
+input {
+  width: 80%
+}
