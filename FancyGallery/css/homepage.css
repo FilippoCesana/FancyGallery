@@ -1,0 +1,91 @@
+
+
+body {
+    background-image: url(../images/partyWall3.jpg);
+	/*background-size: cover;*/
+	background-position: center;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+}
+
+
+.content{
+	text-align: center;
+	padding-top: 18%;
+	color: rgb(226, 247, 91);
+	text-shadow: 2px 2px 2px black,
+				 2px 2px 2px purple,
+				 3px 18px 23px grey;
+}
+
+.navbar-inverse {
+	background-color: #040a13
+
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: rgb(226, 247, 91);
+    text-shadow: 4px 4px 4px black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgb(226, 247, 91);
+    text-shadow: 4px 4px 4px black;
+}
+
+.btn-default {
+    color: rgb(226, 247, 91);
+    background-color: #040a13;
+    border-color: rgb(226, 247, 91);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px black;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: rgb(226, 247, 91);;
+    background-color: #040a13;
+    text-shadow: 4px 4px 4px black;
+}
+
+.active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #294777;
+    background-color: rgb(226, 247, 91);
+    text-shadow: 4px 4px 4px black;
+}
+
+/*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #FFC076;
+    background-color: #294777;
+}*/
+
+
+html {
+	height: 100%;
+}
+
+
+h1, h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+hr {
+	border-top: 1px solid rgb(226, 247, 91);
+	width: 600px;
+	border-bottom: 1px solid rgba(0,0,0,0.2)
+}
+
+/*h1 {
+	color: white;
+	margin-left: 20%;
+	margin-top: 20%;
+}*/
