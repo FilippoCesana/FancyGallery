@@ -12,10 +12,10 @@ body {
 .content{
 	text-align: center;
 	padding-top: 18%;
-	color: rgb(226, 247, 91);
+	color: rgb(91, 224, 247);
 	text-shadow: 2px 2px 2px black,
 				 2px 2px 2px purple,
-				 3px 18px 23px grey;
+				 3px 18px 23px rgb(226, 247, 91);;
 }
 
 .navbar-inverse {
@@ -24,19 +24,19 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: rgb(226, 247, 91);
+    color: rgb(91, 224, 247);
     text-shadow: 4px 4px 4px black;
 }
 
 .navbar-inverse .navbar-brand {
-    color: rgb(226, 247, 91);
+    color: rgb(91, 224, 247);
     text-shadow: 4px 4px 4px black;
 }
 
 .btn-default {
-    color: rgb(226, 247, 91);
+    color: rgb(91, 224, 247);
     background-color: #040a13;
-    border-color: rgb(226, 247, 91);
+    border-color: rgb(91, 224, 247);
     font-family: 'Montserrat', sans-serif;
     text-shadow: 4px 4px 4px black;
 }
@@ -49,17 +49,26 @@ body {
     line-height: 20px;
 }
 
-
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    color: rgb(226, 247, 91);;
+    color: rgb(91, 224, 247);
     background-color: #040a13;
     text-shadow: 4px 4px 4px black;
 }
 
 .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     color: #294777;
-    background-color: rgb(226, 247, 91);
+    background-color: rgb(91, 224, 247);
     text-shadow: 4px 4px 4px black;
+}
+
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card  {
+    background-color: rgb(11, 12, 6);
+    float: 10%;
+}
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .card-img-top {
+    padding: 5%;
 }
 
 /*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
@@ -67,6 +76,9 @@ body {
     background-color: #294777;
 }*/
 
+/* .container .jumbotron{
+    background-color: rgb(142, 136, 56);
+} */
 
 html {
 	height: 100%;
@@ -79,7 +91,7 @@ h1, h3 {
 }
 
 hr {
-	border-top: 1px solid rgb(226, 247, 91);
+	border-top: 1px solid rgb(91, 224, 247);
 	width: 600px;
 	border-bottom: 1px solid rgba(0,0,0,0.2)
 }
