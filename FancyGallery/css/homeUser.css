@@ -69,10 +69,11 @@ body {
     background-position: center;
   }
   
-.container .jumbotron{
+  .jumbotron-fluid{
     background-image: url(../images/partyWall5.jpg);
 	/*background-size: cover;*/
-	background-position: center;
+    background-position: center;
+    height: 50px;
 }
 
 .jumbotron {
