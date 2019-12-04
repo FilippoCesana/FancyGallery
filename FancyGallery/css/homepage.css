@@ -12,7 +12,7 @@ body {
 .content{
 	text-align: center;
 	padding-top: 18%;
-	color: rgb(91, 224, 247);
+	color: rgb(214, 242, 247);
 	text-shadow: 2px 2px 2px black,
 				 2px 2px 2px purple,
 				 3px 18px 23px rgb(226, 247, 91);;
@@ -24,12 +24,12 @@ body {
 }
 
 .navbar-inverse .navbar-nav > li > a {
-    color: rgb(91, 224, 247);
+    color: rgb(214, 242, 247);
     text-shadow: 4px 4px 4px black;
 }
 
 .navbar-inverse .navbar-brand {
-    color: rgb(91, 224, 247);
+    color: rgb(214, 242, 247);
     text-shadow: 4px 4px 4px black;
 }
 
@@ -62,23 +62,41 @@ body {
 }
 
 
-.container .row .col-lg-12 .content .row .col-sm-6 .card  {
-    background-color: rgb(11, 12, 6);
+.container .row .col-lg-12 .content .row .col-sm-6 .card {
+    background-color: rgba(11, 12, 6, 0.461);
     float: 10%;
 }
 
-.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .card-img-top {
+
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-img-top{
+    padding: 3%;
+}
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn{
+    padding: 5%; 
+    background-color:rgb(11, 12, 6);
+    border-color: rgb(91, 224, 247);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px rgb(112, 189, 189);
+    
+}
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn:hover{
+    padding: 5%; 
+    background-color:rgb(205, 187, 47);
+    border-color: rgb(11, 12, 12);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px rgb(159, 189, 112);
+    
+}
+
+
+.titles {
+    background-color: rgba(11, 12, 6, 0.461);
     padding: 5%;
 }
 
-/*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
-    color: #FFC076;
-    background-color: #294777;
-}*/
-
-/* .container .jumbotron{
-    background-color: rgb(142, 136, 56);
-} */
 
 html {
 	height: 100%;
@@ -92,8 +110,7 @@ h1, h3 {
 
 hr {
 	border-top: 1px solid rgb(91, 224, 247);
-	width: 600px;
-	border-bottom: 1px solid rgba(0,0,0,0.2)
+	border-bottom: 1px solid rgb(91, 224, 247);
 }
 
 /*h1 {
@@ -101,3 +118,26 @@ hr {
 	margin-left: 20%;
 	margin-top: 20%;
 }*/
+
+/* @media (max-width: 768px){
+
+    .container .row .col-lg-12 .content .row .col-sm-6 .card  {
+        background-color: rgb(11, 12, 6);
+        float: 10%;
+    }
+} */
+
+
+/* .container .row .col-lg-12 .content {
+    background-color:  rgba(11, 12, 6, 0.461);
+} */
+
+
+/*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #FFC076;
+    background-color: #294777;
+}*/
+
+/* .container .jumbotron{
+    background-color: rgb(142, 136, 56);
+} */
