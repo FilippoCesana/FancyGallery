@@ -15,11 +15,12 @@ body {
 	color: rgb(214, 242, 247);
 	text-shadow: 2px 2px 2px black,
 				 2px 2px 2px purple,
-				 3px 18px 23px rgb(226, 247, 91);;
+				 3px 18px 23px rgb(226, 247, 91);
 }
 
 .navbar-inverse {
-	background-color: #040a13
+    background-color: rgba(0, 0, 0, 0.897);
+    box-shadow: #294777;
 
 }
 
@@ -71,16 +72,89 @@ body {
   
   .jumbotron-fluid{
     background-image: url(../images/partyWall5.jpg);
-	/*background-size: cover;*/
+	background-size: cover;
     background-position: center;
-    height: 50px;
+    padding: 20%;
+    color: rgb(219, 189, 52);
+    text-shadow: 2px 2px 2px black,
+				 2px 2px 2px purple,
+				 3px 18px 23px rgb(226, 247, 91);
 }
 
-.jumbotron {
-    padding: 30%;
+.jumbotron-fluid .container .display-4{
+    text-align: center;
+
+}
+
+.jumbotron-fluid .container .display-4 .input-group-lg .input-group-prepend .input {
+	font-size: 1em;
+	width: 10em;
+    transition: all 3s;
+    background-color: red;
+}
+
+
+
+
+/* .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn{
+    height: 20px;
+    /* padding: 20px 300px; */
+    /* font-size: 18px; */
+    /* line-height: 1.3333333; */
+    /* border-radius: 6px; */
+    /* width: 100 px;  */
+    /* transition: all 3s; */
+    /* text-align: left; */
+    /* /* background-color: rgb(214, 242, 247);
+    width: 100%;  */
+/* } */ 
+
+
+
+/* .input-group .form-control{
+    position: center;
+    width: 100%; 
+} */
+
+/* input, button, select, textarea{
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+} */
+
+/* .form-control{
+     background-color: rgb(214, 242, 247);
+     width: 100%; 
+} */
+
+input:hover{
+    background: rgba(252, 238, 135, 0.774);
+    border-color: rgb(255, 0, 0);
+}
+
+input:focus{
+	width: 20em;
+}
+
+.container .page-header{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(49, 41, 5);
+    text-shadow: 2px 2px 2px rgb(151, 145, 145),
+    2px 2px 2px purple,
+    3px 18px 23px rgb(46, 47, 34);
+}
+
+
+
+
+/* .jumbotron {
+    padding: 20%;
     background-color: rgba(11, 12, 6, 0.461);
     color: rgb(214, 242, 247);
-}
+} */
+
+/* .jumbotron-fluid .container{
+    padding-top: 50%;
+} */
 
 
 

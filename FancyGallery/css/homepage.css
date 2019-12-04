@@ -12,14 +12,14 @@ body {
 .content{
 	text-align: center;
 	padding-top: 18%;
-	color: rgb(214, 242, 247);
+	color: rgb(238, 235, 84);
 	text-shadow: 2px 2px 2px black,
 				 2px 2px 2px purple,
 				 3px 18px 23px rgb(226, 247, 91);;
 }
 
 .navbar-inverse {
-	background-color: #040a13
+	background-color: rgba(0, 0, 0, 0.897);
 
 }
 
