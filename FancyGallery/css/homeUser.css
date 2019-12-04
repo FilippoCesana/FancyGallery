@@ -1,0 +1,208 @@
+
+
+body {
+    /* background-image: url(../images/partyWall5.jpg);
+	/*background-size: cover;*/
+	background-position: center; */
+	font-family: 'Montserrat', sans-serif;
+	font-size: 20px;
+}
+
+
+.content{
+	text-align: center;
+	padding-top: 18%;
+	color: rgb(214, 242, 247);
+	text-shadow: 2px 2px 2px black,
+				 2px 2px 2px purple,
+				 3px 18px 23px rgb(226, 247, 91);;
+}
+
+.navbar-inverse {
+	background-color: #040a13
+
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: rgb(214, 242, 247);
+    text-shadow: 4px 4px 4px black;
+}
+
+.navbar-inverse .navbar-brand {
+    color: rgb(214, 242, 247);
+    text-shadow: 4px 4px 4px black;
+}
+
+.btn-default {
+    color: rgb(91, 224, 247);
+    background-color: #040a13;
+    border-color: rgb(91, 224, 247);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px black;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: rgb(91, 224, 247);
+    background-color: #040a13;
+    text-shadow: 4px 4px 4px black;
+}
+
+.active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #294777;
+    background-color: rgb(91, 224, 247);
+    text-shadow: 4px 4px 4px black;
+}
+
+
+.image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+  }
+  
+.container .jumbotron{
+    background-image: url(../images/partyWall5.jpg);
+	/*background-size: cover;*/
+	background-position: center;
+}
+
+.jumbotron {
+    padding: 30%;
+    background-color: rgba(11, 12, 6, 0.461);
+    color: rgb(214, 242, 247);
+}
+
+
+
+html {
+	height: 100%;
+}
+
+
+h1, h3 {
+	font-family: 'Montserrat', sans-serif;
+	font-weight: 700;
+}
+
+hr {
+	border-top: 1px solid rgb(91, 224, 247);
+	border-bottom: 1px solid rgb(91, 224, 247);
+}
+
+.image1 {
+    background-image: url(../images/partyWall0.jpg);
+}
+
+.image2 {
+    background-image: url(../images/partyWall1.jpg);
+}
+  
+.image3 {
+    background-image: url(../images/partyWall2.jpg);
+}
+  
+.image4 {
+    background-image: url(../images/partyWall0.jpg);
+}
+  
+.image5 {
+    background-image: url(../images/partyWall4.jpg);
+}
+  
+.image6 {
+    background-image: url(../images/partyWall5.jpg);
+}
+  
+.image7 {
+    background-image: url(../images/partyWall0.jpg);
+}
+  
+.image8 {
+    background-image: url(../images/partyWall1.jpg);
+}
+  
+.image9 {
+    background-image: url(../images/partyWall2.jpg);
+}
+  
+
+
+
+
+/* .container .row .col-lg-12 .content .row .col-sm-6 .card {
+    background-color: rgba(11, 12, 6, 0.461);
+    float: 10%;
+}
+
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-img-top{
+    padding: 3%;
+}
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn{
+    padding: 5%; 
+    background-color:rgb(11, 12, 6);
+    border-color: rgb(91, 224, 247);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px rgb(112, 189, 189);
+    
+}
+
+.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn:hover{
+    padding: 5%; 
+    background-color:rgb(205, 187, 47);
+    border-color: rgb(11, 12, 12);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px rgb(159, 189, 112);
+    
+}
+
+
+.titles {
+    background-color: rgba(11, 12, 6, 0.461);
+    padding: 5%;
+} */
+
+
+
+
+
+
+
+/*h1 {
+	color: white;
+	margin-left: 20%;
+	margin-top: 20%;
+}*/
+
+/* @media (max-width: 768px){
+
+    .container .row .col-lg-12 .content .row .col-sm-6 .card  {
+        background-color: rgb(11, 12, 6);
+        float: 10%;
+    }
+} */
+
+
+/* .container .row .col-lg-12 .content {
+    background-color:  rgba(11, 12, 6, 0.461);
+} */
+
+
+/*.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    color: #FFC076;
+    background-color: #294777;
+}*/
+
+/* .container .jumbotron{
+    background-color: rgb(142, 136, 56);
+} */
