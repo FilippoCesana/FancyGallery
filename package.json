@@ -1,0 +1,42 @@
+{
+  "name": "fancygallery",
+  "version": "1.0.0",
+  "description": "Web Atelier 3 Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilippoCesana/FancyGallery.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilippoCesana/FancyGallery/issues"
+  },
+  "homepage": "https://github.com/FilippoCesana/FancyGallery#readme",
+  "dependencies": {
+    "body-parser": "latest",
+    "debug": "^3.1.0",
+    "dust": "^0.3.0",
+    "dustjs-linkedin": "^2.7.5",
+    "express": "^4.16.2",
+    "form-data": "latest",
+    "klei-dust": "^1.0.0",
+    "mongoose": "^5.7.12",
+    "morgan": "^1.9.0",
+    "node-fetch": "^2.6.0",
+    "node-sass": "^4.13.0",
+    "request": "^2.88.0",
+    "supertest": "^3.0.0"
+  },
+  "devDependencies": {
+    "dust-engine": "^1.0.2",
+    "method-override": "^3.0.0",
+    "mocha": "^4.0.1",
+    "should": "^13.1.3",
+    "socket.io": "^2.3.0"
+  }
+}
