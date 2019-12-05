@@ -64,3 +64,87 @@ body {
     background-color: rgb(91, 224, 247);
     text-shadow: 4px 4px 4px black;
 }
+
+.makeSpace{
+    height: 100px;
+}
+
+.makeSpace2{
+    height: 10px;
+}
+
+.container .page-header{
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(33, 255, 255, 0.829);
+    text-shadow: 2px 2px 2px rgb(151, 145, 145),
+    2px 2px 2px purple,
+    3px 18px 23px rgb(46, 47, 34);
+}
+
+.jumbotron{
+    padding:50px;
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+/* .jumbotron .form-group .staticEmail {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 5px;
+} */
+
+label{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input{
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: grey;
+    border-color: rgb(251, 227, 184);
+}
+
+input[type="file" i]{
+    display: inline-block
+}
+
+
+html {
+	height: 100%;
+}
+
+hr {
+	border-top: 1px solid rgb(91, 224, 247);
+	border-bottom: 1px solid rgb(91, 224, 247);
+}
+
+.btn{
+    padding: 5%; 
+    background-color:rgb(11, 12, 6);
+    border-color: rgb(91, 224, 247);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px rgb(112, 189, 189);
+}
+
+.btn:hover{
+    padding: 5%; 
+    background-color:rgba(243, 197, 71, 0.815);
+    border-color: rgb(11, 12, 12);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 2px black,
+    2px 2px 2px purple,
+    3px 10px 10px rgb(25, 27, 8);
+
+}
+
+
+
+
+
+.navbar-fixed-bottom{
+    background-color: #040a13;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3px;
+    color: rgb(214, 242, 247);
+    text-align: center;
+}
