@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>New Gallery</title>
+	<!-- //da prendere quello giusto -->
+	<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+	<h1>Create New Event</h1>
+  <form method="" action="">
+		<div class="container_form">
+			<div class="description">Event name:</div>
+			<div class="input_field"><input type="text" name="eventName" placeholder="Event Name" required></div>
+		</div>
+
+		<div class="container_form">
+			<div class="description">Event location:</div>
+			<div class="input_field"><input type="text" name="Location" placeholder="Event Location" required></div>
+		</div>
+
+		<div class="container_form">
+			<div class="description">Event description:</div>
+			<div class="input_field"><textarea name="Comments" rows="3" cols="60">Enter your description.</textarea><br></div>
+		</div>
+
+		<div class="container_form">
+			<div class="description">Select privatness:</div>
+			<div class="input_field">	<input type="radio" name="Privatness" value="PUBLIC" checked> PUBLIC<br>
+																<input type="radio" name="Privatness" value="HIDDEN"> HIDDEN<br></div>
+		</div>
+
+		<div class="container_form">
+			<div class="description">Select photographers:<br>
+				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'></div>
+			<div class="input_field">
+				<!-- you photographer -->
+				<input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br>
+
+				<!-- found photographer -->
+				<h3> Found Photographers </h3>
+				{#found_photographers}
+          {>"partials/part_photographers_search" /}
+          {:else}
+          <p>No photographers found.</p>
+        {/found_photographers}
+
+				<!-- checked photographer -->
+				<h3> Selected Photographers </h3>
+				{#found_photographers_checked}
+          {>"partials/part_photographers_checked" /}
+          {:else}
+          <p>No photographers selected.</p>
+        {/found_photographers_checked}
+
+			</div>
+		</div>
+
+		<br>
+
+		<input type="submit" name="new" value="Create!" />
+
+	</form>
+</body>
+</html>
+
+
+<!-- watermark -->
+Need a Watermark:<br>
+<input type="checkbox" name="needWatermark" value="needWatermark"><br>
+<!-- should be a toggle switch -->
+Upload a Watermark:<br>
+<input type="file" name="watermarkToUpload" id="watermarkToUpload"/><br>
+
+
+	<!-- // altro -->
+
+	<!-- // per gestire la ricerca fotografi -->
+<script src="script.js"></script>
+<!-- mi serve una route dove posso cercare fotografo per nome e username -->
