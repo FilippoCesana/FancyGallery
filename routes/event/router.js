@@ -9,7 +9,7 @@ const Event = require('../../models/Event');
 //     return Gallery.find({privacy: "public"});
 // };
 
-const searchRoute = async function (req, res, s) {
+const search = async function (req, res, s) {
     try {
         const events = await Event.find(s);
         res.status(200).send(events);
@@ -20,12 +20,12 @@ const searchRoute = async function (req, res, s) {
 
 
 const eventGetRoute = async function (req, res) {//return all public events
-    await searchRoute(req, res, {privacy: "public"});
+    await search(req, res, {privacy: "public"});
 };
 
 
 eventSearchRoute = async function (req, res) {
-   await searchRoute(req, res, req.query);
+   await search(req, res, req.query);
 };
 
 
