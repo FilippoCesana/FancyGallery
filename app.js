@@ -22,7 +22,10 @@ app.engine('dust', dust.dust);
 // Initialize routers here
 const routers = require('./routes/routers');
 //TODO
+
 app.use('/', routers.root);
+app.use('/event', routers.event);
+app.use('/image', routers.image);
 
 p = new Promise(function(resolve, reject) {
         mongoose.connect('mongodb://localhost:27017/atelier3_HW06')
