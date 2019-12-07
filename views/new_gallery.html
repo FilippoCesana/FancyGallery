@@ -2,9 +2,44 @@
 <html>
 <head>
 	<title>New Gallery</title>
-	<link rel='stylesheet' href='style.css'> //da prendere quello giusto
+	<!-- //da prendere quello giusto -->
+
+	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
+
+	<!-- // per gestire la ricerca fotografi -->
+<script src="script.js"></script>
 </head>
 <body>
+
+	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container ">
+			<div class="navbar-header navbarCharacterColor">
+			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign up</a></li>
+					<li><a href="#">Login</a></li>
+			</ul>
+			</div>
+			</div>
+	</nav>
+
+	<br><br><br> -->
+
 	<h1>Create New Event</h1>
   <form method="" action="">
 		<div class="container_form">
@@ -28,104 +63,51 @@
 																<input type="radio" name="Privatness" value="HIDDEN"> HIDDEN<br></div>
 		</div>
 
+		<div class="container_form">
+			<div class="description">Select photographers:<br>
+				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'></div>
+			<div class="input_field">
+				<!-- you photographer -->
+				<input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br>
+
+				<!-- found photographer -->
+				<h3> Found Photographers </h3>
+				{#found_photographers}
+          {>"partials/part_photographers_search" /}
+          {:else}
+          <p>No photographers found.</p>
+        {/found_photographers}
+
+				<!-- checked photographer -->
+				<h3> Selected Photographers </h3>
+				{#found_photographers_checked}
+          {>"partials/part_photographers_checked" /}
+          {:else}
+          <p>No photographers selected.</p>
+        {/found_photographers_checked}
+
+			</div>
+		</div>
+
+		<div class="container_form">
+        <div class="description">Upload the watermark:</div>
+        <div class="input_field"><input type="file" name="WatermarkToUpload"></div>
+    </div>
+
+			<div class="container_form">
+	        <div class="description">Upload the cover image:</div>
+	        <div class="input_field"><input type="file" name="CoverImageToUpload"></div>
+	     </div>
+
 		<br>
 
 		<input type="submit" name="new" value="Create!" />
 
 	</form>
+<!--
+	<br><br><br>
+	<div class="footer navbar-fixed-bottom">
+	        <h5> all rights reserved @FancyGallery</h5>
+	</div> -->
 </body>
 </html>
-
-
-<!-- photofraphers query? -->
-Select number of photographers:<select name="Photographer">
-					<option value="1" selected>1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					</select><br>
-
-<!-- watermark -->
-Need a Watermark:<br>
-<input type="checkbox" name="needWatermark" value="needWatermark"><br>
-<!-- should be a toggle switch -->
-Upload a Watermark:<br>
-<input type="file" name="watermarkToUpload" id="watermarkToUpload"/><br>
-
-
-		<!-- // altro -->
-
-
-<h1>Image Upload Form</h1>
-	<form method="" action="">
-        Enter Event ID:<br>
-				<input type="text" name="idEvent" placeholder="XXX"/><br> <!-- {eventid} -->
-				Select Photographer:<select name="Photographer">
-									<option value="phA" selected>A</option>
-									<option value="phB">B</option>
-									<option value="phC">C</option>
-									</select><br>
-        Select a Picture:<br>
-				<input type="file" name="fileToUploadSelect" id="fileToUploadSelect"/><br>
-        Take a Picture:<br>
-				<input type="file" name="fileToUploadTake" id="fileToUploadTake"/><br>
-				<br>
-				<input type="submit" name="new" value="Click!" />
-    </form>
-
-
-
-
-		<form autocomplete="on">
-      <div class="container_form">
-        <div class="description">Name, surname:</div>
-        <div class="input_field"><input type="text" value="Name, surname" required></div>
-      </div>
-
-      <div class="container_form">
-        <div class="description">E-mail:</div>
-        <div class="input_field"><input type="email" value="e-mail" required></div>
-      </div>
-
-      <div class="container_form">
-        <div class="description">Address:</div>
-        <div class="input_field"><textarea rows="3" required>Address</textarea></div>
-      </div>
-
-      <div class="container_form">
-        <div class="description">Upload the file:</div>
-        <div class="input_field"><input type="file" name="3D File" required></div>
-      </div>
-
-      <div class="container_form">
-        <div class="description">Urgentness:</div>
-        <div class="input_field"><select name="Urgentness" required>
-          <option value="Not Urgent">Not Urgent</option>
-          <option value="Urgent">Urgent</option>
-        </select></div>
-      </div>
-
-      <div class="container_form">
-        <div class="description">Number of copies:</div>
-        <div class="input_field"><input type="number" max="10" min="0" value="1" required></div>
-      </div>
-
-      <br>
-
-      <button id="button">Submit the order</button>
-
-      </form>
-
-
-	<script src="script.js"></script>
-
-
-
-
-{#list}
-          {>"partials/part_favorites" /}
-          {:else}
-          <p>No favorites found. <a href="/">Go to canvas! And be creative today!</a></p>
-        {/list}
-    </article>

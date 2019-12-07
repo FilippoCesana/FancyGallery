@@ -1,0 +1,328 @@
+/* ------------- General settings Desktop / mobile------------- */
+
+/* -- Page elements -- */
+body {
+  margin: 0 auto;
+  font-family: "Helvetica", "Segoe UI", Arial, serif;
+  background-color: white;
+}
+
+.container {
+  display: flex;
+}
+
+.main_content {
+  background-color: #E0E0E0;
+  padding: 1em;
+}
+
+.footer{
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  background-color: #98B1C4;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.navigation{
+  background-color: #C8D7E3;
+  padding: 1em;
+}
+
+.sidebar{
+  background-color: #C8D7E3;
+  padding: 1em;
+}
+
+/* -- Links -- */
+a {
+  text-decoration:none;
+}
+
+a:link {
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: #E15119;
+}
+
+a:active {
+    color: #E15119;
+}
+
+li a {
+  display: block;
+  padding: 1em;
+  font-size: 1.25em;
+  font-weight: lighter;
+}
+
+li a:hover {
+    background-color: #2F4E6F;
+}
+
+.author_date a {
+  color: #98b1c4;
+}
+
+.author_date a:hover {
+    color: #E15119;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+    color: #E15119;
+}
+
+/* -- Style Elements -- */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  display: block;
+  margin: 1em;
+  margin: auto;
+}
+
+hr {
+  color: #98b1c4;
+  clear: both;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.post_margin {
+  margin-bottom: 0px;
+}
+
+#button {
+  border-radius: 5px;
+  display: block;
+  padding:20px 40px;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align:middle;
+  overflow:hidden;
+  background-color:#C8D7E3;
+  text-align:center;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+#button:hover {
+  background-color:#2F4E6F;
+  color: #E15119;
+}
+
+.input_field [type="text"], .input_field [type="email"], .input_field textarea,
+.input_field [type="file"], .input_field select, .input_field [type="number"]  {
+  border-radius: 5px;
+  background-color: #C8D7E3;
+  font-size: 0.8em;
+}
+
+.social {
+  height: 2em;
+  margin-top: 0.2em;
+  margin-right: 0.5em;
+}
+
+.blog_img {
+  border-radius: 5px;
+}
+
+.header {
+  position: relative;
+  margin-bottom: 1em;
+}
+
+#header {
+  width: 100%;
+}
+
+/* -- Fonts -- */
+h1 {
+  font-size: 40px;
+  color: #E15119;
+  font-weight: lighter;
+}
+
+h2 {
+  font-size: 30px;
+  color: #E15119;
+  font-weight: lighter;
+}
+
+h3 {
+  font-size: 20px;
+  color: #E15119;
+  font-weight: lighter;
+}
+
+h5 {
+  font-size: 10px;
+  color: #FFFFFF;
+  font-weight: lighter;
+}
+
+.menu_font {
+  font-size: 20px;
+}
+
+.title_blog{
+  font-size: 30px;
+  color: #E15119;
+  font-weight: lighter;
+  margin-top: 1em;
+  margin-bottom: 0.2em;
+}
+
+.author_date{
+  font-size: 15px;
+  color: #98b1c4;
+  font-weight: lighter;
+  margin-bottom: 1em;
+}
+
+input, textarea, select {
+  font-family: "Helvetica", "Segoe UI", Arial, serif;
+}
+
+.titolo {
+  color: #E15119;
+  font-weight: lighter;
+}
+
+/* ------------- Mobile style settings ------------- */
+
+@media only screen and (max-width: 767px) {
+
+  .container {
+    flex-direction: column;
+  }
+
+  .header {
+    position: relative;
+    margin-bottom: 1em;
+  }
+
+  .header-bottom-left {
+    position: absolute;
+  }
+
+  .blog_img {
+    width: 95%;
+    padding: 1em;
+  }
+
+  iframe {
+    width: 294px;
+    height: 220.5px;
+  }
+
+  .input_field {
+    padding-bottom: 0.8em;
+  }
+
+  .input_field [type="text"], .input_field [type="email"], .input_field textarea,
+  .input_field [type="file"], .input_field select, .input_field [type="number"] {
+    width: 100%;
+  }
+
+  .header-bottom-left {
+    position: absolute;
+    bottom: 1%;
+    left: 2%;
+  }
+
+}
+
+/* ------------- Desktop style settings ------------- */
+
+@media only screen and (min-width: 768px) {
+
+  body {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .big_container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container {
+    flex: 1;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .navigation, .sidebar {
+    flex: 20%;
+  }
+
+  .main_content {
+    flex: 60%;
+  }
+
+  .footer {
+    flex: 0;
+  }
+
+  .container_blog {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .post {
+    flex: auto;
+  }
+
+  .container_form {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .description, .input_field {
+    flex: 50%;
+    margin-top: 1em;
+  }
+
+  .blog_img {
+    max-width: 240px;
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+
+  iframe {
+    width: 420px;
+    height: 315px;
+  }
+
+  .input_field [type="text"], .input_field [type="email"], .input_field textarea,
+  .input_field [type="file"], .input_field select, .input_field [type="number"] {
+    width: 75%;
+  }
+
+  .header-bottom-left {
+    position: absolute;
+    bottom: 2%;
+    left: 2%;
+  }
+}
