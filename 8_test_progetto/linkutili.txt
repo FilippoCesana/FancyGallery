@@ -1,7 +1,0 @@
-Fotocamera per form:
-https://stackoverflow.com/questions/23916566/html5-input-type-file-accept-image-capture-camera-display-as-image-rat/35230743
-
-Dropdown:
-https://www.html5rocks.com/en/tutorials/file/dndfiles/
-
-https://brianium.github.io/watermarkjs/
