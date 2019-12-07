@@ -17,6 +17,6 @@ function getModel(model_name){
 
 const modelManager = {
     getModel : getModel
-}
+};
 
 module.exports = modelManager
