@@ -1,0 +1,68 @@
+PROJECT FLOW:
+
+    routine1 : richiesta per http://localhost/ --> backend riceve richiesta e delega il lavoro a root/router --> il router prende i dati che gli serve e rendera homepage.dust
+
+    routine2: L'utente è nell'homepage e cerca un evento per nome  --> routine3
+              L'utente // // // // //  e si logga come fotografo   --> routine4
+              L'utente // // // // // naviga e carica nuovi eventi --> routine5
+              L'utente // // // // // apre un evento               --> routine8
+    
+    routine3: richiesta fetch lato client per http:localhost/search/event_name=name --> backend riceve richiesta e delega il lavoro a search/router --> il router contatta il DB e ritorna il model --> client rendera il nuovo contenuto aggiungendolo a galler_div
+              if registered --> routine6
+              else          --> routine2
+
+    routine4: richiesta fetch lato client per http:localhost/login/ --> backend riceve e conferma la password --> contatta DB e ritorna il model per utente loggato --> client rendera la pagina
+
+    routine5: richiesta fetch lato client per http:localhost/event/more?n=number --> backend riceve, contatta DB e ritorna il model -> client rendera il model
+
+    routine6: L'utente è  registrato e cerca evento per nome --> routine3
+              // // // // // // //   e filtra gli eventi in cui è stato --> routine7
+    
+    routine7: client nasconde tutti gli event mostrati e carica solo quelli in cui il fotografo è stato, volendo si possono salvare nel browser senza doverli richiedere al server, dato che sono un subset di quelli mostrati in all.
+
+
+    routine8: richiesta fetch lato client per http:localhost/event/show?event_id=id --> backend richiede al DB l'evento e restituisce il model --> client rendera il model
+              una volta nell'evento:
+              -goBack
+              -apri foto  
+
+
+
+Nico/phil : per ogni view o partial ho fatto un model, lo scopo è fare view/partial che funzionano prendendo quei modelli
+Ho gia creato i due file principali homepage.dust(phil) e homepage_logged.dust(nico) e i relativi css
+Vi consiglio di fare css per ogni view e partial di modo da modularizzare il piu possibile ora che è piu facile in caso di errori fate attenzioni a classi/id che possono fare conflitto
+se avete bisogno di una mano o non capite ci sentiamo sul gruppo/telefono
+
+
+Phil:
+
+1) creare homepage.dust
+2) creazioni dei partial necessari
+3) css
+
+
+Nico :
+1) creare homepage_logged.dust
+2) creazioni dei partial necessari
+3) css
+
+Fede:
+Ciao fede per ora ho definito le seguenti routes dimmi se sei d'accordo o vorresti modificare qualcosa
+base = http://localhost:3000
+
+1) base/ -> richiesta per ricevere l'homepage , GET
+
+2) base/event/more?n=number          --> richiesta per vedere piu events nell'homepage, GET  (il number serve per sapere quante volte l'ha gia cliccato e quindi partire sempre dall'index giusto)
+   base/event/create                 --> //  //  //  creare un nuovo evento, POST
+   base/event/open?id_event=id       --> //  //  //  caricare un evento al click per aprirlo 
+   base/event/search?event_name=name --> per cercare gli eventi quando usano la barra di ricerca
+
+
+3) base/user/login  --> per loggare l'utente bisogna capire quale sia la richiesta piu sicura, ma probabilmente useremo gia lato client una qualche  libreria per criptare e inviarlo in maniera sicura                   
+   base/user/signup --> POST
+   base/user/logout
+
+
+   //se mi viene altro ti dico
+   //tu cosa preferiresti implementare? se vuoi io posso fare 1, 2.1, 2. e tu fai quello per creare un nuovo evento 2.2 e per cercare per nome un event 2.4 nel mentre che ci vengono altre idee e domani setuppiamo il login
+   // guarda dentro routers/event/router per capire
