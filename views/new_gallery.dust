@@ -39,71 +39,94 @@
 	</nav>
 
 	<br><br><br> -->
-
-	<h1>Create New Event</h1>
+<div class="container_form_big">
+	<h1>CREATE NEW EVENT</h1>
   <form method="" action="">
 		<div class="container_form">
-			<div class="description">Event name:</div>
-			<div class="input_field"><input type="text" name="eventName" placeholder="Event Name" required></div>
+			<div class="description">EVENT NAME:</div>
+			<div class="input_field"><input type="text" name="eventName" placeholder="EVENT NAME" required></div>
 		</div>
 
-		<div class="container_form">
-			<div class="description">Event location:</div>
-			<div class="input_field"><input type="text" name="Location" placeholder="Event Location" required></div>
-		</div>
+		<hr>
 
 		<div class="container_form">
-			<div class="description">Event description:</div>
-			<div class="input_field"><textarea name="Comments" rows="3" cols="60">Enter your description.</textarea><br></div>
+			<div class="description">EVENT LOCATION:</div>
+			<div class="input_field"><input type="text" name="Location" placeholder="EVENT LOCATION" required></div>
 		</div>
 
+		<hr>
+
 		<div class="container_form">
-			<div class="description">Select privatness:</div>
+			<div class="description">EVENT DESCRIPTION:</div>
+			<div class="input_field"><textarea name="Comments" rows="2" cols="60">ENTER YOUR DESCRIPTION</textarea><br></div>
+		</div>
+
+		<hr>
+
+		<div class="container_form">
+			<div class="description">SELECT PRIVATNESS:</div>
 			<div class="input_field">	<input type="radio" name="Privatness" value="PUBLIC" checked> PUBLIC<br>
 																<input type="radio" name="Privatness" value="HIDDEN"> HIDDEN<br></div>
 		</div>
 
-		<div class="container_form">
-			<div class="description">Select photographers:<br>
-				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'></div>
-			<div class="input_field">
-				<!-- you photographer -->
-				<input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br>
+		<hr>
 
+		<div class="container_form">
+			<div class="description">SELECT PHOTOGRAPHERS:<br><br>
+				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'>
 				<!-- found photographer -->
-				<h3> Found Photographers </h3>
-				{#found_photographers}
+				<h3> FOUND PHOTOGRAPHERS </h3>
+				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA BRUNNER <br>
+				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA LIVER <br>
+				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA PONTIGGIA <br>
+
+				<!-- {#found_photographers}
           {>"partials/part_photographers_search" /}
           {:else}
           <p>No photographers found.</p>
-        {/found_photographers}
+        {/found_photographers} -->
+			</div>
+
+			<div class="input_field">
+				<!-- you photographer -->
+				<!-- <input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br> -->
 
 				<!-- checked photographer -->
-				<h3> Selected Photographers </h3>
-				{#found_photographers_checked}
+				<h3> SELECTED PHOTOGRAPHERS </h3>
+				<input type="checkbox" name="photographer{id}" value="{id}" checked> ANDREA GALLIDABINO <br>
+				<input type="checkbox" name="photographer{id}" value="{id}" checked> CESARE PAUTASSO <br>
+
+				<!-- {#found_photographers_checked}
           {>"partials/part_photographers_checked" /}
           {:else}
           <p>No photographers selected.</p>
-        {/found_photographers_checked}
+        {/found_photographers_checked} -->
 
 			</div>
 		</div>
 
+		<hr>
+
 		<div class="container_form">
-        <div class="description">Upload the watermark:</div>
+        <div class="description">UPLOAD THE WATERMARK:</div>
         <div class="input_field"><input type="file" name="WatermarkToUpload"></div>
     </div>
 
+		<hr>
+
 			<div class="container_form">
-	        <div class="description">Upload the cover image:</div>
+	        <div class="description">UPLOAD THE COVER IMAGE:</div>
 	        <div class="input_field"><input type="file" name="CoverImageToUpload"></div>
 	     </div>
 
+			 <hr>
+
 		<br>
 
-		<input type="submit" name="new" value="Create!" />
+		<input id="button" type="submit" name="new" value="CREATE GALLERY!" />
 
 	</form>
+</div>
 <!--
 	<br><br><br>
 	<div class="footer navbar-fixed-bottom">
