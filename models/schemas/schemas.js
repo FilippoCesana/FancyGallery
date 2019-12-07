@@ -11,20 +11,8 @@ const ImageSchema = new Schema(
         _id : {type: Schema.Types.ObjectId},
         dataURL: {type: String, required: true},
         dateCreated: {type: Date, default: Date.now},
-        user: {type: String}
+        photographer: {type: Schema.Types.ObjectId}
     }
 );
-
-const EventSchema = new Schema(
-
-
-
-
-)
-
-
-
-
-
 
 module.exports.ImageSchema = ImageSchema;

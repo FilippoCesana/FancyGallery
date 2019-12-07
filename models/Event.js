@@ -9,18 +9,22 @@ const Test = new Schema({
 
 
 
-const GallerySchema = new Schema(
-    {
-        _id: {type: Schema.Types.ObjectId},
+const EventSchema = new Schema({
+        _id: {type: Schema.Types.ObjectId, required: true},
         dateCreated: {type: Date, default: Date.now},
+        start: {type: Date, required: true, default: new Date('September 11, 2069 04:20:00')}, //TODO remove default
+        end: {type: Date, required: true, default: new Date('September 11, 2096 04:20:00')},
         images: [schemas.ImageSchema],
         privacy: {type: String, required: true, default: "public"},
-        makerId: {type: String},//TODO SET TO REQUIRED
+        admin: {type: Schema.Types.ObjectId, required: true},//TODO SET TO REQUIRED
         name: {type: String, required: true},
         description: {type: String},
-        live: {type: Boolean}
+        place: {type: String},
+        photographers:[{type: Schema.Types.ObjectId}],
+        pendingPhotographers:[{type: Schema.Types.ObjectId}],//Photographers Ids
+      //  guests:{type: Schema.Types.Mixed} //TODO
     }
 );
 
-mongoose.model('Gallery', GallerySchema);
-module.exports = mongoose.model('Gallery');
+mongoose.model('Event', EventSchema);
+module.exports = mongoose.model('Event');
