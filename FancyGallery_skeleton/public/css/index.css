@@ -9,6 +9,7 @@ body {
 }
 
 
+
 .content{
 	text-align: center;
 	padding-top: 18%;
@@ -67,6 +68,28 @@ body {
     background-color: rgb(91, 224, 247);
     text-shadow: 4px 4px 4px black;
 }
+
+#event_list div.gallery {
+    margin: 5px;
+    float: left;
+    width: 200px;
+}
+
+#event_list div.gallery img {
+    width: 90%;
+    height: 100px;
+    box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.42);
+    margin-left: 10px;
+}
+
+#event_list div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+
+
+
 
 .image-text{
     width: 100%;
@@ -154,11 +177,12 @@ body {
 input:hover{
     background: rgba(252, 238, 135, 0.774);
     border-color: rgb(255, 0, 0);
+    color: black;
 }
-
+/* 
 input:focus{
 	width: 20em;
-}
+} */
 
 .container .page-header{
     font-family: 'Montserrat', sans-serif;
