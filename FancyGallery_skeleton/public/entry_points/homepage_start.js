@@ -2,7 +2,7 @@
 function start(){
     
     //login button listen click
-    const login_btn = document.getElementById('login_btn');
+    const login_btn = document.getElementById('log_in_btn');
     login_btn.addEventListener('click', (e)=>login(e));
 
     //signin button listen click
@@ -27,7 +27,10 @@ function start(){
 }
 
 function login(){
-    //richiesta per login e redirection homepage_logged
+    //TODO:
+    //go to nico form
+    console.log("prova");
+    // window.location.href = "http://localhost:3000/user/login/";
 }
 function sign_up(){
       //richiesta per sing_up e redirect to homepage_logged
@@ -50,4 +53,7 @@ function showEvent(){
     //render nel div corretto
 }
 
-start();
+setTimeout(()=>{
+    start();
+},100);
+
