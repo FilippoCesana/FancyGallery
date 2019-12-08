@@ -1,50 +1,53 @@
-Ciao phil un esempio di modello per questa pagina e tutti i partial la trovi in public/models
 
-FILE CSS : homepage.css
 
-SCRIPT da includere :
+<!-- DON'T MODIFY THIS FILE -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>homepage</title>
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link rel="stylesheet" href="/css/partials/event.css">
+</head>
+
+<body >
+{#model}
+   <div id="navbar"> logo       <button id="login_btn">Log in</button> <button id="sign_in_btn">Sign in</button>  </div>
+
+   <div id="sign_in_box" class="hidden">
+         <input type="text" value="email">  </input>
+         <input type="text" value="password"> </input>
+         <button id="submit">Submit</button>
+         <button id="sign_in_back_btn">Back</button>
+   </div>
+
+
+   <div id="search_box">
+        <input type="text" name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
+   </div>
+
+   
+
+   <div id="gallery">
+        {#event_list}
+            {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
+        {/event_list}
+
+        <button id="show_more_btn">Show more</button>
+
+        <div id="open_event_box" class="hidden">  </div>
+   </div>
+
+
+
+   <footer> INFORMAZIONI FOOTER <footer>
+  
  <script src="dustjs-linkedin/dust-core.min.js"></script> 
  <script src="/entry_points/homepage_start.js" type="module"></script>  
+ {/model}
+</body>
 
-I box che vedi con la classe hidden sono dei div che all'inizio avranno display:none, poi al momento del bisogno verrano mostrati con all'interno i vari contenuti.
-Esempio per il log_in_pop_up_box l'interno di quel div è un html hardcoded(non cambia mai) che pero all'inizio non sara visibile perche il suo contenitore è nascosto.
-mentre per event_open_box a lato client faremo: event_open_box -> display -> innerHtml = model   il model sara il risultato di dust.render(<partial_name>,<model>);
-
-
-//partials che servono alcuni sono in comune con nico quindi mettetevi d'accordo
-1) event (layout di un singolo event)
-2) event_open(layout di un event aperto quindi con anche un div per contenere images)
-3) photo_open (layout per una singola foto aperta che mostra id_fotografo id_foto timestamp e la foto chiaramente ahah)
-
-
-
-
-
-
-////BODY CONCEPT
-
-{?model}
-    <navbar_box>
-
-    <log_in_pop_up_box  class="hidden">  <login_form>  </log_in_pop_up_box class="hidden">
-    <sign_in_pop_up_box class="hidden">  <sign_in_form>  </sign_in_pop_up_box class="hidden">
-
-    <event_open_box class="hidden"> 
-         {ci andra il partial per l'event_open}
-
-        <photo_open_box class="hidden"> {ci andra il partial per aprire una photo_open} <photo_open_box> //usata per mostrare un immagine al click
-    <event_open_box>
-
-    <search_box> <search_bar> <button> </search_box>
-
-    <gallery_box>
-        {#event_list}
-            {> partial/event name=name place=place date=date dataURL=dataURl} //TODO il partial per l'event che verra rimepito con i dati esempio in public/models/homepage_model.js
-        {/event_list}
-    </gallery_box>
-{/model}
-
-<footer>
-
+</html>
 
 
