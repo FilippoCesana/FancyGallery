@@ -62,13 +62,12 @@ async function deleteUser(req, res) {
 
 function sendLoginForm(req,res){
    log("TODO Sending login form");
-//    res.status(200).render("login");
-   
+   res.status(200).render("login",{});
 }
 
 function sendSignInForm(req,res){
     log("TODO Sending signin form");
-//    res.status(200).render("signin");
+    res.status(200).render("signin",{});
 }
 
 module.exports.findUser = findUser;

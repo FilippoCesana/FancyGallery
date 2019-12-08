@@ -54,7 +54,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use("/", routers.root); ///////// Al compito di servirela prima pagina. ! DA FARE PER LUNEDI !
 
-//app.use("/user",routers.user); //Identifica il fotografo che si vuole registrare. E serve la pagina con l'utente loggato ! DA FARE PER LUNEDI con finto check !
+app.use("/user",routers.user); //Identifica il fotografo che si vuole registrare. E serve la pagina con l'utente loggato ! DA FARE PER LUNEDI con finto check !
 
 app.use('/event', routers.event); //Per richiedere eventi, example /event/more -> loadMoreEvent() nell'homepage. Oppure /event/create per creare un nuovo evento ecc... ! DA FARE PER LUNEDI  !
 

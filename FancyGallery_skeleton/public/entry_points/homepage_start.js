@@ -7,7 +7,7 @@ function start(){
 
     //signin button listen click
     const sign_in_btn = document.getElementById("sign_in_btn");
-    sign_in_btn.addEventListener('click', (e)=>signUp(e));
+    sign_in_btn.addEventListener('click', (e)=>sign_up(e));
 
     //search button listen click
     const search_btn = document.getElementById('search_btn');
@@ -28,17 +28,14 @@ function start(){
 
 function login(){
     //TODO:
-    //go to nico form
-    console.log("prova");
-    // window.location.href = "http://localhost:3000/user/login/";
+    window.location.href = "http://localhost:3000/user/login";
 }
 function sign_up(){
-      //richiesta per sing_up e redirect to homepage_logged
+    window.location.href = "http://localhost:3000/user/signin";
 }
 
-function searchEventByName(){
-    //read input e fai richiesta per quell'evento
-    //render 
+async function searchEventByName(){
+    const model = 
 }
 
 function showMore(){
@@ -48,9 +45,7 @@ function showMore(){
 }
 
 function showEvent(){
-    //capire che event ha cliccato leggendo l'id associato;
-    //richiesta per l'evento 
-    //render nel div corretto
+    console.log("ricevuto");
 }
 
 setTimeout(()=>{

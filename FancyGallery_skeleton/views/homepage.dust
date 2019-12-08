@@ -36,8 +36,8 @@
                                 <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Sign up</a></li>
-                                <li><a href="homeLogged.dust">Login</a></li>
+                                <li><button id="sign_in_btn">Sign up</button></li>
+                                <li><button id="log_in_btn" href="">Login</button></li>
                             </ul>
                         </div>
                     </div>	
@@ -52,7 +52,7 @@
                             <div class="input-group-prepend">
                             </div>
                             <div id="search_box">
-                                    <input type="text" onkeyup="search(event)"  name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
+                                    <input type="text"   name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
                                </div>
                           </div>
                         </div>
@@ -68,9 +68,7 @@
                         {#event_list}
                             {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
                         {/event_list}
-                
-                        
-                
+    
                         <div id="open_event_box" class="hidden">  </div>
                    </div>
                    <button id="show_more_btn">Show more</button>
