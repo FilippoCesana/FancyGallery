@@ -68,19 +68,19 @@
                         </div>    
                 </div>  
 
-                <div class="container">
-                            <div class="thumbnail">
-                                <div id="gallery">
-                        {#event_list}
-                            {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
-                        {/event_list}
-    
+                <div class="container .fluid">
+                        <div class="row">
+                                <div class="col">
+                        <div id="gallery">
+                            {#event_list}
+                                {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
+                            {/event_list}
                         <div id="open_event_box" class="hidden">  </div>
-                   </div>
-                   <br>
-                   </div>
-                   </div>
-                   <hr>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                <hr>
 
 
                    <button id="show_more_btn">Show more</button>
