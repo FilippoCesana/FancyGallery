@@ -8,7 +8,7 @@
         
         
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-            <link rel="stylesheet" type="text/css" href="../css/index.css">
+            <link rel="stylesheet" type="text/css" href="../css/homepage_logged.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
             
             <!-- 	To make the website responsive on mobile devices.  -->
@@ -35,13 +35,7 @@
                                 <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-<<<<<<< HEAD
-                                <li><button id="sign_in_btn">Sign up</button></li>
-                                <li><button id="log_in_btn">Login</button></li>
-=======
-                                <li><a href="#">Sign up</a></li>
-                                <li><a href="homeLogged.dust">Login</a></li>
->>>>>>> 0a0e4fcc51dc64c3ab9a9d5a640c3ead533a6e79
+                                <li><a href="homepage.dust">Logout</a></li>
                             </ul>
                         </div>
                     </div>	
@@ -102,8 +96,7 @@
 
 
 
-        <script src="utility/dustjs-linkedin/dust-core.min.js"></script> 
-        <script src="/entry_points/homepage_start.js" type="module"></script>  
+
     </body>
 
 </html>
