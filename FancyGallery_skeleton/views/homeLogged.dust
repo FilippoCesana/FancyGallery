@@ -8,7 +8,7 @@
         
         
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-            <link rel="stylesheet" type="text/css" href="../css/index.css">
+            <link rel="stylesheet" type="text/css" href="../css/homepage_logged.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
             
             <!-- 	To make the website responsive on mobile devices.  -->
@@ -35,8 +35,7 @@
                                 <li><a href="#">Contact</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#">Sign up</a></li>
-                                <li><a href="homeLogged.dust">Login</a></li>
+                                <li><a href="homepage.dust">Logout</a></li>
                             </ul>
                         </div>
                     </div>	
