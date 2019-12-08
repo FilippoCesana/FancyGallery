@@ -37,8 +37,29 @@ body {
 
 #button:hover {
   background-color: #ccff00;
-  color: black;
-  box-shadow: 0 0 8px #00ccff;
+  color: #00ccff;
+  box-shadow: 0 0 20px #ccff00;
+}
+
+#button_small {
+  border-radius: 1px;
+  border-color: transparent;
+  padding:10px 20px;
+  margin-left: auto;
+  margin-right: auto;
+  vertical-align: middle;
+  overflow: hidden;
+  background-color: #00ccff;
+  text-align:center;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
+
+#button_small:hover {
+  background-color: #ccff00;
+  color: #00ccff;
+  box-shadow: 0 0 10px #ccff00;
 }
 
 .input_field [type="text"], .input_field [type="email"], .input_field textarea,
@@ -161,5 +182,9 @@ input, textarea, select {
 
   #button {
     width: 90%;
+  }
+
+  #button_small {
+    width: 75%;
   }
 }

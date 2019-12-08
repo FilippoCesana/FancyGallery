@@ -65,7 +65,7 @@
 
 		<div class="container_form">
         <div class="description">TAKE PICTURE:</div>
-        <div class="input_field"><button type="button">CLICK!</button></div>
+        <div class="input_field"><button id= "button_small" type="button">CLICK!</button></div>
     </div>
 
 		<hr>
