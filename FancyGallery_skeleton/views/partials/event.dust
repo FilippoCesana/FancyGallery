@@ -1,7 +1,28 @@
 <div class="event_box">
     <img src="{dataURL}"> </img>
+    <div class="image-text">
     <label class="event_name_label">{name} </label>
     <label class="event_place_label">{place} </label>
     <label class="event_timestamp_label">{timestamp} </label>
+    <br>
+    <a href="imagesEvent.dust" class="btn btn-primary">Visit</a>
     <input type="hidden" value="{id}" class="event_id_input"> </input>
+    </div>
 </div>
+
+
+
+<!-- Jaco dovremmo aggiungere almeno un input per clicclare sull'album, io avevo cosi nell'assingment -->
+<!-- <div class="gallery" id="{_id}">
+        <input type="text" name="name" value="{name}" onchange='changeName(event, "{_id}")' />
+        <img src="{dataURL}" />
+        <button onclick='deleteImage("{_id}")'>Delete</button>
+        <form onsubmit="postOnImgur(event)">
+          <input type="hidden" name="id" value="{_id}" /><br />
+          Album: <input type="text" name="album" /><br />
+          Add to favorites: <input type="checkbox" name="favorites" /><br />
+          Tags: <input type="text" name="tags" />
+          <button type="submit">Post</button>
+        </form>
+      </div>
+       -->
