@@ -232,6 +232,38 @@ body {
     
 }
 
+#search_box{
+    text-align: center;
+}
+
+#search_text_field{
+    text-align: center;
+    border-color: red;
+}
+
+#search_btn{
+    color: rgb(91, 224, 247);
+    background-color: #040a13;
+    border-color: rgb(91, 224, 247);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 4px 4px 4px black;
+
+}
+
+#search_btn:hover{ 
+    background-color:rgb(10, 10, 10);
+    border-color: rgb(247, 237, 91);
+    font-family: 'Montserrat', sans-serif;
+    text-shadow: 2px 2px 2px rgb(163, 224, 21),
+    2px 2px 2px purple,
+    3px 10px 10px rgb(25, 27, 8);
+
+}
+
+/* #search_text_field: hover{
+    border-color: black;
+} */
+
 
 
 /* .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn{
