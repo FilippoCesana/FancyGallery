@@ -7,6 +7,9 @@ body {
 	font-size: 20px;
 }
 
+.content2{
+   text-align: center;
+}
 
 .content{
 	text-align: center;
@@ -81,8 +84,12 @@ body {
     background-position: center;
 }
 
+/* .card{
+    background-color: rgba(0, 0, 0, 0.459);
+} */
+
 .image-text p{
-    padding: 10px;
+    padding: 5px;
     font-family: 'Montserrat', sans-serif;
     text-shadow: 1px 1px 1px rgb(149, 149, 149);
 }
@@ -120,11 +127,11 @@ body {
 
 
 .setInput{
-    padding: 30px;
+    padding: 0px;
 }
 
 .btn{
-    padding: 5%; 
+    padding: 1%; 
     background-color:rgb(11, 12, 6);
     border-color: rgb(91, 224, 247);
     font-family: 'Montserrat', sans-serif;
@@ -132,7 +139,7 @@ body {
 }
 
 .btn:hover{
-    padding: 5%; 
+    padding: 1%; 
     background-color:rgba(243, 197, 71, 0.815);
     border-color: rgb(11, 12, 12);
     font-family: 'Montserrat', sans-serif;
@@ -143,7 +150,7 @@ body {
 }
 
 .jumbotron .jumboPhoto{
-    padding:50px;
+    padding:0px;
     margin-left: 200px;
     margin-right: 200px;
 }
@@ -159,11 +166,11 @@ body {
 
 
 .container .row .col-lg-12 .content .row .col-sm-6 .card .card-img-top{
-    padding: 3%;
+    padding: 0%;
 }
 
 .container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn{
-    padding: 5%; 
+    padding: 0%; 
     background-color:rgb(11, 12, 6);
     border-color: rgb(91, 224, 247);
     font-family: 'Montserrat', sans-serif;
@@ -211,6 +218,78 @@ input:focus{
 }
 
 
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .container .col-lg-12 .content{
+      height:100px;
+  }
+
+
+  .buttonPhotographer{
+      margin-left: 100px;
+      margin-right: 100px;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      padding: 0px;
+  }
 
 html {
 	height: 100%;
