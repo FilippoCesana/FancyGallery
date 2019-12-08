@@ -28,7 +28,7 @@ app.use('/', routers.image);
 
 
 p = new Promise(function(resolve, reject) {
-        mongoose.connect('mongodb://localhost:27017/atelier3_HW06')
+        mongoose.connect('mongodb://localhost:27017/atelier_project')
             .then(function() {
                 console.log("connection to Mongo established");
                 resolve(app);

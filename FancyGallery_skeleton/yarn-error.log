@@ -25,7 +25,7 @@ npm manifest:
   {
     "name": "Instaevent",
     "version": "1.0.0",
-    "main": "backend.js",
+    "main": "backendInit.js",
     "author": "jacopo stucchi, filippo cesana, nicola brunner, federico lagrasta",
     "license": "MIT",
   
@@ -43,7 +43,7 @@ npm manifest:
     },
   
     "scripts": {
-      "start" : "DEBUG=:* node backend.js"
+      "start" : "DEBUG=:* node backendInit.js"
   }
 
 yarn manifest: 

@@ -4,8 +4,6 @@
   "main": "backend.js",
   "author": "jacopo stucchi, filippo cesana, nicola brunner, federico lagrasta",
   "license": "MIT",
-
-
   "dependencies": {
     "debug": "^3.2.6",
     "dustjs-linkedin": "^2.7.5",
@@ -17,8 +15,7 @@
     "dustjs-helpers": "1.7.4",
     "body-parser": "1.19.0"
   },
-
   "scripts": {
-    "start" : "DEBUG=:* node backend.js"
+    "start": "DEBUG=:* node backend.js"
   }
 }
