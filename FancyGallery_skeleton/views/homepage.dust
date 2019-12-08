@@ -51,7 +51,7 @@
                             <div class="input-group-prepend">
                             </div>
                             <div id="search_box">
-                                    <input type="text"   name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
+                                    <input id="search_text_field" type="text"   name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
                                </div>
                           </div>
                         </div>
