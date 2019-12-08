@@ -17,7 +17,6 @@
     </head>   
 
     <body> 
-    {#model}
             <nav class="navbar navbar-inverse navbar-fixed-top"> 
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -71,6 +70,7 @@
     
                         <div id="open_event_box" class="hidden">  </div>
                    </div>
+                   <br>
                    <button id="show_more_btn">Show more</button>
 
                    <footer class="footer-bs">
@@ -94,10 +94,8 @@
                       
 
 
-    {/model}
 
-        <script src="utility/dustjs-linkedin/dust-core.min.js"></script> 
-        <script src="/entry_points/homepage_start.js" type="module"></script>  
+
 
     </body>
 
