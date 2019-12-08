@@ -72,6 +72,7 @@
                 
                         <div id="open_event_box" class="hidden">  </div>
                    </div>
+                   <br>
                    <button id="show_more_btn">Show more</button>
 
                    <footer class="footer-bs">

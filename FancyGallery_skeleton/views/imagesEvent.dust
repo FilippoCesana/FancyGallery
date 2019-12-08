@@ -7,7 +7,7 @@
         
         
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-            <link rel="stylesheet" type="text/css" href="../css/homeUser.css">
+            <link rel="stylesheet" type="text/css" href="../css/index.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
             
             <!-- 	To make the website responsive on mobile devices.  -->
