@@ -2,12 +2,12 @@
 function start(){
     
     //login button listen click
-    const login_btn = document.getElementById('login_btn');
+    const login_btn = document.getElementById('log_in_btn');
     login_btn.addEventListener('click', (e)=>login(e));
 
     //signin button listen click
     const sign_in_btn = document.getElementById("sign_in_btn");
-    sign_in_btn.addEventListener('click', (e)=>signUp(e));
+    sign_in_btn.addEventListener('click', (e)=>sign_up(e));
 
     //search button listen click
     const search_btn = document.getElementById('search_btn');
@@ -27,15 +27,15 @@ function start(){
 }
 
 function login(){
-    //richiesta per login e redirection homepage_logged
+    //TODO:
+    window.location.href = "http://localhost:3000/user/login";
 }
 function sign_up(){
-      //richiesta per sing_up e redirect to homepage_logged
+    window.location.href = "http://localhost:3000/user/signin";
 }
 
-function searchEventByName(){
-    //read input e fai richiesta per quell'evento
-    //render 
+async function searchEventByName(){
+    const model = 
 }
 
 function showMore(){
@@ -45,9 +45,10 @@ function showMore(){
 }
 
 function showEvent(){
-    //capire che event ha cliccato leggendo l'id associato;
-    //richiesta per l'evento 
-    //render nel div corretto
+    console.log("ricevuto");
 }
 
-start();
+setTimeout(()=>{
+    start();
+},100);
+

@@ -8,4 +8,8 @@ router.get(/\/search\?[^=]+=[a-zA-Z0-9]+/, controller.findUser);
 router.post('/', controller.createUser);
 router.delete('/delete/:id', controller.deleteUser);
 
+router.get("/login", controller.sendLoginForm);
+
+router.get("/signin", controller.sendSignInForm);
+
 module.exports = router;
