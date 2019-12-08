@@ -42,7 +42,8 @@ body {
 }
 
 .input_field [type="text"], .input_field [type="email"], .input_field textarea,
-.input_field [type="file"], .input_field select, .input_field [type="number"], .description [type="text"]  {
+.input_field [type="file"], .input_field select, .input_field [type="number"],
+.description [type="text"], .input_field [type="password"] {
   background-color: transparent;
   font-size: 0.8em;
   border: none;
@@ -153,7 +154,8 @@ input, textarea, select {
   }
 
   .input_field [type="text"], .input_field [type="email"], .input_field textarea,
-  .input_field [type="file"], .input_field select, .input_field [type="number"], .description [type="text"] {
+  .input_field [type="file"], .input_field select, .input_field [type="number"],
+  .description [type="text"], .input_field [type="password"] {
     width: 75%;
   }
 
