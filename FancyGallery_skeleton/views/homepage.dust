@@ -17,6 +17,7 @@
     </head>   
 
     <body> 
+        {#model}
             <nav class="navbar navbar-inverse navbar-fixed-top"> 
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -36,6 +37,10 @@
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
                                 <li><button id="sign_in_btn">Sign up</button></li>
+                                <li> <div class="makeSpaceNav"></div></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li> <div class="makeSpaceNav"></div></li>
                                 <li><button id="log_in_btn" href="">Login</button></li>
                             </ul>
                         </div>
@@ -94,7 +99,7 @@
                       
 
 
-
+{/model}
 
 
     </body>
