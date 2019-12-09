@@ -44,6 +44,8 @@ app.use("/user",routers.user);
 
 app.use('/event', routers.event);
 
+app.use('/image',routers.image);
+
 app.get('*', function(req, res){
     res.status(404).json({error:'what??? This thing does not exist'});
 });
