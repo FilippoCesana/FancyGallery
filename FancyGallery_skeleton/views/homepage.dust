@@ -7,8 +7,10 @@
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
         
         
+
             <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
             <link rel="stylesheet" type="text/css" href="/css/index.css">
+            <link rel="stylesheet" type="text/css" href="/css/event.css">
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
             
             <!-- 	To make the website responsive on mobile devices.  -->
