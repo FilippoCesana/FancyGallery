@@ -1,0 +1,12 @@
+<html>
+
+  {#foundphotographers}
+    {>"partials/part_photographers_search" /}
+    {:else}
+    <p>No photographers found.</p>
+  {/foundphotographers}
+
+</html>
+
+
+<!-- <script src="js/fetch.js"></script> -->

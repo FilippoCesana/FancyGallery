@@ -1,0 +1,12 @@
+<html>
+
+  {#checkedphotographers}
+    {>"partials/part_photographers_checked" /}
+    {:else}
+    <p>No photographers selected.</p>
+  {/checkedphotographers}
+
+</html>
+
+
+<!-- <script src="js/fetch.js"></script> -->

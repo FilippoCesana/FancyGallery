@@ -27,10 +27,10 @@
             <li data-target="#myCarousel" data-slide-to="1"></li>
             <li data-target="#myCarousel" data-slide-to="2"></li>
           </ol>
-      
+
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
-      
+
             <div class="item active">
               <img src="../images/partyWall0.jpg" alt="Los Angeles" style="width:100%;">
               <div class="carousel-caption">
@@ -38,7 +38,7 @@
                 <p>Lugano is always so much fun!</p>
               </div>
             </div>
-      
+
             <div class="item">
               <img src="../images/partyWall5.jpg" alt="Chicago" style="width:100%;">
               <div class="carousel-caption">
@@ -46,7 +46,7 @@
                 <p>Thank you, Loc!</p>
               </div>
             </div>
-          
+
             <div class="item">
               <img src="../images/partyWall4.jpg" alt="New York" style="width:100%;">
               <div class="carousel-caption">
@@ -54,9 +54,9 @@
                 <p>We love Piazza del Sole!</p>
               </div>
             </div>
-        
+
           </div>
-      
+
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left"></span>
