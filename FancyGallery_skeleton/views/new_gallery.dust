@@ -4,13 +4,31 @@
 	<title>New Gallery</title>
 	<!-- //da prendere quello giusto -->
 
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
 	<!-- // per gestire la ricerca fotografi -->
-<script src="script.js"></script>
+	<script>
+			$(document).ready(function(){
+			  var date_input=$('input[name="date"]'); //our date input has the name "date"
+			  var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+			  var options={
+				format: 'mm/dd/yyyy',
+				container: container,
+				todayHighlight: true,
+				autoclose: true,
+			  };
+			  date_input.datepicker(options);
+			})
+	</script>
 </head>
 <body>
 
@@ -132,5 +150,33 @@
 	<div class="footer navbar-fixed-bottom">
 	        <h5> all rights reserved @FancyGallery</h5>
 	</div> -->
+
+
+
+	<div class="bootstrap-iso">
+		<div class="container-fluid">
+			<div class="row">
+			  <div class="col-md-6 col-sm-6 col-xs-12">
+		   
+			   <!-- Form code begins -->
+			   <form method="post">
+				 <div class="form-group"> <!-- Date input -->
+				   <label class="control-label" for="date">Date</label>
+				   <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+				 </div>
+				 <div class="form-group"> <!-- Submit button -->
+				   <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+				 </div>
+				</form>
+				<!-- Form code ends --> 
+		   
+			   </div>
+			 </div>    
+		</div>
+	</div>
+
+	
+
+
 </body>
 </html>
