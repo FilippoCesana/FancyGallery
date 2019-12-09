@@ -12,16 +12,16 @@ let myEvent
 initNewEvent()
 
 // da inizializzare ogni volta che creo una nuova galleria
-function new_photographer_list(id_evento, organizzatore){
+function new_photographer_list(organizzatore){
   myEvent.organizer = organizzatore;
   myEvent.photographers.push(organizzatore);
 }
 
-function add_photographer(id_evento, photographer) {
-  myEvent.photographers.push(id_photographer);
+function add_photographer(photographer) {
+  myEvent.photographers.push(photographer.id);
 }
 
-function remove_photographer(id_evento, photographer) {
+function remove_photographer(photographer) {
   let target = myEvent.photographers.findIndex(e => (photographer.id == e._id));
   myEvent.photographers.splice(target,1);
 }

@@ -1,2 +1,4 @@
-<input type="image" src="../../public/images/add.png" width="12" height="12" id="add{id}"
-onclick= 'add_photographer("{._id}")'> {name} <br>
+<div>
+  <label for="photographer">{name}</label>
+    <input type="image" src="../../public/images/add.png" width="12" height="12" id="photographer" class="bt_add_photographer"><br>
+</div>

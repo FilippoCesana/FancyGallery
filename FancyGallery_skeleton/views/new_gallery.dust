@@ -86,7 +86,12 @@
 				<!-- found photographer -->
 
 				<h3> FOUND PHOTOGRAPHERS </h3>
-				<div id="search_result"></div>
+				<div id="search_result">
+					{#foundphotographers}
+				    {>"partials/part_photographers_search" /}
+				    {:else}
+				    <p>No photographers found.</p>
+				  {/foundphotographers}/div>
 
 			</div>
 
@@ -94,7 +99,13 @@
 
 				<!-- checked photographer -->
 				<h3> SELECTED PHOTOGRAPHERS </h3>
-				<div id="selected_photographers"></div>
+				<div id="selected_photographers">
+					{#checkedphotographers}
+						{>"partials/part_photographers_checked" /}
+						{:else}
+						<p>No photographers selected.</p>
+					{/checkedphotographers}
+				</div>
 
 			</div>
 		</div>

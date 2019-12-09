@@ -9,8 +9,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
 	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
-	<!-- // per gestire la ricerca fotografi -->
-<script src="script.js"></script>
+	<script src="../public/entry_points/uploadimagepreview.js"></script>
 </head>
 <body>
 
@@ -42,37 +41,24 @@
 <div class="container_form_big">
 	<h1>UPLOAD A PICTURE</h1>
   <form method="" action="">
+
 		<div class="container_form">
-			<div class="description">UPLOAD A PICTURE TO:</div>
-			<div class="input_field">{event_name}</div>
+				<div class="description">TAKE PICTURE:</div>
+				<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" onchange="onChange(event)"></div>
 		</div>
 
 		<hr>
 
-		<div class="container_form">
-			<div class="description">PHOTOGRAPHER:</div>
-			<div class="input_field">{photographer}</div>
-		</div>
-
-		<hr>
-
-		<div class="container_form">
-        <div class="description">UPLOAD SINGLE IMAGE:</div>
-        <div class="input_field"><input type="file" name="ImageToUpload"></div>
-    </div>
-
-		<hr>
-
-		<div class="container_form">
+		<!-- <div class="container_form">
         <div class="description">TAKE PICTURE:</div>
         <div class="input_field"><button id= "button_small" type="button">CLICK!</button></div>
     </div>
 
-		<hr>
+		<hr> -->
 
 		<div class="container_form">
         <div class="description">PREVIEW:</div>
-        <div class="input_field"><canvas> </canvas></div>
+        <div class="input_field"> <canvas id="canvas"> </canvas></div>
     </div>
 
 		<hr>
