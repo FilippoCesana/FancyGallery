@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 async function showMore(req, res) {
     const n = Number(req.url.split("=").pop());
-    const start = n*3
+    const start = n*3;
     const  end = (n+1)*3;
     // console.log(start,end);
 
@@ -71,7 +71,7 @@ async function createEvent(req, res) {
 
 
 function openEvent(req, res) {
-
+   res.render('imagesEvent',{});
 }
 
 
@@ -88,7 +88,6 @@ const search = async function (req, res, s) {
 
 
 function findEvent(req, res) {
-    console.log("@@@@@@@@ HERE");
     search(req, res, req.query);
 }
 

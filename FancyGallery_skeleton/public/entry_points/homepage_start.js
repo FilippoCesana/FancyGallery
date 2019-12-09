@@ -138,10 +138,7 @@ async function showMore(e){
 }
 
 function showEvent(e,item){
-    //capire che event ha cliccato leggendo l'id associato;
-    //richiesta per l'evento 
-    //render nel div corretto
-    console.log(item.childNodes)
+    window.location.href = "http://localhost:3000/event/open?:id=1";
 }
 
 setTimeout(()=>{

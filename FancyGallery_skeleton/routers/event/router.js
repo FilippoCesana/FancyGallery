@@ -12,7 +12,8 @@ router.post('/create', controller.createEvent);
 router.post('/:id/image', controller.addImage);
 
 //jaco
-router.get(/\/open\?id_event=[a-zA-Z0-9]+/, controller.openEvent);
+// router.get(/\/open\?id_event=[a-zA-Z0-9]+/, controller.openEvent);
+router.get('/open?:id', controller.openEvent);
 // /search?event_name=Mio%20Evento
 
 
