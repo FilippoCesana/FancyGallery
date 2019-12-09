@@ -14,6 +14,13 @@
     margin-left: 55px;
 }
 
+.image{
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
 .btn{
     padding: 5%; 
     background-color:rgba(250, 250, 250, 0.918);
