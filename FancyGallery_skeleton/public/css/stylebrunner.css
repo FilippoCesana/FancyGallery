@@ -110,6 +110,13 @@ input, textarea, select {
   font-family: "Helvetica", "Segoe UI", Arial, serif;
 }
 
+.description img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 /* ------------- Mobile style settings ------------- */
 
 @media only screen and (max-width: 767px) {
