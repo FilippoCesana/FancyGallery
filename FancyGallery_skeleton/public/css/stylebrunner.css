@@ -83,7 +83,7 @@ body {
   color: white;
 }
 
-.input_field [type=text]:focus, .description [type="text"]:focus {
+.input_field [type=text]:focus, .description [type="text"]:focus, .input_field [type = "password"]:focus {
   border-bottom: 2px solid #ccff00;
 }
 

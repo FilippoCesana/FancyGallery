@@ -6,11 +6,11 @@ function nextNumber(){
    return  ++nextNumber.counter;
 }
 
-    
+
 
 
 function start(){
-    
+
     //login button listen click
     const login_btn = document.getElementById('log_in_btn');
     login_btn.addEventListener('click', (e)=>login(e));
@@ -20,9 +20,11 @@ function start(){
     sign_in_btn.addEventListener('click', (e)=>signUp(e));
 
     //search button listen click
-    const search_btn = document.getElementById('search_btn');
-    search_btn.addEventListener('click',(e)=>searchEventByName(e));
+    // const search_btn = document.getElementById('search_btn');
+    // search_btn.addEventListener('click',(e)=>searchEventByName(e));
 
+    var search_input_home = document.querySelector("input[name='event_name']");
+    search_input_home.addEventListener("keyup", (e)=>searchEventByName(e));
 
     //show more btn button listen click
     const show_more_btn = document.getElementById('show_more_btn');
@@ -33,8 +35,7 @@ function start(){
     event_boxes.forEach(box=>{
         box.addEventListener('click', (e)=>showEvent(e,box))
     });
-
-   
+    
 }
 
 function login(){
@@ -54,7 +55,7 @@ function searchEventByName(e){
     headers : {
         accept : "application/json"
         }
-    } 
+    }
 
     const url = "http://localhost:3000/event/search?name="+value;
 
@@ -121,12 +122,12 @@ async function showMore(e){
 
 function showEvent(e,item){
     //capire che event ha cliccato leggendo l'id associato;
-    //richiesta per l'evento 
+    //richiesta per l'evento
     //render nel div corretto
 
     //TODO:
     // if already open_event_box do nothing
-    //await chimata fetch 
+    //await chimata fetch
     //close button
     console.log(item)
     const x = e.clientX;
@@ -138,15 +139,14 @@ function showEvent(e,item){
     open_event_box.style.top      =  100   + 'px';
     open_event_box.style.left     = 200 + 'px'
 
-    
+
     console.log("TODO showEvent");
 }
 
 setTimeout(()=>{
-   
+
 
 
             start();
-   
-},10)
 
+},10)
