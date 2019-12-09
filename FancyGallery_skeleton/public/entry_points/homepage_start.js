@@ -56,11 +56,12 @@ function searchEventByName(e){
         }
     } 
 
-    const url = "http://localhost:3000/event/search&event_name="+value;
+    const url = "http://localhost:3000/event/search?name="+value;
 
     fetch(url,options)
         .then(res=>res.json().then(model=>{
             nextNumber.counter = undefined;
+            document.getElementById("show_more_btn").style.display = '';
             dust.render("partials/event",{model},(err,out)=>{
                 if(err){throw err}
                 document.getElementById('gallery').innerHTML = out;
