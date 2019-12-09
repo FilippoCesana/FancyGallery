@@ -1,17 +1,18 @@
-var canvas = document.getElementById('canvas');
-var ctx = canvas.getContext('2d');
+document.getElementById("imageUpload").onchange = function(event) {
+  var image = new Image();
+  image.onload = drawImage;
+  image.onerror = failedImage;
+  image.src = URL.createObjectURL(this.files[0]);
+};
 
-function onChange(event) {
-  var file = event.target.files[0];
-  var reader = new FileReader();
-  reader.onload = function(e) {
-    var image = new Image();
-    image.onload = function() {
-      canvas.width = image.width;
-      canvas.height = image.height;
-      ctx.drawImage(image, 0, 0);
-    }
-    image.src = file;
-  }
-  reader.readAsDataURL(file);
+function drawImage() {
+  var canvas = document.getElementById('canvas');
+  var ctx = canvas.getContext('2d');
+  canvas.width = this.width;
+  canvas.height = this.height;
+  ctx.drawImage(this, 0,0);
+}
+
+function failedImage() {
+  console.error("File not loaded!");
 }
