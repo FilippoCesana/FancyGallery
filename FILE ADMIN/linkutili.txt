@@ -6,11 +6,10 @@ https://www.html5rocks.com/en/tutorials/file/dndfiles/
 
 https://brianium.github.io/watermarkjs/
 
-
-
-
-
 Forms:
 
 autoresize of text area:
 https://stackoverflow.com/questions/454202/creating-a-textarea-with-auto-resize
+
+Date picker:
+https://eonasdan.github.io/bootstrap-datetimepicker/

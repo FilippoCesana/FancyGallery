@@ -10,6 +10,7 @@ body {
 
 .container_form_big {
   background-image: url("../images/black20.png");
+  background-repeat: no-repeat;
   padding: 1em;
   margin: 1em;
 }
@@ -61,6 +62,14 @@ body {
   color: #00ccff;
   box-shadow: 0 0 10px #ccff00;
 }
+
+
+/* .adbutton {
+  background-size: 1px 1px;
+  background-image:url("../images/add.png");
+  background-repeat: no-repeat;
+  border-color: transparent;
+} */
 
 .input_field [type="text"], .input_field [type="email"], .input_field textarea,
 .input_field [type="file"], .input_field select, .input_field [type="number"],

@@ -10,7 +10,7 @@
 	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
 	<!-- // per gestire la ricerca fotografi -->
-<script src="script.js"></script>
+	<script src="../public/utility/fetch.js"></script>
 </head>
 <body>
 
@@ -73,34 +73,20 @@
 
 		<div class="container_form">
 			<div class="description">SELECT PHOTOGRAPHERS:<br><br>
-				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'>
+				<input type="text" name="photographer_search_field" placeholder="Search your photographer">
 				<!-- found photographer -->
-				<h3> FOUND PHOTOGRAPHERS </h3>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA BRUNNER <br>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA LIVER <br>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA PONTIGGIA <br>
 
-				<!-- {#found_photographers}
-          {>"partials/part_photographers_search" /}
-          {:else}
-          <p>No photographers found.</p>
-        {/found_photographers} -->
+				<h3> FOUND PHOTOGRAPHERS </h3>
+				<div id="search_result"></div>
+
 			</div>
 
 			<div class="input_field">
-				<!-- you photographer -->
-				<!-- <input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br> -->
 
 				<!-- checked photographer -->
 				<h3> SELECTED PHOTOGRAPHERS </h3>
 				<input type="checkbox" name="photographer{id}" value="{id}" checked> ANDREA GALLIDABINO <br>
 				<input type="checkbox" name="photographer{id}" value="{id}" checked> CESARE PAUTASSO <br>
-
-				<!-- {#found_photographers_checked}
-          {>"partials/part_photographers_checked" /}
-          {:else}
-          <p>No photographers selected.</p>
-        {/found_photographers_checked} -->
 
 			</div>
 		</div>
