@@ -4,7 +4,24 @@ const User = require('../../dataModels/User');
 const mongoose = require('mongoose');
 
 function showMore(req, res) {
-    //
+    const n = Number(req.url.split("=").pop());
+    let tmp = homepage_model.event_list.slice();
+    console.log(tmp.length);
+    const start = n*9
+    const  end = (n+1)*9;
+    console.log(start,end);
+
+    try{
+       const res = await  Event.find({})
+        res = res.slice(start,end);
+        res.status(200).json(res);
+
+    }catch(err){
+        res.status(200).json(tmp)
+        throw err;
+    }
+    
+
 }
 
 //l'obbiettivo è aggiungere un nuovo evento al databse
