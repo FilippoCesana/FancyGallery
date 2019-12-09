@@ -1,0 +1,51 @@
+<style>
+        #photoGallery div.event_box {
+            margin-left: 100px;
+            float: left;
+            width: 250px;
+        }
+        
+        #photoGallery div.event_box img {
+            width: 100%;
+            height: 180px;
+            box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.42);
+            margin-left: 10px;
+        }
+
+        #photoGallery.event_place_label{
+            color: grey;
+            margin-left: 10px;
+            font-size: 10px;
+        }
+        
+        #photoGallery .event_name_label{
+            margin-left: 5px;
+            font-size: 10px;
+            color: grey;
+        }
+        
+        #photoGallery.event_btn_toGallery{
+            margin-left: 55px;
+        }
+
+        #photoGallery.event_timestamp_label{
+            margin-left: 5px;
+            font-size: 10px;
+            color: grey;
+        }
+
+</style>
+
+
+
+
+
+ <div class="row text-center text-lg-left">
+        <div class="col-lg-3 col-md-4 col-6">
+    <img src="{dataURL}" class="image_box"> </img>
+    <label class="id_photographer">{id_photographer}, </label>
+    <label class="id_image">{id_image} </label>
+    <label class="image_timestamp_label">{timestamp} </label>
+</div>
+</div>
+

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 async function showMore(req, res) {
     const n = Number(req.url.split("=").pop());
-    const start = n*3
+    const start = n*3;
     const  end = (n+1)*3;
     // console.log(start,end);
 
@@ -69,9 +69,45 @@ async function createEvent(req, res) {
     }
 }
 
+const model = {
+    photo_list : [
+        {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+       
+    ]
+}
+
 
 function openEvent(req, res) {
-
+   res.render('imagesEvent',{model});
 }
 
 
@@ -88,7 +124,6 @@ const search = async function (req, res, s) {
 
 
 function findEvent(req, res) {
-    console.log("@@@@@@@@ HERE");
     search(req, res, req.query);
 }
 

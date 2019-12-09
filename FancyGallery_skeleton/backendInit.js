@@ -16,21 +16,13 @@ log("Init backend");
 log("Express app instantiation...")
 const app = express();
 
-//create db connection
-// log("Establishing connection with mongoDB")
-// mongoose.connect('mongodb://localhost/',{useUnifiedTopology: true,useNewUrlParser:true});
-
 //dust options -> useHelpers allows to use dustjs-helpers like @eq, @select ...
 klei_dust.setOptions({useHelpers: true});
-
-
 //set views location
-
 log("Setting app views folder ...")
 app.set('views', __dirname + '/views');
 
 //set template engine
-
 log("Setting app view engine ...")
 app.engine('dust', klei_dust.dust); //define template engine
 app.set('view engine', 'dust'); //register template engine
@@ -46,22 +38,16 @@ app.use(b_parse.urlencoded({extended: true})); //parse only post data in x-www-f
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-////////////////////////////////////////////////////////////
-// REST API ROUTE /////////////////////////////////////////
+app.use("/", routers.root);
 
-//Secondo me vale la pena mantenere l'impostazione dei router come negli assignment, con router-list.js che inizializza tutti i router nei vari folder.
-// L'unica cosa che staccherei la funzione che si passa a router.get/post(<path>,<funzione>) e la implementerei nello stesso folder in un file chiamato folder.controller
-//Potete vedere un esempio aprendo routers/root
-//
+app.use("/user",routers.user);
 
-app.use("/", routers.root); ///////// Al compito di servirela prima pagina. ! DA FARE PER LUNEDI !
+app.use('/event', routers.event);
 
-app.use("/user",routers.user); //Identifica il fotografo che si vuole registrare. E serve la pagina con l'utente loggato ! DA FARE PER LUNEDI con finto check !
-
-app.use('/event', routers.event); //Per richiedere eventi, example /event/more -> loadMoreEvent() nell'homepage. Oppure /event/create per creare un nuovo evento ecc... ! DA FARE PER LUNEDI  !
+app.use('/image',routers.image);
 
 app.get('*', function(req, res){
-    res.status(404).json({error:'what???'});
+    res.status(404).json({error:'what??? This thing does not exist'});
 });
 
 p = new Promise(function (resolve, reject) {
