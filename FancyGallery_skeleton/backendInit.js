@@ -65,7 +65,7 @@ app.get('*', function(req, res){
 });
 
 p = new Promise(function (resolve, reject) {
-        mongoose.connect('mongodb://localhost:27017/atelier_project')
+        mongoose.connect('mongodb://localhost:27017/atelier_project',{useUnifiedTopology: true,useNewUrlParser:true})
             .then(function () {
                 log("connection to Mongo established");
                 resolve(app);

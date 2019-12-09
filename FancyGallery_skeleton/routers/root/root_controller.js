@@ -6,8 +6,7 @@ async function sendHomePage(req,res){
     log("Sending homepage")
     try{
         if(req.accepts("html")){
-            const data = await modelManager.getModel("homepage"); //TODO: connetere il modelManager con il database ora serve contenuti statici
-            const model = data.event_list;
+            const model = await modelManager.getModel("homepage"); //TODO: connetere il modelManager con il database ora serve contenuti statici
             res.status(200);
             res.render('homepage', {model});
          }else{

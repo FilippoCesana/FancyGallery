@@ -1,50 +1,119 @@
-Ciao phil un esempio di modello per questa pagina e tutti i partial la trovi in public/models
 
-FILE CSS : homepage.css
+<!DOCTYPE html>
+<html>
 
-SCRIPT da includere :
- <script src="dustjs-linkedin/dust-core.min.js"></script> 
- <script src="/entry_points/homepage_start.js" type="module"></script>  
+    <head>
+            <title>FancyGallery landing page</title>            <!-- 
+            <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
+        
+        
+            <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+            <link rel="stylesheet" type="text/css" href="../css/index.css">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+            
+            <!-- 	To make the website responsive on mobile devices.  -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+                
+    </head>   
 
-I box che vedi con la classe hidden sono dei div che all'inizio avranno display:none, poi al momento del bisogno verrano mostrati con all'interno i vari contenuti.
-Esempio per il log_in_pop_up_box l'interno di quel div è un html hardcoded(non cambia mai) che pero all'inizio non sara visibile perche il suo contenitore è nascosto.
-mentre per event_open_box a lato client faremo: event_open_box -> display -> innerHtml = model   il model sara il risultato di dust.render(<partial_name>,<model>);
+    <body> 
+        {#model}
+            <nav class="navbar navbar-inverse navbar-fixed-top"> 
+                    <div class="container ">
+                        <div class="navbar-header navbarCharacterColor">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>	
+                            <a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="bs-nav-demo">
+                            <ul class="nav navbar-nav">
+                                <!-- <li class="active"><a href="#">Home</a></li> -->
+                                <li><a href="#">About</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><button id="sign_in_btn">Sign up</button></li>
+                                <li> <div class="makeSpaceNav"></div></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li> <div class="makeSpaceNav"></div></li>
+                                <li><button id="log_in_btn" href="">Login</button></li>
+                            </ul>
+                        </div>
+                    </div>	
+                </nav> 
+
+                <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                          <h2 class="display-4">The only place where you can find pictures of the party you are attending right now</h2>
+                          <div class = "setInput"></div>
+                          <div class="input-group input-group-lg">
+                          </div>
+                            <div class="input-group-prepend">
+                            </div>
+                            <div id="search_box">
+                                    <input id="search_text_field" type="text"   name="event_name" value="Search event"></input>  <button id="search_btn">Search</button>
+                               </div>
+                          </div>
+                        </div>
+                </div>
+
+                <div class="container">
+                        <div class="page-header">
+                          <h1>Events</h1>      
+                        </div>    
+                </div>  
+
+                <div class="container .fluid">
+                        <div class="row">
+                                <div class="col">
+                        <div id="gallery">
+                            {#event_list}
+                                {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
+                            {/event_list}
+                        <div id="open_event_box" class="hidden">  </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                <hr>
 
 
-//partials che servono alcuni sono in comune con nico quindi mettetevi d'accordo
-1) event (layout di un singolo event)
-2) event_open(layout di un event aperto quindi con anche un div per contenere images)
-3) photo_open (layout per una singola foto aperta che mostra id_fotografo id_foto timestamp e la foto chiaramente ahah)
+                   <button id="show_more_btn">Show more</button>
 
 
+                   <hr>
+
+                   <footer class="footer-bs">
+                        <div class="row">
+                          <div class="col-md-6 footer-brand animated fadeInLeft">
+                              <h2>Logo</h2>
+                                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+                                <p>© 2014 BS3 UI Kit, All rights reserved</p>
+                            </div>
+                          <div class="col-md-6 footer-social animated fadeInDown">
+                              <h4>Follow Us</h4>
+                              <ul>
+                                  <li><a href="#">Facebook</a></li>
+                                  <li><a href="#">Twitter</a></li>
+                                  <li><a href="#">Instagram</a></li>
+                                  <li><a href="#">RSS</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </footer>           
+                      
 
 
-
-
-////BODY CONCEPT
-
-{?model}
-    <navbar_box>
-
-    <log_in_pop_up_box  class="hidden">  <login_form>  </log_in_pop_up_box class="hidden">
-    <sign_in_pop_up_box class="hidden">  <sign_in_form>  </sign_in_pop_up_box class="hidden">
-
-    <event_open_box class="hidden"> 
-         {ci andra il partial per l'event_open}
-
-        <photo_open_box class="hidden"> {ci andra il partial per aprire una photo_open} <photo_open_box> //usata per mostrare un immagine al click
-    <event_open_box>
-
-    <search_box> <search_bar> <button> </search_box>
-
-    <gallery_box>
-        {#event_list}
-            {> partial/event name=name place=place date=date dataURL=dataURl} //TODO il partial per l'event che verra rimepito con i dati esempio in public/models/homepage_model.js
-        {/event_list}
-    </gallery_box>
 {/model}
 
-<footer>
 
+    </body>
+
+</html>
 
 

@@ -1,6 +1,6 @@
-const User = require('../../dataModels/User');
-const mongoose = require('mongoose');
-
+const User      = require('../../dataModels/User');
+const mongoose  = require('mongoose');
+const log       = require('debug')(":-> user_controller:")
 
 async function findUser(req, res) {
     try {
@@ -57,6 +57,19 @@ async function deleteUser(req, res) {
     }
 }
 
+
+function sendLoginForm(req,res){
+   log("TODO Sending login form");
+   res.status(200).render("login",{});
+}
+
+function sendSignInForm(req,res){
+    log("TODO Sending signin form");
+    res.status(200).render("signin",{});
+}
+
 module.exports.findUser = findUser;
 module.exports.createUser = createUser;
 module.exports.deleteUser = deleteUser;
+module.exports.sendLoginForm = sendLoginForm;
+module.exports.sendSignInForm = sendSignInForm;
