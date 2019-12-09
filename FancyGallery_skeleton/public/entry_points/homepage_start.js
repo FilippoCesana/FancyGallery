@@ -46,6 +46,10 @@ function signUp(){
     window.location.href = "http://localhost:3000/user/signin"
 }
 
+function resetResults(){
+    document.getElementById("gallery").innerHTML = "No event found";
+}
+
 function searchEventByName(e){
    const value = document.getElementById('search_text_field').value.replace(" ","_");
 
@@ -56,11 +60,24 @@ function searchEventByName(e){
         }
     } 
 
-    const url = "http://localhost:3000/event/search&event_name="+value;
+    const url = "http://localhost:3000/event/search?name="+value;
 
     fetch(url,options)
-        .then(res=>res.json().then(model=>{
+        .then(res=>res.json().then(result=>{
             nextNumber.counter = undefined;
+            if(result.length === 0) { resetResults(); return;}
+            const model = [];
+
+            result.forEach(event=>{
+
+                model.push({
+                    name : event.name,
+                    id   : event._id,
+                    timestamp : event.start,
+                    dataURL   : event.cover,
+                    place     : event.place,
+                });
+            });
             dust.render("partials/event",{model},(err,out)=>{
                 if(err){throw err}
                 document.getElementById('gallery').innerHTML = out;
@@ -96,13 +113,14 @@ async function showMore(e){
                 console.log("RESULT: ", result);
 
                 result.forEach(event=>{
-                    let event_model = {};
-                    event_model.name = event.name;
-                    event_model.id   = event._id;
-                    event_model.timestamp = event.start;
-                    event_model.dataURL   = event.cover;
-                    event_model.place     = event.place;
-                    model.push(event_model);
+
+                    model.push({
+                     name : event.name,
+                     id   : event._id,
+                    timestamp : event.start,
+                    dataURL   : event.cover,
+                    place     : event.place,
+                    });
                 });
                 dust.render('partials/event',{model},(err,out)=>{
                     if(err){throw err};
@@ -122,23 +140,7 @@ function showEvent(e,item){
     //capire che event ha cliccato leggendo l'id associato;
     //richiesta per l'evento 
     //render nel div corretto
-
-    //TODO:
-    // if already open_event_box do nothing
-    //await chimata fetch 
-    //close button
-    console.log(item)
-    const x = e.clientX;
-    const y = e.clientY;
-   document.body.style.overflow = 'hidden'
-    const open_event_box = document.getElementById("open_event_box");
-    open_event_box.className = "open_event_box_style"
-    open_event_box.style.position = "fixed";
-    open_event_box.style.top      =  100   + 'px';
-    open_event_box.style.left     = 200 + 'px'
-
-    
-    console.log("TODO showEvent");
+    console.log(item.childNodes)
 }
 
 setTimeout(()=>{
