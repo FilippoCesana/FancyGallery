@@ -3,7 +3,7 @@ const Image = require('../../dataModels/Image');
 const User = require('../../dataModels/User');
 const mongoose = require('mongoose');
 
-function showMore(req, res) {
+async function showMore(req, res) {
     const n = Number(req.url.split("=").pop());
     let tmp = homepage_model.event_list.slice();
     console.log(tmp.length);
