@@ -5,19 +5,19 @@ const mongoose = require('mongoose');
 
 async function showMore(req, res) {
     const n = Number(req.url.split("=").pop());
-    let tmp = homepage_model.event_list.slice();
-    console.log(tmp.length);
-    const start = n*9
-    const  end = (n+1)*9;
-    console.log(start,end);
+    const start = n*3
+    const  end = (n+1)*3;
+    // console.log(start,end);
 
     try{
-       const res = await  Event.find({})
-        res = res.slice(start,end);
-        res.status(200).json(res);
+       let found = await  Event.find({});
+       console.log(found)
+        found = found.slice(start,end);
+        res.status(200).json(found);
+
 
     }catch(err){
-        res.status(200).json(tmp)
+        res.status(200).json(found)
         throw err;
     }
     

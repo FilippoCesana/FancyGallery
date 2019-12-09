@@ -4,7 +4,7 @@ const router = express.Router();
 const controller = require("./event_controller.js");
 
 //jaco
-router.get(/\/more\?n=[0-9]+/, controller.showMore);
+router.get(/\/more&n=[0-9]+/, controller.showMore);
 router.get('/search?', controller.findEvent);
 //fede
 router.post('/create', controller.createEvent);

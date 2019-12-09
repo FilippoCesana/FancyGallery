@@ -36,7 +36,7 @@
 }
 </style>
 
-
+{#model}
 <div class="event_box" >
     <a href="imagesEvent.dust">
     <img src="{dataURL}"> </img>
@@ -49,4 +49,5 @@
     </div>
     <input type="hidden" value="{id}" class="event_id_input"> </input>
 </div>
+{/model}
 

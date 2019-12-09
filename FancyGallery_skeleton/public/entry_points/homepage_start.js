@@ -79,26 +79,42 @@ function showLess(){
 
 async function showMore(e){
 
-    // const options = {
-    //     method : 'get',
-    //     headers : {
-    //         accept : "application/json"
-    //     }
-    // }
-    //   const n = nextNumber();
-    //     const url ='http://localhost:3000/event/more&n='+n;
-    //    fetch(url,options)
-    //         .then((r)=>r.json().then((model)=>{
-    //             if(model.length ==0){showLess(); return};
-    //             dust.render('partials/event',{model},(err,out)=>{
-    //                 if(err){throw err};
-    //                 const gallery = document.getElementById('gallery');
-    //                 const before =  gallery.innerHTML;
-    //                 gallery.innerHTML = before + " " + out;
-    //             })
-    //         }))
-    //         .catch(err=>{throw err})
-    console.log("ricevuto")
+    const options = {
+        method : 'get',
+        headers : {
+            accept : "application/json"
+        }
+    }
+      const n = nextNumber();
+        const url ='http://localhost:3000/event/more&n='+n;
+       fetch(url,options)
+            .then((r)=>r.json().then((result)=>{
+                if(result.length ==0){showLess(); return};
+                const model = {
+                    event_list : []
+                }
+
+                console.log("RESULT: ", result);
+
+                result.forEach(event=>{
+                    let event_model = {};
+                    event_model.name = event.name;
+                    event_model.id   = event._id;
+                    event_model.timestamp = event.start;
+                    event_model.dataURL   = event.cover;
+                    event_model.place     = event.place;
+                    model.event_list.push(event_model);
+                });
+                dust.render('partials/event',{model},(err,out)=>{
+                    if(err){throw err};
+                    console.log(out);
+                    const gallery = document.getElementById('gallery');
+                    const before =  gallery.innerHTML;
+                    gallery.innerHTML = before + " " + out;
+                })
+            }))
+            .catch(err=>{throw err})
+
 
 
 }
