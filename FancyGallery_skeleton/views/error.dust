@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Picture upload</title>
+	<!-- //da prendere quello giusto -->
+
+	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
+	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
+
+	<!-- // per gestire la ricerca fotografi -->
+<script src="script.js"></script>
+</head>
+<body>
+
+	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container ">
+			<div class="navbar-header navbarCharacterColor">
+			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+			</div>
+			<div class="collapse navbar-collapse" id="bs-nav-demo">
+			<ul class="nav navbar-nav">
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">Sign up</a></li>
+					<li><a href="#">Login</a></li>
+			</ul>
+			</div>
+			</div>
+	</nav>
+
+	<br><br><br> -->
+<div class="container_form_big">
+
+		<div class="container_form">
+			<div class="description"><img src="../public/images/error.png"></div>
+			<div class="input_field"><h1>AWWW...DON’T CRY.</h1><br><h3>IT'S JUST A 404 ERROR!</h3></div>
+		</div>
+
+</div>
+<!--
+	<br><br><br>
+	<div class="footer navbar-fixed-bottom">
+	        <h5> all rights reserved @FancyGallery</h5>
+	</div> -->
+</body>
+</html>

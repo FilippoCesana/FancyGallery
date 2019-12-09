@@ -78,6 +78,7 @@ function searchEventByName(e){
                     place     : event.place,
                 });
             });
+            document.getElementById("show_more_btn").style.display = '';
             dust.render("partials/event",{model},(err,out)=>{
                 if(err){throw err}
                 document.getElementById('gallery').innerHTML = out;

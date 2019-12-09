@@ -73,7 +73,8 @@ body {
 
 .input_field [type="text"], .input_field [type="email"], .input_field textarea,
 .input_field [type="file"], .input_field select, .input_field [type="number"],
-.description [type="text"], .input_field [type="password"] {
+.description [type="text"], .input_field [type="password"], .input_field [type="date"],
+.input_field [type="time"], .description [type="time"], .description [type="date"] {
   background-color: transparent;
   font-size: 0.8em;
   border: none;
@@ -107,6 +108,13 @@ h3 {
 
 input, textarea, select {
   font-family: "Helvetica", "Segoe UI", Arial, serif;
+}
+
+.description img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* ------------- Mobile style settings ------------- */
@@ -187,6 +195,11 @@ input, textarea, select {
   .input_field [type="file"], .input_field select, .input_field [type="number"],
   .description [type="text"], .input_field [type="password"] {
     width: 75%;
+  }
+
+  .input_field [type="date"],
+  .input_field [type="time"], .description [type="time"], .description [type="date"] {
+    width: 50%;
   }
 
   #button {
