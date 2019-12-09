@@ -1,9 +1,7 @@
 const modelManager = require('../../managers/modelManager.js');
 const log = require("debug")(':-> root_controller: ')
 
-const modelManager = require('../../managers/modelManager.js');
-const log = require("debug")(':-> root_controller: ');
-const Event = require("./../../actualSchema/Event");
+const Event = require("./../../dataModels/Event");
 
 
 async function sendHomePage(req,res){
@@ -11,9 +9,9 @@ async function sendHomePage(req,res){
     log("Sending homepage")
 
     Event.find({})
-             .then(res=>{
+             .then(r=>{
                  const model = {
-                     event_list = []
+                     event_list : []
                  }
                  let event_model = {
                      name       : undefined,
@@ -23,7 +21,7 @@ async function sendHomePage(req,res){
                     place       : undefined
                  }
 
-                 res.forEach(event=>{
+                 r.forEach(event=>{
                     event_model.name = event.name;
                     event_model.id   = event._id;
                     event_model.timestamp = event.start;

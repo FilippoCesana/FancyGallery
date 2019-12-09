@@ -27,7 +27,9 @@ async function createEvent(req, res) {
                 admin: req.body.admin, //authorization should contain userId and password
                 description: req.body.description,
                 place: req.body.place,
-                images: req.body.images
+                images: req.body.images,
+                cover: req.body.cover,
+                watermark: req.body.watermark,
             });
 
             console.log(user)
@@ -70,7 +72,7 @@ const search = async function (req, res, s) {
 
 function findEvent(req, res) {
     console.log("@@@@@@@@ HERE");
-    search(req, res, req.query.eventName);
+    search(req, res, req.query);
 }
 
 
