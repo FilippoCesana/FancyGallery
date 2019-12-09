@@ -111,6 +111,9 @@
 
 {/model}
 
+    <script src="/utility/dustjs-linkedin/dust-core.js"></script>
+    <script src="/views/views.js"></script>
+    <script src="/entry_points/homepage_start.js"></script>
 
     </body>
 

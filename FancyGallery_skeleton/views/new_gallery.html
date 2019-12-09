@@ -76,32 +76,17 @@
 				<input type="text" name="photographer_search_field" placeholder="Search your photographer" onchange='photographer_search("{._id}")'>
 				<!-- found photographer -->
 				<h3> FOUND PHOTOGRAPHERS </h3>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA BRUNNER <br>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA LIVER <br>
-				<input type="checkbox" name="photographer{id}" value="{id}"> NICOLA PONTIGGIA <br>
-
-				<!-- {#found_photographers}
-          {>"partials/part_photographers_search" /}
-          {:else}
-          <p>No photographers found.</p>
-        {/found_photographers} -->
+				<input type="image" src="../public/images/add.png" width="12" height="12"> NICOLA BRUNNER <br>
+				<input type="image" src="../public/images/add.png" width="12" height="12"> NICOLA LIVER <br>
+				<input type="image" src="../public/images/add.png" width="12" height="12"> NICOLA PONTIGGIA <br>
 			</div>
 
 			<div class="input_field">
-				<!-- you photographer -->
-				<!-- <input type="checkbox" name="photographer{id}" value="{id}" checked> {name} <br> -->
 
 				<!-- checked photographer -->
 				<h3> SELECTED PHOTOGRAPHERS </h3>
-				<input type="checkbox" name="photographer{id}" value="{id}" checked> ANDREA GALLIDABINO <br>
-				<input type="checkbox" name="photographer{id}" value="{id}" checked> CESARE PAUTASSO <br>
-
-				<!-- {#found_photographers_checked}
-          {>"partials/part_photographers_checked" /}
-          {:else}
-          <p>No photographers selected.</p>
-        {/found_photographers_checked} -->
-
+				<input type="image" src="../public/images/remove.png" width="12" height="12"> ANDREA GALLIDABINO <br>
+				<input type="image" src="../public/images/remove.png" width="12" height="12"> CESARE PAUTASSO <br>
 			</div>
 		</div>
 

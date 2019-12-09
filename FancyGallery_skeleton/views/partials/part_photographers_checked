@@ -1,1 +1,2 @@
-<input type="checkbox" name="photographer{id}" value="{id}"> {name} <br>
+<input type="image" src="../../public/images/remove.png" width="12" height="12" id="remove{id}"
+onclick= 'remove_photographer("{._id}")'> {name} <br>
