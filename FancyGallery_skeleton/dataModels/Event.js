@@ -22,6 +22,8 @@ const EventSchema = new Schema({
         place: {type: String},
         photographers:[{type: Schema.Types.ObjectId}],
         pendingPhotographers:[{type: Schema.Types.ObjectId}],//Photographers Ids
+        cover:{type: String, default:""},//Photographers Ids
+        watermark:{type: String, default:""}//Photographers Ids
       //  guests:{type: Schema.Types.Mixed} //TODO
     }
 );

@@ -3,8 +3,25 @@ const Image = require('../../dataModels/Image');
 const User = require('../../dataModels/User');
 const mongoose = require('mongoose');
 
-function showMore(req, res) {
-    //
+async function showMore(req, res) {
+    const n = Number(req.url.split("=").pop());
+    const start = n*3
+    const  end = (n+1)*3;
+    // console.log(start,end);
+
+    try{
+       let found = await  Event.find({});
+       console.log(found)
+        found = found.slice(start,end);
+        res.status(200).json(found);
+
+
+    }catch(err){
+        res.status(200).json(found)
+        throw err;
+    }
+    
+
 }
 
 //l'obbiettivo è aggiungere un nuovo evento al databse
@@ -27,7 +44,9 @@ async function createEvent(req, res) {
                 admin: req.body.admin, //authorization should contain userId and password
                 description: req.body.description,
                 place: req.body.place,
-                images: req.body.images
+                images: req.body.images,
+                cover: req.body.cover,
+                watermark: req.body.watermark,
             });
 
             console.log(user)
@@ -70,7 +89,7 @@ const search = async function (req, res, s) {
 
 function findEvent(req, res) {
     console.log("@@@@@@@@ HERE");
-    search(req, res, req.query.eventName);
+    search(req, res, req.query);
 }
 
 
