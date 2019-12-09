@@ -5,13 +5,10 @@ const schemas = require("./schemas/schemas");
 
 const UserSchema = new Schema(
     {
-        _id: {type: Schema.Types.ObjectId},
         dateCreated: {type: Date, default: Date.now},
-        private: {
-            password: {type: String, required: true}
-        },
+        password: {type: String, required: true, get: v => undefined},
         nickname: {type: String, required: true},
-        email: {type: String},
+        email: {type: String, set: v => v.toLowerCase()},
         name: {type: String},
         surname: {type: String},
         events: [{type: Schema.Types.ObjectId}],

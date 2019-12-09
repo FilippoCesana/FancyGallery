@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 
 async function findUser(req, res) {
     try {
-        const users = await User.find({nickname: req.params.nickname});
+        const users = await User.find(req.params);
         if (users) {
             res.status(200).json(users[0]);
         } else {
@@ -18,9 +18,7 @@ async function findUser(req, res) {
 async function createUser(req, res) {
     try {
         const user = new User({
-            private: {
-                password: req.body.password
-            },
+            password: req.body.password,
             nickname: req.body.nickname,
             email: req.body.email,
             name: req.body.name,

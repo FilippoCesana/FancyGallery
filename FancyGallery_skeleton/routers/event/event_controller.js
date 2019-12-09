@@ -1,5 +1,6 @@
 const Event = require('../../dataModels/Event');
 const Image = require('../../dataModels/Image');
+const User = require('../../dataModels/User');
 const mongoose = require('mongoose');
 
 function showMore(req, res) {
@@ -10,21 +11,31 @@ function showMore(req, res) {
 //ora non c'e ancora il db vedi se vuoi iniziare a setupparlo se no lo guardo io piu tardi senza problem
 
 async function createEvent(req, res) {
-    if (true) {//TODO CERTIFY USER
+    if (true) {//TODO VERIFY USER
         try {
-            console.log("@@@@@@")
-            console.log(req.body);
+            const user = await User.findById(req.body.admin); // dude who made the event
+            if (!user) {
+                res.status(400).json({error: "Admin user doesn't exist"});
+                return;
+            }
             const event = new Event({
                 name: req.body.name,
+                _id: new mongoose.Types.ObjectId(),
                 privacy: "public",//TODO privacy get from client
                 start: req.body.start, // from the user EX : new Date('December 17, 1995 03:24:00');
                 end: req.body.end,
                 admin: req.body.admin, //authorization should contain userId and password
                 description: req.body.description,
                 place: req.body.place,
+                images: req.body.images
             });
 
+            console.log(user)
+            console.log("@@@@@@@")
             const saved = await event.save();
+            user.events.push(saved._id);//Event id added to user
+            await user.save();
+
             res.status(201).json(saved);
         } catch (e) {
             console.log(e);
@@ -58,6 +69,7 @@ const search = async function (req, res, s) {
 
 
 function findEvent(req, res) {
+    console.log("@@@@@@@@ HERE");
     search(req, res, req.query.eventName);
 }
 
@@ -75,10 +87,10 @@ async function addImage(req, res) {
         res.status(404).json({error: "Event not found :p"});
         return;
     }
+
+    // if(event.photographers.contains()) //TODO check it has the authorization
     //TODO check Dataurl is valid
     try {
-
-
         let image = new Image({
             dataURL: req.body.dataURL,
             photographer: req.body.clientId
@@ -87,13 +99,13 @@ async function addImage(req, res) {
         image = await image.save();
         event.images.push(image).save();
         res.status(201).json(image);
-    }catch (e) {
+    } catch (e) {
         res.status(400).json({error: "TODO"});
     }
-
 }
 
 module.exports.showMore = showMore;
 module.exports.createEvent = createEvent;
 module.exports.openEvent = openEvent;
 module.exports.findEvent = findEvent;
+module.exports.addImage = addImage;
