@@ -90,9 +90,8 @@ async function showMore(e){
        fetch(url,options)
             .then((r)=>r.json().then((result)=>{
                 if(result.length ==0){showLess(); return};
-                const model = {
-                    event_list : []
-                }
+
+                const model = [];
 
                 console.log("RESULT: ", result);
 
@@ -103,7 +102,7 @@ async function showMore(e){
                     event_model.timestamp = event.start;
                     event_model.dataURL   = event.cover;
                     event_model.place     = event.place;
-                    model.event_list.push(event_model);
+                    model.push(event_model);
                 });
                 dust.render('partials/event',{model},(err,out)=>{
                     if(err){throw err};
