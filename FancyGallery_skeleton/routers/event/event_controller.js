@@ -69,9 +69,45 @@ async function createEvent(req, res) {
     }
 }
 
+const model = {
+    photo_list : [
+        {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+     {
+        id_photographer : "prova_photographer_id",
+        id_image        : "prova_image_id",
+        timestamp       : "10 dicembre 2019",
+        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
+     },
+       
+    ]
+}
+
 
 function openEvent(req, res) {
-   res.render('imagesEvent',{});
+   res.render('imagesEvent',{model});
 }
 
 
