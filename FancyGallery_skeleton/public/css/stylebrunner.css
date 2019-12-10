@@ -6,6 +6,7 @@ body {
   font-family: "Helvetica", "Segoe UI", Arial, serif;
   background-image: url("../images/party_dark.jpg");
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container_form_big {
@@ -34,12 +35,14 @@ body {
   font-size: 1em;
   font-weight: bold;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #button:hover {
   background-color: #ccff00;
   color: #00ccff;
   box-shadow: 0 0 20px #ccff00;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #button_small {
@@ -55,12 +58,14 @@ body {
   font-size: 1em;
   font-weight: bold;
   color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #button_small:hover {
   background-color: #ccff00;
   color: #00ccff;
   box-shadow: 0 0 10px #ccff00;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -97,6 +102,7 @@ h1 {
   color: #ccff00;
   font-weight: lighter;
   text-shadow: 0 0 10px #ccff00;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h3 {
@@ -104,10 +110,12 @@ h3 {
   color: #ccff00;
   font-weight: lighter;
   text-shadow: 0 0 10px #ccff00;
+  font-family: 'Montserrat', sans-serif;
 }
 
 input, textarea, select {
-  font-family: "Helvetica", "Segoe UI", Arial, serif;
+  /* font-family: "Helvetica", "Segoe UI", Arial, serif; */
+  font-family: 'Montserrat', sans-serif;
 }
 
 .description img {
@@ -149,6 +157,7 @@ input, textarea, select {
   body {
     margin-left: 10%;
     margin-right: 10%;
+    font-family: 'Montserrat', sans-serif;
   }
 
   .big_container {
