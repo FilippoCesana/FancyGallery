@@ -81,13 +81,15 @@
                     </div>
                     </div>
                     </div>
-                <hr>
-
-
+                
+             <div class="container">      
+                <div class="containerSearchButton">
+                    <hr>
                    <button id="show_more_btn">Show more</button>
-
-
                    <hr>
+                </div>   
+             </div>    
+
 
                    <footer class="footer-bs">
                         <div class="row">
