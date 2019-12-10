@@ -7,7 +7,7 @@
         
             <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
             <link rel="stylesheet" type="text/css" href="../css/index.css">
-            <link rel="stylesheet" type="text/css" href="../css/event.css">
+            <!-- <link rel="stylesheet" type="text/css" href="../css/event.css"> -->
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
             <!-- 	To make the website responsive on mobile devices.  -->
             <meta name="viewport" content="width=device-width, initial-scale=1">     
@@ -58,22 +58,19 @@
 
 
      <!-- Page Content -->
-<div class="container">
-  
-    <hr class="mt-2 mb-5">
-  
-    <div class="row text-center text-lg-left">
-  
-      <div class="col-lg-3 col-md-4 col-6">
-            <div id="photoGallery">
+    <div class="container .fluid">
+            <div class="row">
+                    <div class="col-sm-12">
+                <div id="photoGallery">
                     {#photo_list}
                         {> "partials/image" id_photographer=id_photographer id_image=id_image timestamp=timestamp dataURL=dataURL /}
                     {/photo_list}
-                </div>
-            </a>
-      </div>
-    </div>
-    </div>
+            <div id="open_event_box" class="hidden">  </div>
+            </div>
+        </div>
+        </div>
+        </div>
+
 
 
 {/model}
