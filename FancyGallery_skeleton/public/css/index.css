@@ -299,8 +299,8 @@ body {
 }
 
 .container .containerSearchButton hr{
-    margin-left: -500px;
-    margin-right: 50px;
+    /* margin-left: 5px;
+    margin-right: 5px; */
 }
 
 .setInput{
