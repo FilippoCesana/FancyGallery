@@ -16,9 +16,7 @@ router.post('/:id/image', controller.addImage);
 router.get('/open?:id', controller.openEvent);
 // /search?event_name=Mio%20Evento
 
-
-
+router.get('/match/:name',controller.matchEvent)
 //fede
 //router.
-
 module.exports = router;

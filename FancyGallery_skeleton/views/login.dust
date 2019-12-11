@@ -7,7 +7,9 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
+	<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css"> 
+	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">  -->
+	
 
 	<!-- // per gestire la ricerca fotografi -->
 <!-- <script src="script.js"></script> -->
@@ -39,12 +41,16 @@
 	</nav>
 
 	<br><br><br> -->
+
+<div class="container">
+	<div clas="jumbotron">
 <div class="container_form_big">
 	<h1>LOGIN</h1>
-  <form method="" action="">
+	<hr>
+  <form method="POST" action="/auth/login">
 		<div class="container_form">
-			<div class="description">USERNAME:</div>
-			<div class="input_field"><input type="text" name="username" id="username" placeholder="USERNAME" required></div>
+			<div class="description">EMAIL:</div>
+			<div class="input_field"><input type="text" name="email" id="username" placeholder="EMAIL" required></div>
 		</div>
 
 		<hr>
@@ -61,6 +67,8 @@
 		<input id="button" type="submit" name="new" value="LOGIN" />
 
 	</form>
+</div>
+</div>
 </div>
 <!--
 	<br><br><br>

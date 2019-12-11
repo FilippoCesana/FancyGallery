@@ -2052,6 +2052,11 @@ vary@~1.1.2:
   resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
   integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
 
+watermarkjs@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/watermarkjs/-/watermarkjs-2.0.0.tgz#69dc3eb1beaa4f70c1189b202e3de6585ecd5b22"
+  integrity sha1-adw+sb6qT3DBGJsgLj3mWF7NWyI=
+
 wide-align@^1.1.0:
   version "1.1.3"
   resolved "https://registry.yarnpkg.com/wide-align/-/wide-align-1.1.3.tgz#ae074e6bdc0c14a431e804e624549c633b000457"

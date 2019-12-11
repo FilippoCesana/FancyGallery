@@ -1,27 +1,26 @@
 const Event = require('../../dataModels/Event');
 const Image = require('../../dataModels/Image');
 const User = require('../../dataModels/User');
+const Invite = require('../../dataModels/Invite');
 const mongoose = require('mongoose');
 
 async function showMore(req, res) {
     const n = Number(req.url.split("=").pop());
-    const start = n*3;
-    const  end = (n+1)*3;
+    const start = n * 3;
+    const end = (n + 1) * 3;
     // console.log(start,end);
 
-    try{
-       let found = await  Event.find({});
-       console.log(found)
-        found = found.slice(start,end);
+    try {
+        let found = await Event.find({});
+        console.log(found)
+        found = found.slice(start, end);
         res.status(200).json(found);
 
 
-    }catch(err){
+    } catch (err) {
         res.status(200).json(found)
         throw err;
     }
-    
-
 }
 
 //l'obbiettivo è aggiungere un nuovo evento al databse
@@ -30,7 +29,7 @@ async function showMore(req, res) {
 async function createEvent(req, res) {
     if (true) {//TODO VERIFY USER
         try {
-            const user = await User.findById(req.body.admin); // dude who made the event
+            const user = await User.findById(req.body.admin); // dude who made the myEvent
             if (!user) {
                 res.status(400).json({error: "Admin user doesn't exist"});
                 return;
@@ -49,8 +48,8 @@ async function createEvent(req, res) {
                 watermark: req.body.watermark,
             });
 
-            console.log(user)
-            console.log("@@@@@@@")
+            console.log(user);
+            console.log("@@@@@@@");
             const saved = await event.save();
             user.events.push(saved._id);//Event id added to user
             await user.save();
@@ -61,7 +60,7 @@ async function createEvent(req, res) {
             if (e instanceof TypeError) {
                 res.status(400).json({error: "Bad request: missing/invalid fields"});//missing required fields or invalid fields
             } else {
-                res.status(500).json({error: "Could not save event"})
+                res.status(500).json({error: "Could not save myEvent"})
             }
         }
     } else {
@@ -69,62 +68,26 @@ async function createEvent(req, res) {
     }
 }
 
-const model = {
-    photo_list : [
-        {
-        id_photographer : "prova_photographer_id",
-        id_image        : "prova_image_id",
-        timestamp       : "10 dicembre 2019",
-        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-     },
-     {
-        id_photographer : "prova_photographer_id",
-        id_image        : "prova_image_id",
-        timestamp       : "10 dicembre 2019",
-        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-     },
-     {
-        id_photographer : "prova_photographer_id",
-        id_image        : "prova_image_id",
-        timestamp       : "10 dicembre 2019",
-        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-     },
-     {
-        id_photographer : "prova_photographer_id",
-        id_image        : "prova_image_id",
-        timestamp       : "10 dicembre 2019",
-        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-     },
-     {
-        id_photographer : "prova_photographer_id",
-        id_image        : "prova_image_id",
-        timestamp       : "10 dicembre 2019",
-        dataURL         :  "https://homepages.cae.wisc.edu/~ece533/images/girl.png",
-     },
-       
-    ]
-}
-
 
 function openEvent(req, res) {
-   res.render('imagesEvent',{model});
+    res.render('imagesEvent', {});
 }
 
 
 //l'obbiettivo è che ti arrivi una req cons req.eventName come field che contiente il nome del evento cosi fai direttamnte la ricerca
 // appena riesco faccio una middleware che ti fa sta roba almeno puoi accedere gia al campo
-const search = async function (req, res, s) {
+async function findEvent(req, res) {
     try {
-        const events = await Event.find(s);
+        const events = await Event.find(req.params);
         res.status(200).json(events);
     } catch (e) {
         res.status(400).json({error: "Bad request"});
     }
-};
+}
 
 
-function findEvent(req, res) {
-    search(req, res, req.query);
+async function findEventById(req, res) {
+    return await Event.findById(req.params.id).plain();
 }
 
 
@@ -142,7 +105,7 @@ async function addImage(req, res) {
         return;
     }
 
-    // if(event.photographers.contains()) //TODO check it has the authorization
+    // if(myEvent.photographers.contains()) //TODO check it has the authorization
     //TODO check Dataurl is valid
     try {
         let image = new Image({
@@ -158,8 +121,23 @@ async function addImage(req, res) {
     }
 }
 
+
+async function matchEvent(req, res) {
+    try {
+        const s = req.params.name;
+        const regex = new RegExp(s, 'i')
+        const events = await Event.find({name: {$regex: regex  }});
+        console.log(events);
+        res.status(200).json(events);
+    } catch (e) {
+        res.status(500).json({error: "Our bad"})
+    }
+}
+
+
 module.exports.showMore = showMore;
 module.exports.createEvent = createEvent;
 module.exports.openEvent = openEvent;
 module.exports.findEvent = findEvent;
 module.exports.addImage = addImage;
+module.exports.matchEvent = matchEvent;
