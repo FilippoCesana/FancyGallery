@@ -82,7 +82,7 @@
 
 		<div class="container_form">
 			<div class="description">SELECT PHOTOGRAPHERS:<br><br>
-				<input type="text" name="photographer_search_field" placeholder="SEARCH YOUR PHOTOGRAPHER">
+				<input  type="text" name="photographer_search_field" placeholder="SEARCH YOUR PHOTOGRAPHER">
 				<!-- found photographer -->
 
 				<h3> FOUND PHOTOGRAPHERS </h3>

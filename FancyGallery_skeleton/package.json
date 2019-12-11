@@ -5,18 +5,19 @@
   "author": "jacopo stucchi, filippo cesana, nicola brunner, federico lagrasta",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "1.19.0",
     "debug": "^3.2.6",
+    "dustjs-helpers": "1.7.4",
     "dustjs-linkedin": "^2.7.5",
     "express": "^4.16.2",
     "klei-dust": "^1.0.0",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",
-    "socket.io": "^2.3.0",
-    "dustjs-helpers": "1.7.4",
-    "body-parser": "1.19.0"
+    "morgan": "^1.9.1",
+    "socket.io": "^2.3.0"
   },
   "scripts": {
     "start": "DEBUG=:* node backend.js",
-    "dustc" : "cd ./views; dustc partials/*.dust -o ../public/views/views.js"
+    "dustc": "cd ./views; dustc partials/*.dust -o ../public/views/views.js"
   }
 }
