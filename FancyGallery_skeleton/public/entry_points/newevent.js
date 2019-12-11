@@ -10,6 +10,8 @@ function start() {
   };
 
   let search_input = document.getElementById("search_input");
+  let add_btn = document.querySelector(".plus");
+  let delete_btn = document.querySelector(".minus");
 
   //var new_list = document.querySelector("div[class = 'container_form']");
   //var add_phot = document.querySelector("input[class='bt_add_photographer']");
@@ -17,28 +19,29 @@ function start() {
 
   // Event Listeners
   search_input.addEventListener("keypress", photographer_search);
-  // console.log("search_input: ", search_input.getElementsByClassName());
+  add_btn.addEventListener("onclick", add_photographer);
+  delete_btn.addEventListener("onclick", remove_photographer);
 
   function photographer_search() {
-    doFetchRequest("GET", "user/search?name=" + search_input.value, {
-      "Content-Type": "text/html"
-    })
+    doFetchRequest(
+      "GET",
+      "user/search?name=" + search_input.value,
+      {
+        "Content-Type": "text/html"
+      },
+      undefined
+    )
       .then(res => {
         console.log(res);
-        //return res.text();
+        return res.text();
       })
       .then(body => {
         document.getElementById("search_result").innerHTML = body;
       });
   }
 
-  // search_input.addEventListener("load",);
-
   // da inizializzare ogni volta che creo una nuova galleria
   // when page is reloaded {loggedId,}
-  function new_photographer_list(myEvent) {
-    return myEvent.photographers.push(myEvent.organizer);
-  }
 
   function add_photographer(myEvent, photographer) {
     return myEvent.photographers.push(photographer.id);

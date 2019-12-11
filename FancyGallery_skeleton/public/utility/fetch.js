@@ -16,7 +16,7 @@ var header_no = ["Content-Type", "Accept"];
 
 function doFetchRequest(method, url, headers, body) {
   if (arguments.length !== 4) {
-    throw new Error(`the arguments aren't enough`);
+    throw err;
   }
   if (
     method === "GET" ||
@@ -26,7 +26,7 @@ function doFetchRequest(method, url, headers, body) {
   ) {
     if (method === "GET") {
       if (body) {
-        throw new Error(`the body should be undefined`);
+        throw err;
       } else {
         return fetch(url, {
           method: method,
@@ -56,10 +56,10 @@ function doFetchRequest(method, url, headers, body) {
             headers: headers
           });
         } else {
-          throw new Error(`the method isn't POST nor PUT`);
+          throw err;
         }
       } else {
-        throw new Error(`invalid method`);
+        throw err;
       }
     } else if (method === "DELETE") {
       return fetch(url, {
@@ -68,11 +68,11 @@ function doFetchRequest(method, url, headers, body) {
       });
     } else {
       console.log("method not correct");
-      throw new Error(`incorrect method`);
+      throw err;
     }
   } else {
     console.log("error");
-    throw new Error(`Error`);
+    throw err;
   }
 }
 
