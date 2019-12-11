@@ -47,7 +47,7 @@
 <div class="container_form_big">
 	<h1>LOGIN</h1>
 	<hr>
-  <form method="" action="">
+  <form method="POST" action="/login">
 		<div class="container_form">
 			<div class="description">USERNAME:</div>
 			<div class="input_field"><input type="text" name="username" id="username" placeholder="USERNAME" required></div>
