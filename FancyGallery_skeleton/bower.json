@@ -1,0 +1,24 @@
+{
+  "name": "Instaevent",
+  "description": "",
+  "main": "backend.js",
+  "authors": [
+    "jacopo stucchi",
+    "filippo cesana",
+    "nicola brunner",
+    "federico lagrasta"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/FilippoCesana/FancyGallery",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "./public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "watermarkjs": "^2.0.0"
+  }
+}
