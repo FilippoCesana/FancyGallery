@@ -7,9 +7,13 @@
   "dependencies": {
     "body-parser": "1.19.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "bower": "^1.8.8",
 >>>>>>> 9c5ecf77b4b415b77d35fcd55ee628596852c882
+=======
+    "bower": "^1.8.8",
+>>>>>>> origin/master
     "debug": "^3.2.6",
     "dustjs-helpers": "1.7.4",
     "dustjs-linkedin": "^2.7.5",
@@ -19,11 +23,16 @@
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "socket.io": "^2.3.0"
 =======
     "socket.io": "^2.3.0",
     "watermarkjs": "^2.0.0"
 >>>>>>> 9c5ecf77b4b415b77d35fcd55ee628596852c882
+=======
+    "socket.io": "^2.3.0",
+    "watermarkjs": "^2.0.0"
+>>>>>>> origin/master
   },
   "scripts": {
     "postinstall": "node_modules/.bin/bower install",
