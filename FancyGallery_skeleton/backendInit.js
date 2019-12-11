@@ -9,6 +9,8 @@ const mongoose = require('mongoose');
 const b_parse = require('body-parser');
 const log = require("debug")(":->Backend:");
 
+const watermark = require("watermarkjs");
+
 
 //Punto d'ingresso dell'app lato server:
 log("Init backend");
@@ -62,4 +64,3 @@ p = new Promise(function (resolve, reject) {
 
 
 module.exports = p;
-
