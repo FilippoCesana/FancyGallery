@@ -40,7 +40,7 @@ function start(){
 
 function login(){
     //inviare la password in modo sicuro bisogna fare lo start.js del login
-    window.location.href = "http://localhost:3000/user/login"
+    window.location.href = "http://localhost:3000/auth/login"
 }
 
 function signUp(){

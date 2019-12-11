@@ -10,7 +10,7 @@ async function sendHomePage(req,res){
 
     Event.find({})
              .then(r=>{
-                 console.log(r);
+               //  console.log(r);
                  const model = {
                      event_list : []
                  }

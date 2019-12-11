@@ -47,10 +47,10 @@
 <div class="container_form_big">
 	<h1>LOGIN</h1>
 	<hr>
-  <form method="" action="">
+  <form method="POST" action="/auth/login">
 		<div class="container_form">
-			<div class="description">USERNAME:</div>
-			<div class="input_field"><input type="text" name="username" id="username" placeholder="USERNAME" required></div>
+			<div class="description">EMAIL:</div>
+			<div class="input_field"><input type="text" name="email" id="username" placeholder="EMAIL" required></div>
 		</div>
 
 		<hr>
