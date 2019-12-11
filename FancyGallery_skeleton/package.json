@@ -15,7 +15,11 @@
     "mongoose": "^5.7.7",
     "morgan": "^1.9.1",
     "socket.io": "^2.3.0",
-    "watermarkjs": "^2.0.0"
+    "watermarkjs": "^2.0.0",
+    "express-passport-logout": "latest",
+    "passport": "latest",
+    "express-session": "latest",
+    "express-flash": "latest"
   },
   "scripts": {
     "start": "DEBUG=:* node backend.js",

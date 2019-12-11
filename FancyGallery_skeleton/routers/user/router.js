@@ -8,8 +8,8 @@ router.get('/search?', controller.findUser);
 router.post('/', controller.createUser);
 router.delete('/delete/:id', controller.deleteUser);
 
-router.get("/login", controller.sendLoginForm);
-
 router.get("/signin", controller.sendSignInForm);
+
+//router.get("/login", controller.sendLoginForm);
 
 module.exports = router;
