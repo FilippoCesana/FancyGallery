@@ -1,8 +1,8 @@
-/** @module routes/routers 
+/** @module routes/routers
 * Exposes all routers
 */
 
-//è quello degli assignments 
+//è quello degli assignments
 
 'use strict';
 
@@ -10,7 +10,7 @@ const fs = require('fs');
 
 const dirEntries = fs.readdirSync(__dirname);
 const base = __dirname + '/';
-const routers = {};
+let routers = {};
 
 try{
   dirEntries.forEach(function(dirEntry){

@@ -17,8 +17,7 @@
                 
     </head>   
 
-    <body> 
-        {#model}
+    <body>
             <nav class="navbar navbar-inverse navbar-fixed-top"> 
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -73,9 +72,9 @@
                         <div class="row">
                                 <div class="col-sm-12">
                         <div id="gallery">
-                            {#event_list}
-                                {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
-                            {/event_list}
+                            {#events}
+                                {> "partials/event" name=name place=place id=id timestamp=timestamp cover=cover /}
+                            {/events}
                         <div id="open_event_box" class="hidden">  </div>
                         </div>
                     </div>
@@ -112,7 +111,7 @@
                       
 
 
-{/model}
+
 
     <script src="/utility/dustjs-linkedin/dust-core.js"></script>
     <script src="/views/views.js"></script>

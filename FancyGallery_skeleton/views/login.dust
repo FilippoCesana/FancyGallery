@@ -47,7 +47,11 @@
 <div class="container_form_big">
 	<h1>LOGIN</h1>
 	<hr>
+<<<<<<< HEAD
+  <form method="POST" action="/login">
+=======
   <form method="POST" action="/auth/login">
+>>>>>>> 5e15622563046b726294476b47bb3fdc30dd1acc
 		<div class="container_form">
 			<div class="description">EMAIL:</div>
 			<div class="input_field"><input type="text" name="email" id="username" placeholder="EMAIL" required></div>
