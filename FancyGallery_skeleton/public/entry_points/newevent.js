@@ -10,8 +10,8 @@ function start() {
   };
 
   let search_input = document.getElementById("search_input");
-  let add_btn = document.querySelector(".plus");
-  let delete_btn = document.querySelector(".minus");
+  let add_btn = document.getElementsByClassName(".plus");
+  let delete_btn = document.getElementsByClassName(".minus");
 
   //var new_list = document.querySelector("div[class = 'container_form']");
   //var add_phot = document.querySelector("input[class='bt_add_photographer']");
