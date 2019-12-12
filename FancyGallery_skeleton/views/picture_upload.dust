@@ -7,7 +7,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css">
+	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
 </head>
 <body>
@@ -37,46 +37,43 @@
 	</nav>
 
 	<br><br><br> -->
-	<div class="container_form_big">
-		<h1>UPLOAD A PICTURE</h1>
-	  <form method="POST" action="/event/newpicture">
+<div class="container_form_big">
+	<h1>UPLOAD A PICTURE</h1>
+  <form method="" action="">
 
-			<div class="container_form">
-					<div class="description">TAKE PICTURE:</div>
-					<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" id="imageUpload"></div>
-			</div>
+		<div class="container_form">
+				<div class="description">TAKE PICTURE:</div>
+				<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" id="imageUpload"></div>
+		</div>
 
-			<hr>
+		<hr>
 
-			<!-- <div class="container_form">
-	        <div class="description">TAKE PICTURE:</div>
-	        <div class="input_field"><button id= "button_small" type="button">CLICK!</button></div>
-	    </div>
+		<!-- <div class="container_form">
+        <div class="description">TAKE PICTURE:</div>
+        <div class="input_field"><button id= "button_small" type="button">CLICK!</button></div>
+    </div>
 
-			<hr> -->
+		<hr> -->
 
-			<div class="container_form">
-	        <div class="description">PREVIEW:</div>
-	        <div class="input_field"><canvas id="canvas"> </canvas></div>
-	    </div>
+		<div class="container_form">
+        <div class="description">PREVIEW:</div>
+        <div class="input_field"> <canvas id="canvas"> </canvas></div>
+    </div>
 
-			<hr>
+		<hr>
 
-			<br>
+		<br>
 
-			<input id="button" type="submit" name="new" value="OK" />
+		<input id="button" type="submit" name="new" value="OK" />
 
-		</form>
-	</div>
+	</form>
+</div>
 <!--
 	<br><br><br>
 	<div class="footer navbar-fixed-bottom">
 	        <h5> all rights reserved @FancyGallery</h5>
 	</div> -->
 
-	<script src="/entry_points/uploadimagepreview.js"></script>
-	<script src="/components/watermarkjs/dist/watermark.js"></script>
-
-
+	<script src="../public/entry_points/uploadimagepreview.js"></script>
 </body>
 </html>

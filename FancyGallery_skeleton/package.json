@@ -53,7 +53,7 @@
 >>>>>>> irini
   },
   "scripts": {
-    "postinstall": "bower install",
+    "postinstall": "node_modules/.bin/bower install",
     "start": "DEBUG=:* node backend.js",
     "dustc": "cd ./views; dustc partials/*.dust -o ../public/views/views.js"
   }
