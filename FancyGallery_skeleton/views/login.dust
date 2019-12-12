@@ -7,9 +7,9 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css"> 
+	<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css">
 	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">  -->
-	
+
 
 	<!-- // per gestire la ricerca fotografi -->
 <!-- <script src="script.js"></script> -->
@@ -47,11 +47,7 @@
 <div class="container_form_big">
 	<h1>LOGIN</h1>
 	<hr>
-<<<<<<< HEAD
-  <form method="POST" action="/login">
-=======
-  <form method="POST" action="/auth/login">
->>>>>>> 5e15622563046b726294476b47bb3fdc30dd1acc
+  <form method="POST" action="/auth/login" autocomplete="on">
 		<div class="container_form">
 			<div class="description">EMAIL:</div>
 			<div class="input_field"><input type="text" name="email" id="username" placeholder="EMAIL" required></div>
@@ -60,8 +56,8 @@
 		<hr>
 
 		<div class="container_form">
-			<div class="description">PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="password" id="password" minlength="8" required></div>
+			<div class="description">PASSWORD:</div>
+			<div class="input_field"><input type="password" name="password" id="password" required></div>
 		</div>
 
 		<hr>

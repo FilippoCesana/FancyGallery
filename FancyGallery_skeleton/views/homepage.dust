@@ -3,22 +3,26 @@
 <html>
 
     <head>
-            <title>FancyGallery landing page</title>            <!-- 
+            <title>FancyGallery landing page</title>            <!--
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
-        
+
 
             <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
             <link rel="stylesheet" type="text/css" href="/css/index.css">
             <!-- <link rel="stylesheet" type="text/css" href="/css/event.css"> -->
             <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-            
+
             <!-- 	To make the website responsive on mobile devices.  -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
-                
-    </head>   
 
     <body>
             <nav class="navbar navbar-inverse navbar-fixed-top"> 
+
+    </head>
+
+    <body>
+
+            <nav class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
@@ -26,7 +30,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
-                            </button>	
+                            </button>
                             <a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-nav-demo">
@@ -35,17 +39,31 @@
                                 <li><a href="#">About</a></li>
                                 <li><a href="#">Contact</a></li>
                             </ul>
+
+
+                            {?user}
+                            <!-- da far vedere se loggato -->
                             <ul class="nav navbar-nav navbar-right">
-                                <li><button id="sign_in_btn">Sign up</button></li>
                                 <li> <div class="makeSpaceNav"></div></li>
+                                <li><button id="log_out_btn" href="">Logout</button></li>
                             </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li> <div class="makeSpaceNav"></div></li>
-                                <li><button id="log_in_btn" href="">Login</button></li>
-                            </ul>
+
+                            {:else}
+                            <!-- da far vedere se non loggato -->
+                              <ul class="nav navbar-nav navbar-right">
+                                  <li><button id="sign_in_btn">Sign up</button></li>
+                                  <li> <div class="makeSpaceNav"></div></li>
+                              </ul>
+                              <ul class="nav navbar-nav navbar-right">
+                                  <li> <div class="makeSpaceNav"></div></li>
+                                  <li><button id="log_in_btn" href="">Login</button></li>
+                              </ul>
+
+                            {/user}
+
                         </div>
-                    </div>	
-                </nav> 
+                    </div>
+                </nav>
 
                 <div class="jumbotron jumbotron-fluid">
                         <div class="container">
@@ -64,9 +82,9 @@
 
                 <div class="container">
                         <div class="page-header">
-                          <h1>Events</h1>      
-                        </div>    
-                </div>  
+                          <h1>Events</h1>
+                        </div>
+                </div>
 
                 <div class="container .fluid">
                         <div class="row">
@@ -80,14 +98,14 @@
                     </div>
                     </div>
                     </div>
-                
-             <div class="container">      
+
+             <div class="container">
                 <div class="containerSearchButton">
                     <hr>
                    <button id="show_more_btn">Show more</button>
                    <hr>
-                </div>   
-             </div>    
+                </div>
+             </div>
 
 
                    <footer class="footer-bs">
@@ -107,8 +125,8 @@
                                 </ul>
                             </div>
                         </div>
-                    </footer>           
-                      
+                    </footer>
+
 
 
 
@@ -120,5 +138,3 @@
     </body>
 
 </html>
-
-
