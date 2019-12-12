@@ -22,6 +22,7 @@
 
     <body>
 
+          
             <nav class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -97,7 +98,7 @@
                         </div>
                     </div>
                     </div>
-                    </div>
+                </div>
 
              <div class="container">
                 <div class="containerSearchButton">
@@ -135,6 +136,7 @@
     <script src="/views/views.js"></script>
     <script src="/entry_points/homepage_start.js"></script>
 
+  
     </body>
 
 </html>

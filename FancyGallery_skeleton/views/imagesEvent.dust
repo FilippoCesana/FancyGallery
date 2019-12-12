@@ -67,9 +67,9 @@
                     {/photo_list}
             <div id="open_event_box" class="hidden">  </div>
             </div>
+            </div>
         </div>
-        </div>
-        </div>
+    </div>
 
 
 
