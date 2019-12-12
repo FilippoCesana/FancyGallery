@@ -27,7 +27,7 @@ async function sendHomePage(req,res){
                  });
 
                  //console.log(model);
-                 
+
                  model.event_list = model.event_list.slice(0,3);
                  if(req.accepts("html")){
                     res.status(200).render("homepage", {model});
@@ -36,13 +36,17 @@ async function sendHomePage(req,res){
                  }
 
              })
+             // Nicola ha modificato risposta error con dust
+             //throw err;
              .catch(err=>{
                 log("Error while rendering homepage");
-                res.status(500);
-                res.send("Error");
-                //throw err;
+                if(req.accepts("html")){
+                   res.status(500).render("error", {error : "500"});
+                }else{
+                  res.status(500).send("Error");
+                }
              })
-          
+
 }
 
 
