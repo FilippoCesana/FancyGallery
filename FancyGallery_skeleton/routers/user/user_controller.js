@@ -1,6 +1,6 @@
-const User      = require('../../dataModels/User');
-const mongoose  = require('mongoose');
-const log       = require('debug')(":-> user_controller:")
+const User = require('../../dataModels/User');
+const mongoose = require('mongoose');
+const log = require('debug')(":-> user_controller:")
 
 async function findUser(req, res) {
     try {
@@ -14,6 +14,7 @@ async function findUser(req, res) {
         res.status(400).json({error: "Bad request"});
     }
 }
+
 
 async function createUser(req, res) {
     try {
@@ -39,21 +40,19 @@ async function createUser(req, res) {
 
 
 async function deleteUser(req, res) {
-    try {
-        const users = await User.find({_id: req.params._id});
-        if (users.length !== 1) {
-            res.status(404).json({error: "User ID not found"});
-            res.end();
-        } else {
-            const tmp = users[0];
-            users[0]
-                .remove(function () {
-                    res.status(201).json(tmp);
-                })
+    if (req.user) {
+        try {
+            const user = await User.findById(req.user._id);
+            const tmp = user;
+            user.remove(function () {
+                res.status(201).json(tmp);
+            })
+        } catch (e) {
+            console.log(e);
+            res.status(500).json({error: "Our bad"});
         }
-    } catch (e) {
-        console.log(e);
-        res.status(400).json({error: "Bad request"});
+    } else {
+        res.status(403).json({error: "Permission denied"});
     }
 }
 
@@ -63,9 +62,9 @@ async function deleteUser(req, res) {
 //    res.status(200).render("login",{});
 // }
 //
-function sendSignInForm(req,res){
+function sendSignInForm(req, res) {
     log("TODO Sending signin form");
-    res.status(200).render("signin",{});
+    res.status(200).render("signin", {});
 }
 
 module.exports.findUser = findUser;
