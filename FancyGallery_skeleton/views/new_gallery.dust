@@ -6,7 +6,7 @@
 		<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
 	<!-- // per gestire la ricerca fotografi -->
-		<script src="../public/utility/fetch.js"></script>
+		<script src="../public/entry_points/fetch.js"></script>
 		<script src="../public/entry_points/newevent.js"></script>
 	</head>
 	<body>
