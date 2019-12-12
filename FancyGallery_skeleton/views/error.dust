@@ -43,7 +43,7 @@
 
 		<div class="container_form">
 			<div class="description"><img src="../public/images/error.png"></div>
-			<div class="input_field"><h1>AWWW...DON&#39;T CRY.</h1><br><h3>IT'S JUST AN {error} ERROR!</h3></div>
+			<div class="input_field"><h1>AWWW...DON&#39;T CRY.</h1><br><h3>IT'S JUST A 404 ERROR!</h3></div>
 		</div>
 
 </div>
