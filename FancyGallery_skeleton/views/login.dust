@@ -56,8 +56,8 @@
 		<hr>
 
 		<div class="container_form">
-			<div class="description">PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="password" id="password" minlength="8" required></div>
+			<div class="description">PASSWORD:</div>
+			<div class="input_field"><input type="password" name="password" id="password" required></div>
 		</div>
 
 		<hr>
