@@ -1,8 +1,8 @@
-/** @module routes/routers 
+/** @module routes/routers
 * Exposes all routers
 */
 
-//è quello degli assignments 
+//è quello degli assignments
 
 'use strict';
 

@@ -62,10 +62,12 @@ app.use("/auth", routers.auth);
 
 //NO OTHER ROUTE FOUND
 app.all('*', function(req, res){
+  if(req.accepts("html")){
+     res.status(404).render("error", {error : "404"});
+  }else{
     res.status(404).json({error:'what??? This thing does not exist'});
+  }
 });
-
-
 
 
 //it exports a promise since it waits for mongo to connect
@@ -81,4 +83,3 @@ p = new Promise(function (resolve, reject) {
 
 
 module.exports = p;
-
