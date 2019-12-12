@@ -1,49 +1,62 @@
 Arguments: 
-  /usr/local/bin/node /Users/jacopostucchi/.yarn/bin/yarn.js run start
+  /Users/windowsisbetter/.nvm/versions/node/v10.16.3/bin/node /Users/windowsisbetter/.nvm/versions/node/v10.16.3/bin/yarn add passport_local
 
 PATH: 
-  /Users/jacopostucchi/.yarn/bin:/Users/jacopostucchi/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Users/jacopostucchi/.yarn/bin:/Users/jacopostucchi/.config/yarn/global/node_modules/.bin:/Library/Frameworks/Python.framework/Versions/3.7/bin
+  /Users/windowsisbetter/.nvm/versions/node/v10.16.3/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion.app/Contents/Public:/Library/TeX/texbin:.:/Users/windowsisbetter/bin
 
 Yarn version: 
   1.19.1
 
 Node version: 
-  12.4.0
+  10.16.3
 
 Platform: 
   darwin x64
 
 Trace: 
-  SyntaxError: /Users/jacopostucchi/Desktop/project_app/package.json: Unexpected end of JSON input
-      at JSON.parse (<anonymous>)
-      at /Users/jacopostucchi/.yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/Users/jacopostucchi/.yarn/lib/cli.js:304:30)
-      at /Users/jacopostucchi/.yarn/lib/cli.js:315:13
+  Error: https://registry.yarnpkg.com/passport_local: Not found
+      at Request.params.callback [as _callback] (/Users/windowsisbetter/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:66926:18)
+      at Request.self.callback (/Users/windowsisbetter/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:140564:22)
+      at Request.emit (events.js:198:13)
+      at Request.<anonymous> (/Users/windowsisbetter/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:141536:10)
+      at Request.emit (events.js:198:13)
+      at IncomingMessage.<anonymous> (/Users/windowsisbetter/.nvm/versions/node/v10.16.3/lib/node_modules/yarn/lib/cli.js:141458:12)
+      at Object.onceWrapper (events.js:286:20)
+      at IncomingMessage.emit (events.js:203:15)
+      at endReadableNT (_stream_readable.js:1145:12)
+      at process._tickCallback (internal/process/next_tick.js:63:19)
 
 npm manifest: 
   {
     "name": "Instaevent",
     "version": "1.0.0",
-    "main": "backendInit.js",
+    "main": "backend.js",
     "author": "jacopo stucchi, filippo cesana, nicola brunner, federico lagrasta",
     "license": "MIT",
-  
-  
     "dependencies": {
+      "body-parser": "1.19.0",
+      "bower": "^1.8.8",
       "debug": "^3.2.6",
+      "dustjs-helpers": "1.7.4",
       "dustjs-linkedin": "^2.7.5",
       "express": "^4.16.2",
+      "express-flash": "latest",
+      "express-passport-logout": "latest",
+      "express-session": "latest",
       "klei-dust": "^1.0.0",
       "mongodb": "^3.3.3",
       "mongoose": "^5.7.7",
+      "morgan": "^1.9.1",
+      "passport": "latest",
+      "passport-local": "^1.0.0",
       "socket.io": "^2.3.0",
-      "dustjs-helpers": "1.7.4",
-      "body-parser": "1.19.0"
+      "watermarkjs": "^2.0.0"
     },
-  
     "scripts": {
-      "start" : "DEBUG=:* node backendInit.js"
+      "postinstall": "node_modules/.bin/bower install",
+      "start": "DEBUG=:* node backend.js",
+      "dustc": "cd ./views; dustc partials/*.dust -o ../public/views/views.js"
+    }
   }
 
 yarn manifest: 
@@ -198,6 +211,13 @@ Lockfile:
       mixin-deep "^1.2.0"
       pascalcase "^0.1.1"
   
+  basic-auth@~2.0.0:
+    version "2.0.1"
+    resolved "https://registry.yarnpkg.com/basic-auth/-/basic-auth-2.0.1.tgz#b998279bf47ce38344b4f3cf916d4679bbf51e3a"
+    integrity sha512-NF+epuEdnUYVlGuhaxbbq+dvJttwLnGY+YixlXlME5KpQ5W3CnXA5cVTneY3SPbPDRkcjMbifrwmFYcClgOZeg==
+    dependencies:
+      safe-buffer "5.1.2"
+  
   better-assert@~1.0.0:
     version "1.0.2"
     resolved "https://registry.yarnpkg.com/better-assert/-/better-assert-1.0.2.tgz#40866b9e1b9e0b55b481894311e68faffaebc522"
@@ -235,6 +255,11 @@ Lockfile:
       qs "6.7.0"
       raw-body "2.4.0"
       type-is "~1.6.17"
+  
+  bower@^1.8.8:
+    version "1.8.8"
+    resolved "https://registry.yarnpkg.com/bower/-/bower-1.8.8.tgz#82544be34a33aeae7efb8bdf9905247b2cffa985"
+    integrity sha512-1SrJnXnkP9soITHptSO+ahx3QKp3cVzn8poI6ujqc5SeOkg5iqM1pK9H+DSc2OQ8SnO0jC/NG4Ur/UIwy7574A==
   
   brace-expansion@^1.1.7:
     version "1.1.11"
@@ -376,6 +401,11 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
     integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
   
+  connect-flash@0.1.x:
+    version "0.1.1"
+    resolved "https://registry.yarnpkg.com/connect-flash/-/connect-flash-0.1.1.tgz#d8630f26d95a7f851f9956b1e8cc6732f3b6aa30"
+    integrity sha1-2GMPJtlaf4UfmVax6MxnMvO2qjA=
+  
   console-control-strings@^1.0.0, console-control-strings@~1.1.0:
     version "1.1.0"
     resolved "https://registry.yarnpkg.com/console-control-strings/-/console-control-strings-1.1.0.tgz#3d7cf4464db6446ea644bf4b39507f9851008e8e"
@@ -487,6 +517,11 @@ Lockfile:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/depd/-/depd-1.1.2.tgz#9bcd52e14c097763e749b274c4346ed2e560b5a9"
     integrity sha1-m81S4UwJd2PnSbJ0xDRu0uVgtak=
+  
+  depd@~2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/depd/-/depd-2.0.0.tgz#b696163cc757560d09cf22cc8fad1571b79e76df"
+    integrity sha512-g7nH6P6dyDioJogAAGprGpCtVImJhpPk/roCzdb3fIh61/s/nPsfR6onyMwkCAR/OlC3yBC0lESvUoQEAssIrw==
   
   destroy@~1.0.4:
     version "1.0.4"
@@ -602,6 +637,32 @@ Lockfile:
     integrity sha1-opnv/TNf4nIeuujiV+x5ZE/IUzc=
     dependencies:
       fill-range "^2.1.0"
+  
+  express-flash@latest:
+    version "0.0.2"
+    resolved "https://registry.yarnpkg.com/express-flash/-/express-flash-0.0.2.tgz#23d1a8bcf3f90d707928e489f96869ecad0acda2"
+    integrity sha1-I9GovPP5DXB5KOSJ+Whp7K0KzaI=
+    dependencies:
+      connect-flash "0.1.x"
+  
+  express-passport-logout@latest:
+    version "0.1.0"
+    resolved "https://registry.yarnpkg.com/express-passport-logout/-/express-passport-logout-0.1.0.tgz#ae20b635312f43b10a24c35e1eb1e89bda3ecd27"
+    integrity sha1-riC2NTEvQ7EKJMNeHrHom9o+zSc=
+  
+  express-session@latest:
+    version "1.17.0"
+    resolved "https://registry.yarnpkg.com/express-session/-/express-session-1.17.0.tgz#9b50dbb5e8a03c3537368138f072736150b7f9b3"
+    integrity sha512-t4oX2z7uoSqATbMfsxWMbNjAL0T5zpvcJCk3Z9wnPPN7ibddhnmDZXHfEcoBMG2ojKXZoCyPMc5FbtK+G7SoDg==
+    dependencies:
+      cookie "0.4.0"
+      cookie-signature "1.0.6"
+      debug "2.6.9"
+      depd "~2.0.0"
+      on-headers "~1.0.2"
+      parseurl "~1.3.3"
+      safe-buffer "5.2.0"
+      uid-safe "~2.1.5"
   
   express@^4.16.2:
     version "4.17.1"
@@ -1306,6 +1367,17 @@ Lockfile:
       sift "7.0.1"
       sliced "1.0.1"
   
+  morgan@^1.9.1:
+    version "1.9.1"
+    resolved "https://registry.yarnpkg.com/morgan/-/morgan-1.9.1.tgz#0a8d16734a1d9afbc824b99df87e738e58e2da59"
+    integrity sha512-HQStPIV4y3afTiCYVxirakhlCfGkI161c76kKFca7Fk1JusM//Qeo1ej2XaMniiNeaZklMVrh3vTtIzpzwbpmA==
+    dependencies:
+      basic-auth "~2.0.0"
+      debug "2.6.9"
+      depd "~1.1.2"
+      on-finished "~2.3.0"
+      on-headers "~1.0.1"
+  
   mpath@0.6.0:
     version "0.6.0"
     resolved "https://registry.yarnpkg.com/mpath/-/mpath-0.6.0.tgz#aa922029fca4f0f641f360e74c5c1b6a4c47078e"
@@ -1480,6 +1552,11 @@ Lockfile:
     dependencies:
       ee-first "1.1.1"
   
+  on-headers@~1.0.1, on-headers@~1.0.2:
+    version "1.0.2"
+    resolved "https://registry.yarnpkg.com/on-headers/-/on-headers-1.0.2.tgz#772b0ae6aaa525c399e489adfad90c403eb3c28f"
+    integrity sha512-pZAE+FJLoyITytdqK0U5s+FIpjN0JP3OzFi/u8Rx+EV5/W+JTWGXG8xFzevE7AjBfDqHv/8vL8qQsIhHnqRkrA==
+  
   once@^1.3.0:
     version "1.4.0"
     resolved "https://registry.yarnpkg.com/once/-/once-1.4.0.tgz#583b1aa775961d4b113ac17d9c50baef9dd76bd1"
@@ -1539,6 +1616,19 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
     integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
   
+  passport-strategy@1.x.x:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/passport-strategy/-/passport-strategy-1.0.0.tgz#b5539aa8fc225a3d1ad179476ddf236b440f52e4"
+    integrity sha1-tVOaqPwiWj0a0XlHbd8ja0QPUuQ=
+  
+  passport@latest:
+    version "0.4.1"
+    resolved "https://registry.yarnpkg.com/passport/-/passport-0.4.1.tgz#941446a21cb92fc688d97a0861c38ce9f738f270"
+    integrity sha512-IxXgZZs8d7uFSt3eqNjM9NQ3g3uQCW5avD8mRNoXV99Yig50vjuaez6dQK2qC0kVWPRTujxY0dWgGfT09adjYg==
+    dependencies:
+      passport-strategy "1.x.x"
+      pause "0.0.1"
+  
   path-is-absolute@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/path-is-absolute/-/path-is-absolute-1.0.1.tgz#174b9268735534ffbc7ace6bf53a5a9e1b5c5f5f"
@@ -1548,6 +1638,11 @@ Lockfile:
     version "0.1.7"
     resolved "https://registry.yarnpkg.com/path-to-regexp/-/path-to-regexp-0.1.7.tgz#df604178005f522f15eb4490e7247a1bfaa67f8c"
     integrity sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  
+  pause@0.0.1:
+    version "0.0.1"
+    resolved "https://registry.yarnpkg.com/pause/-/pause-0.0.1.tgz#1d408b3fdb76923b9543d96fb4c9dfd535d9cb5d"
+    integrity sha1-HUCLP9t2kjuVQ9lvtMnf1TXZy10=
   
   posix-character-classes@^0.1.0:
     version "0.1.1"
@@ -1576,6 +1671,11 @@ Lockfile:
     version "6.7.0"
     resolved "https://registry.yarnpkg.com/qs/-/qs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"
     integrity sha512-VCdBRNFTX1fyE7Nb6FYoURo/SPe62QCaAyzJvUjwRaIsc+NePBEniHlvxFmmX56+HZphIGtV0XeCirBtpDrTyQ==
+  
+  random-bytes@~1.0.0:
+    version "1.0.0"
+    resolved "https://registry.yarnpkg.com/random-bytes/-/random-bytes-1.0.0.tgz#4f68a1dc0ae58bd3fb95848c30324db75d64360b"
+    integrity sha1-T2ih3Arli9P7lYSMMDJNt11kNgs=
   
   randomatic@^3.0.0:
     version "3.1.1"
@@ -1703,7 +1803,7 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
     integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
   
-  safe-buffer@^5.1.2:
+  safe-buffer@5.2.0, safe-buffer@^5.1.2:
     version "5.2.0"
     resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.2.0.tgz#b74daec49b1148f88c64b68d49b1e815c1f2f519"
     integrity sha512-fZEwUGbVl7kouZs1jCdMLdt95hdIv0ZeHg6L7qPeciMZhZ+/gdesW4wgTARkrFWEpspjEATAzUGPG8N2jJiwbg==
@@ -2033,6 +2133,13 @@ Lockfile:
       media-typer "0.3.0"
       mime-types "~2.1.24"
   
+  uid-safe@~2.1.5:
+    version "2.1.5"
+    resolved "https://registry.yarnpkg.com/uid-safe/-/uid-safe-2.1.5.tgz#2b3d5c7240e8fc2e58f8aa269e5ee49c0857bd3a"
+    integrity sha512-KPHm4VL5dDXKz01UuEd88Df+KzynaohSL9fBh096KWAxSKZQDI2uBrVqtvRM4rwrIrRRKsdLNML/lnaaVSRioA==
+    dependencies:
+      random-bytes "~1.0.0"
+  
   union-value@^1.0.0:
     version "1.0.1"
     resolved "https://registry.yarnpkg.com/union-value/-/union-value-1.0.1.tgz#0b6fe7b835aecda61c6ea4d4f02c14221e109847"
@@ -2080,6 +2187,11 @@ Lockfile:
     version "1.1.2"
     resolved "https://registry.yarnpkg.com/vary/-/vary-1.1.2.tgz#2299f02c6ded30d4a5961b0b9f74524a18f634fc"
     integrity sha1-IpnwLG3tMNSllhsLn3RSShj2NPw=
+  
+  watermarkjs@^2.0.0:
+    version "2.0.0"
+    resolved "https://registry.yarnpkg.com/watermarkjs/-/watermarkjs-2.0.0.tgz#69dc3eb1beaa4f70c1189b202e3de6585ecd5b22"
+    integrity sha1-adw+sb6qT3DBGJsgLj3mWF7NWyI=
   
   wide-align@^1.1.0:
     version "1.1.3"
