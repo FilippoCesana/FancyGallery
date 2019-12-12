@@ -1,34 +1,54 @@
-// search
-var search_input = document.querySelector("input[name='photographer_search_field']");
-search_input.addEventListener("keyup", (e) => {
-  var s = photographer_search_field.value;
-  console.log(s);
-  doFetchRequest('GET', "user/search?name=" + s, {'Content-Type':'text/html'}, undefined)
-  .then((res) => {return res.text()})
-  .then((body) => {document.getElementById('search_result').innerHTML = body})
-})
+// TODO: 1) SERCH form,  2) ADD photographer, 3) DELETE photographer
 
-let myEvent
-initNewEvent()
+document.addEventListener("DOMContentLoaded", start);
 
-// da inizializzare ogni volta che creo una nuova galleria
-function new_photographer_list(organizzatore){
-  myEvent.organizer = organizzatore;
-  myEvent.photographers.push(organizzatore);
-}
-
-function add_photographer(photographer) {
-  myEvent.photographers.push(photographer.id);
-}
-
-function remove_photographer(photographer) {
-  let target = myEvent.photographers.findIndex(e => (photographer.id == e._id));
-  myEvent.photographers.splice(target,1);
-}
-
-function initNewEvent() {
-  myEvent = {
+function start() {
+  // variables
+  let myEvent = {
     orginainizer: undefined,
     photographers: []
+  };
+
+  let search_input = document.getElementById("search_input");
+  let add_btn = document.querySelector(".plus");
+  let delete_btn = document.querySelector(".minus");
+
+  //var new_list = document.querySelector("div[class = 'container_form']");
+  //var add_phot = document.querySelector("input[class='bt_add_photographer']");
+  //all these varibles are null
+
+  // Event Listeners
+  search_input.addEventListener("keypress", photographer_search);
+  add_btn.addEventListener("onclick", add_photographer);
+  delete_btn.addEventListener("onclick", remove_photographer);
+
+  function photographer_search() {
+    doFetchRequest(
+      "GET",
+      "user/search?name=" + search_input.value,
+      {
+        "Content-Type": "text/html"
+      },
+      undefined
+    )
+      .then(res => {
+        console.log(res);
+        return res.text();
+      })
+      .then(body => {
+        document.getElementById("search_result").innerHTML = body;
+      });
+  }
+
+  // da inizializzare ogni volta che creo una nuova galleria
+  // when page is reloaded {loggedId,}
+
+  function add_photographer(myEvent, photographer) {
+    return myEvent.photographers.push(photographer.id);
+  }
+
+  function remove_photographer(myEvent, photographer) {
+    let target = myEvent.photographers.findIndex(e => photographer.id == e._id);
+    return myEvent.photographers.splice(target, 1);
   }
 }
