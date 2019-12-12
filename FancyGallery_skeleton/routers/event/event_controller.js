@@ -64,11 +64,69 @@ async function createEvent(req, res) {
 }
 
 
+
+//ONLY FOR TESTING
+const photos = [
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+]
+
+
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
-        const event = await Event.findById(req.params.id).populate('images').lean();
-        res.status(200).json({event: event, user: req.user})
+        const id = req.url.split("=").pop();
+        const event = await Event.findById(id).populate('images').lean();
+        const model = {
+            event_detail : {},
+            photo_list   : photos
+        }
+        model.event_detail["name"]      = event.name;
+        model.event_detail["place"]     = event.place;
+        model.event_detail["timestamp"] = event.start;
+        model.event_detail["data"]      = event.cover;
+        model.event_detail
+        res.status(200).render("imagesEvent",{model})
     } catch (e) {
         if (e instanceof TypeError) {
             res.status(404).json({error: 'event not found'});

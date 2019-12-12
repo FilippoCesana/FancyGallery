@@ -139,13 +139,16 @@ async function showMore(e){
 }
 
 function showEvent(e,item){
-    window.location.href = "http://localhost:3000/event/open?:id=1";
+   const event_id = item.childNodes[8].value;
+    const options = {
+        method : "get"
+    }
+
+    const url = "http://localhost:3000/event/open/id="+event_id;
+    // fetch(url,options);
+    window.location.href = url
 }
 
 setTimeout(()=>{
-
-
-
-            start();
-
+  start();
 },10)
