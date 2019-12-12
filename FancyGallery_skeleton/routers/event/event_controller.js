@@ -27,20 +27,16 @@ async function showMore(req, res) {
 //ora non c'e ancora il db vedi se vuoi iniziare a setupparlo se no lo guardo io piu tardi senza problem
 
 async function createEvent(req, res) {
-    if (true) {//TODO VERIFY USER
+    if (req.user) {//User verification
+        const user = req.user;
         try {
-            const user = await User.findById(req.body.admin); // dude who made the myEvent
-            if (!user) {
-                res.status(400).json({error: "Admin user doesn't exist"});
-                return;
-            }
             const event = new Event({
                 name: req.body.name,
                 _id: new mongoose.Types.ObjectId(),
                 privacy: "public",//TODO privacy get from client
                 start: req.body.start, // from the user EX : new Date('December 17, 1995 03:24:00');
                 end: req.body.end,
-                admin: req.body.admin, //authorization should contain userId and password
+                admin: user._id, //authorization should contain userId and password
                 description: req.body.description,
                 place: req.body.place,
                 images: req.body.images,
@@ -48,13 +44,12 @@ async function createEvent(req, res) {
                 watermark: req.body.watermark,
             });
 
-            console.log(user);
-            console.log("@@@@@@@");
             const saved = await event.save();
+
             user.events.push(saved._id);//Event id added to user
             await user.save();
 
-            res.status(201).json(saved);
+            res.status(201).json({event: saved, user: user});
         } catch (e) {
             console.log(e);
             if (e instanceof TypeError) {
@@ -64,13 +59,23 @@ async function createEvent(req, res) {
             }
         }
     } else {
-        res.status(400).json({error: "Need user credentials"})
+        res.status(401).json({error: "Need user credentials"})
     }
 }
 
 
-function openEvent(req, res) {
-    res.render('imagesEvent', {});
+async function openEvent(req, res) {
+    // res.render('imagesEvent', {});
+    try {
+        const event = await Event.findById(req.params.id).populate('images').lean();
+        res.status(200).json({event: event, user: req.user})
+    } catch (e) {
+        if (e instanceof TypeError) {
+            res.status(404).json({error: 'event not found'});
+        } else {
+            res.status(500).json({error: 'server error'});
+        }
+    }
 }
 
 
@@ -92,7 +97,7 @@ async function findEventById(req, res) {
 
 
 async function addImage(req, res) {
-    let event; //TODO check auth
+    let event;
     try {
         event = Event.findById(req.params.id);
     } catch (e) {
@@ -104,21 +109,23 @@ async function addImage(req, res) {
         res.status(404).json({error: "Event not found :p"});
         return;
     }
+    if (!(req.user._id === event.admin || event.photographers.includes(req.user._id))) {
+        res.status(403).json({error: "Permission denied"});
+        return;
+    }
 
-    // if(myEvent.photographers.contains()) //TODO check it has the authorization
-    //TODO check Dataurl is valid
     try {
         let image = new Image({
             dataURL: req.body.dataURL,
-            photographer: req.body.clientId
+            photographer: req.user._id
         });
-
         image = await image.save();
         event.images.push(image).save();
         res.status(201).json(image);
     } catch (e) {
-        res.status(400).json({error: "TODO"});
+        res.status(500).json({error: "Our bad"});
     }
+
 }
 
 
@@ -126,7 +133,7 @@ async function matchEvent(req, res) {
     try {
         const s = req.params.name;
         const regex = new RegExp(s, 'i')
-        const events = await Event.find({name: {$regex: regex  }});
+        const events = await Event.find({name: {$regex: regex}}).lean();
         console.log(events);
         res.status(200).json(events);
     } catch (e) {

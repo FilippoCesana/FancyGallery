@@ -32,7 +32,7 @@ function initialize(passport) {
     });
 
     passport.deserializeUser(async function (email, done) {
-            const user = await User.findOne({email: email}).lean();
+            const user = await User.findOne({email: email});
             return done(null, user);
         }
     )
