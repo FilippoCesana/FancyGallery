@@ -2,7 +2,3 @@
 # yarn lockfile v1
 
 
-watermarkjs@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/watermarkjs/-/watermarkjs-2.0.0.tgz#69dc3eb1beaa4f70c1189b202e3de6585ecd5b22"
-  integrity sha1-adw+sb6qT3DBGJsgLj3mWF7NWyI=
