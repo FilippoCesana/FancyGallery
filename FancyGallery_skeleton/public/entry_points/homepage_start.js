@@ -116,7 +116,7 @@ function searchEventByName(e){
 
 
 
-    const url = "http://localhost:3000/event/match/"+value;
+    const url = "http://localhost:3000/event/match?"+value;
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
