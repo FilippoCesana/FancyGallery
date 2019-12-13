@@ -158,7 +158,7 @@ function showEvent(e,item){
         method : "get"
     }
 
-    const url = "http://localhost:3000/event/open/id="+event_id;
+    const url = "http://localhost:3000/event/open/"+event_id;
     // fetch(url,options);
     window.location.href = url
 }
