@@ -3,15 +3,11 @@
   <head>
     <title>New Gallery</title>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../public/css/stylebrunner.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" >
 
     <!-- // per gestire la ricerca fotografi -->
-    <script src="../public/entry_points/fetch.js"></script>
-    <script src="../public/entry_points/newevent.js"></script>
+    <script src="/entry_points/fetch.js"></script>
+    <script src="/entry_points/newevent.js"></script>
   </head>
   <body>
     <div class="container_form_big">
