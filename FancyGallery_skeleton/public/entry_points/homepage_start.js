@@ -52,8 +52,8 @@ function resetResults(){
 }
 
 function searchEventByName(e){
-   const value = document.getElementById('search_text_field').value.replace(" ","_");
-
+   const value = document.getElementById('search_text_field').value;
+   
    const options = {
     method : 'get',
     headers : {
@@ -61,7 +61,9 @@ function searchEventByName(e){
         }
     }
 
-    const url = "http://localhost:3000/event/search?name="+value;
+
+
+    const url = "http://localhost:3000/event/match/"+value;
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
