@@ -19,7 +19,12 @@
         <div class="container_form">
           <div class="description">EVENT NAME:</div>
           <div class="input_field">
-            <input type="text" name="eventName" placeholder="EVENT NAME" />
+            <input
+              type="text"
+              name="eventName"
+              placeholder="EVENT NAME"
+              required
+            />
           </div>
         </div>
 
@@ -28,7 +33,12 @@
         <div class="container_form">
           <div class="description">EVENT LOCATION:</div>
           <div class="input_field">
-            <input type="text" name="Location" placeholder="EVENT LOCATION" />
+            <input
+              type="text"
+              name="Location"
+              placeholder="EVENT LOCATION"
+              required
+            />
           </div>
         </div>
 
@@ -52,16 +62,22 @@ ENTER YOUR DESCRIPTION</textarea
               type="date"
               name="startdate"
               placeholder="DD/MM/YYYY"
+              required
             /><br />
             START TIME:
-            <input type="time" name="starttime" placeholder="HH:MM" />
+            <input type="time" name="starttime" placeholder="HH:MM" required />
           </div>
 
           <div class="input_field">
             END DATE:
-            <input type="date" name="enddate" placeholder="DD/MM/YYYY" /><br />
+            <input
+              type="date"
+              name="enddate"
+              placeholder="DD/MM/YYYY"
+              required
+            /><br />
             END TIME:
-            <input type="time" name="endtime" placeholder="HH:MM" />
+            <input type="time" name="endtime" placeholder="HH:MM" required />
           </div>
         </div>
 

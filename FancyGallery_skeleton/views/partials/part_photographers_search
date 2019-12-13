@@ -1,4 +1,4 @@
-<div class = " plus" id = "partial">
-  <label for="photographer">{name}</label>
-    <input  type="image" src="../../public/images/add.png" width="12" height="12" id="photographer" class="add_btn"><br>
+<div  id = "partial">
+  <label  for="photographer">{name}</label>
+    <input  class = " plus" type="image" src="../../public/images/add.png" width="12" height="12" id="photographer" class="add_btn"><br>
 </div>
