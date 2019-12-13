@@ -24,9 +24,7 @@ const show_more_manager = {
         
     },
 
-    hideButton : ()=>{
-        document.getElementById('show_more_btn').style.display = 'none';
-    },
+
 
     display : ()=>{
        
@@ -37,7 +35,7 @@ const show_more_manager = {
         const tmp = this.events.slice(start,end);
         
         
-        if(tmp.length === 0){this.hideButton; return}
+        if(tmp.length === 0){ document.getElementById('show_more_btn').style.display = 'none';return}
         
         let finalToBeRendered = "";
         tmp.forEach(event=>{
@@ -53,7 +51,8 @@ const show_more_manager = {
         gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
 
         this.times = this.times +1;
-    }
+    },
+
 }
 
 
@@ -120,26 +119,21 @@ function searchEventByName(e){
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
-            nextNumber.counter = undefined;
-            if(result.length === 0) { resetResults(); return;}
-            const model = [];
-
+        
+            if(result.length == 0) {return;}
+            
+            let finalToBeRendered = "";
             result.forEach(event=>{
-
-                model.push({
-                    name : event.name,
-                    id   : event._id,
-                    timestamp : event.start,
-                    dataURL   : event.cover,
-                    place     : event.place,
-                });
+                dust.render("partials/event",event,(err,out)=>{
+                    if(err)throw err;
+                    finalToBeRendered += out;
+                })
+                
             });
-            document.getElementById("show_more_btn").style.display = '';
-            dust.render("partials/event",{model},(err,out)=>{
-                if(err){throw err}
-                document.getElementById('gallery').innerHTML = out;
-            })
-        }))
+            
+            document.getElementById('gallery').innerHTML = finalToBeRendered;
+        })) 
+         
         .catch(err=>{
             console.log("error during searching for event");
             throw err;
