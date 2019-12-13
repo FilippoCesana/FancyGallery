@@ -26,15 +26,15 @@ function start() {
   search_input.addEventListener("keypress", () => {
     doFetchRequest(
       "GET",
-      "user/search?name=" + search_input.value,
+      "user/search?nickname=" + search_input.value,
       {
-        "Content-Type": "text/html"
+        Accept: "application/json"
       },
       undefined
     )
       .then(res => {
-        console.log(res);
-        return res.text();
+        // console.log(res);
+        return res.json();
       })
       .then(body => {
         document.getElementById("search_result").innerHTML = body;
