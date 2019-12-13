@@ -180,7 +180,7 @@ async function addImage(req, res) {
         image = await image.save();
         event.images.push(image).save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-        const eventSockets = req.app.get('io').sockets.filter(socket=>socket.eventId === event._id);
+        const eventSockets = req.app.get('io').sockets.filter(socket => socket.eventId === event._id);
         eventSockets.emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
@@ -193,7 +193,12 @@ async function addImage(req, res) {
 async function matchEvent(req, res) {
     try {
         const regex = new RegExp(req.params.name, 'i')
-        const events = await Event.find({name: {$regex: regex}}).lean();
+        let events;
+        if(req.params.name) {
+           events = await Event.find({name: {$regex: regex}}).limit(20).lean();
+        } else {
+            events = await Event.find({}).limit(20).lean();
+        }
         //console.log(events);
         res.status(200).json(events);
     } catch (e) {
