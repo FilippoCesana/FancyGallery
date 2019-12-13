@@ -10,7 +10,9 @@ ftpServer.on('login', (data, resolve, reject) => { console.log("new connection: 
 ftpServer.listen()
 .then(r => {
   console.log(r);
-})
+});
+
+// connection.on('STOR', (error, fileName) => { console.log(fileName); });
 
 module.exports = ftpServer;
 

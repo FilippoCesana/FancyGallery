@@ -1,44 +1,26 @@
-// var image;
-//
-// document.getElementById("imageUpload").onchange = function(event) {
-//   image = new Image();
-//   image.onload = applyWatermark;
-//   image.onerror = failedImage;
-//   image.src = URL.createObjectURL(this.files[0]);
-// };
-//
-// function applyWatermark(e){
-//   watermark([this, '/images/fancygallery.png'])
-//     .image(watermark.image.lowerLeft(0.5))
-//     .then(drawImage);
-// }
-//
-// function drawImage(img) {
-//   var canvas = document.getElementById('canvas');
-//   var ctx = canvas.getContext('2d');
-//   canvas.width = img.width;
-//   canvas.height = img.height;
-//   ctx.drawImage(img, 0,0);
-// }
-//
-// function failedImage() {
-//   console.error("File not loaded!");
-// }
-
-//
 //-----------------------------------------------------------------------------
-//
+// Si ringrazia Andrea per l'aiuto :)
+//-----------------------------------------------------------------------------
+
 var image;
 var watermark;
 
 document.getElementById("imageUpload").onchange = function(event) {
+  if(watermark !== undefined) {
+    watermarkn = new Image();
+    watermarkn.onload = loadImage.bind(this)
+    watermarkn.src = "/images/fancygallery.png";
+  } else {
+    loadImage.call(this)
+  }
+};
+
+function loadImage(e) {
   image = new Image();
   image.onload = drawImage;
   image.onerror = failedImage;
   image.src = URL.createObjectURL(this.files[0]);
-  watermarkn = new Image();
-  watermarkn.src = "/images/fancygallery.png";
-};
+}
 
 function drawImage() {
   var canvas = document.getElementById('canvas');
