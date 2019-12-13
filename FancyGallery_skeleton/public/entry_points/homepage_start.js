@@ -163,11 +163,10 @@ function showLess(){
   document.getElementById("show_more_btn").style.display = 'none';
 }
 
-async function showMore(e){
+function createEvent(){
 
-   
-
-
+    const url = "http://localhost:3000/event/create";
+    window.location.href = url
 }
 
 function showEvent(e,item){
@@ -184,3 +183,4 @@ function showEvent(e,item){
 setTimeout(()=>{
   start();
 },100)
+
