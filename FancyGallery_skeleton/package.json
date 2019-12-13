@@ -26,7 +26,10 @@
   },
   "scripts": {
     "postinstall": "bower install",
+    "i": "yarn install",
     "start": "DEBUG=:* node backend.js",
     "dustc": "cd ./views; dustc partials/*.dust -o ../public/views/views.js"
   }
 }
+
+

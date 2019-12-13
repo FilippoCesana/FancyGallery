@@ -49,12 +49,17 @@
                 </nav> 
 
         <div class="makeSpace"></div>        
-
+    {#event_detail}
         <div class="container">
                 <div class="page-header">
-                  <h1>Lugano saaaa </h1>      
+                  <img src={data}> </img>
+                  <h1> {name} </h1>  
+                  <h1> {place} </h1>  
+                  <h1> {timestamp} </h1>  
+
                 </div>    
         </div>  
+    {/event_detail}
 
 
      <!-- Page Content -->

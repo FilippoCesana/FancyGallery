@@ -52,8 +52,8 @@ function resetResults(){
 }
 
 function searchEventByName(e){
-   const value = document.getElementById('search_text_field').value.replace(" ","_");
-
+   const value = document.getElementById('search_text_field').value;
+   
    const options = {
     method : 'get',
     headers : {
@@ -61,7 +61,9 @@ function searchEventByName(e){
         }
     }
 
-    const url = "http://localhost:3000/event/search?name="+value;
+
+
+    const url = "http://localhost:3000/event/match/"+value;
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
@@ -139,13 +141,16 @@ async function showMore(e){
 }
 
 function showEvent(e,item){
-    window.location.href = "http://localhost:3000/event/open?:id=1";
+   const event_id = item.childNodes[8].value;
+    const options = {
+        method : "get"
+    }
+
+    const url = "http://localhost:3000/event/open/id="+event_id;
+    // fetch(url,options);
+    window.location.href = url
 }
 
 setTimeout(()=>{
-
-
-
-            start();
-
+  start();
 },10)
