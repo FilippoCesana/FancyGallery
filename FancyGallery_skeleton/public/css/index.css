@@ -661,6 +661,30 @@ hr {
 }
 
 
+#buttonLoggedFilter{
+    margin-top: 10px;
+    color: rgb(91, 224, 247);
+    background-color: #00ccff;
+    border-color: transparent;
+    overflow:hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align:center;
+    color: white;
+}
+
+#buttonLoggedFilter:hover{
+    color: #00ccff;
+    background-color: #ccff00;
+    box-shadow: 0 0 20px #ccff00;
+    border-color: transparent;
+    overflow:hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align:center;
+    color: white;
+}
+
 .jumbotron .col-xs-2 .btn{
     /* padding: 10px; */
     padding: 5px;
