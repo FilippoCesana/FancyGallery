@@ -1,15 +1,64 @@
 //function to count times show more button is pressed
-function nextNumber(){
-    if(typeof nextNumber.counter == 'undefined'){
-        nextNumber.counter = 0 ;
+
+const show_more_manager = {
+    events : [],
+    times  : 0,
+    
+    init : async ()=>{
+        const url = "http://localhost:3000/events"
+        const options = {
+            method : "GET",
+            headers : {
+                "Accept" : "application/json"
+            }
+        }
+
+        try{
+          const res =  await fetch(url,options);
+          this.events = await res.json();
+          this.times = 1;
+
+        }catch(err){
+            throw err;
+        }
+        
+    },
+
+    hideButton : ()=>{
+        document.getElementById('show_more_btn').style.display = 'none';
+    },
+
+    display : ()=>{
+       
+        const start = this.times * 1;
+     
+        const end   = (this.times + 1) * 1;
+       
+        const tmp = this.events.slice(start,end);
+        console.log(tmp)
+        
+        if(tmp.length === 0){this.hideButton; return}
+        
+        let finalToBeRendered = "";
+        tmp.forEach(event=>{
+            dust.render("partials/event",{event},(err,out)=>{
+                if(err)throw err;
+    
+            finalToBeRendered += out;
+             
+        })
+        })
+        console.log(finalToBeRendered)
+        const gallery =  document.getElementById('gallery');
+        gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
+
+        this.times = this.times +1;
     }
-   return  ++nextNumber.counter;
 }
 
 
 
-
-function start(){
+async function start(){
 
     //login button listen click
     const login_btn = document.getElementById('log_in_btn');
@@ -28,13 +77,17 @@ function start(){
 
     //show more btn button listen click
     const show_more_btn = document.getElementById('show_more_btn');
-    show_more_btn.addEventListener('click',(e)=>showMore(e))
+    show_more_btn.addEventListener('click',(e)=>show_more_manager.display());
 
     //event open listen click
     const event_boxes = document.querySelectorAll(".event_box");
     event_boxes.forEach(box=>{
         box.addEventListener('click', (e)=>showEvent(e,box))
     });
+
+    await show_more_manager.init();
+    
+
 
 }
 
@@ -100,42 +153,7 @@ function showLess(){
 
 async function showMore(e){
 
-    const options = {
-        method : 'get',
-        headers : {
-            accept : "application/json"
-        }
-    }
-      const n = nextNumber();
-        const url ='http://localhost:3000/event/more&n='+n;
-       fetch(url,options)
-            .then((r)=>r.json().then((result)=>{
-                if(result.length ==0){showLess(); return};
-
-                const model = [];
-
-                console.log("RESULT: ", result);
-
-                result.forEach(event=>{
-
-                    model.push({
-                     name : event.name,
-                     id   : event._id,
-                    timestamp : event.start,
-                    dataURL   : event.cover,
-                    place     : event.place,
-                    });
-                });
-                dust.render('partials/event',{model},(err,out)=>{
-                    if(err){throw err};
-                    console.log(out);
-                    const gallery = document.getElementById('gallery');
-                    const before =  gallery.innerHTML;
-                    gallery.innerHTML = before + " " + out;
-                })
-            }))
-            .catch(err=>{throw err})
-
+   
 
 
 }
