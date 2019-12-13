@@ -30,9 +30,9 @@ const show_more_manager = {
 
     display : ()=>{
        
-        const start = this.times * 1;
+        const start = this.times * 3;
      
-        const end   = (this.times + 1) * 1;
+        const end   = (this.times + 1) * 3;
        
         const tmp = this.events.slice(start,end);
         
