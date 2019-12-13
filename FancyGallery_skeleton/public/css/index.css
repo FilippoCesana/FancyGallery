@@ -11,6 +11,7 @@ body {
 
 
 
+
 .content{
 	text-align: center;
 	padding-top: 18%;
@@ -639,6 +640,24 @@ hr {
 
 
 
+.jumbotron .col-sm-6 .btn{
+    /* padding: 10px; */
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+
+/* .card{
+    background-color: rgba(160, 160, 160, 0.801);
+    margin-left:50px;
+} */
+
+/* .card .content2 .card-img-top{
+    padding: 5px;
+    margin-left: 200px;
+} */
+
+
 
 
 
@@ -650,28 +669,28 @@ hr {
 
 .container .row .col-lg-12 .content .row .col-sm-6 .card .card-img-top{
     padding: 3%;
-}
+} */
 
-.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn{
+/* .container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn{
     padding: 5%;
     background-color:rgb(11, 12, 6);
     border-color: rgb(91, 224, 247);
     font-family: 'Montserrat', sans-serif;
     text-shadow: 4px 4px 4px rgb(112, 189, 189);
 
-}
+} */
 
-.container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn:hover{
+/* .container .row .col-lg-12 .content .row .col-sm-6 .card .card-body .btn:hover{
     padding: 5%;
     background-color:rgb(205, 187, 47);
     border-color: rgb(11, 12, 12);
     font-family: 'Montserrat', sans-serif;
     text-shadow: 4px 4px 4px rgb(159, 189, 112);
 
-}
+} */
 
 
-.titles {
+/* .titles {
     background-color: rgba(11, 12, 6, 0.461);
     padding: 5%;
 } */
