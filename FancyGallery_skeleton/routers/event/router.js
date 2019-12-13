@@ -13,10 +13,10 @@ router.post('/:id/image', controller.addImage);
 
 //jaco
 // router.get(/\/open\?id_event=[a-zA-Z0-9]+/, controller.openEvent);
-router.get(/\/open\/id=[0-9a-zA-Z]+/, controller.openEvent);
+router.get('/open/:id', controller.openEvent);
 // /search?event_name=Mio%20Evento
 
-router.get('/match/:name',controller.matchEvent)
+router.get('/match?',controller.matchEvent)
 //fede
 //router.
 module.exports = router;

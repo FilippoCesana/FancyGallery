@@ -29,6 +29,12 @@ router.get('/cookie', function (req,res) {
 // }));
 
 
+router.post('/logout', function (req, res) {
+    req.logOut();
+    res.status(301).redirect('/');
+});
+
+
 router.post('/login', function (req, res) {
     let passport = req.app.get('passport');
     let f = passport.authenticate('local', {

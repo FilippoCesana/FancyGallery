@@ -15,7 +15,7 @@ async function run() {
     const io = socket(server);
     io.on('connection', function (socket) {
         socket.on('visiting', function (eventId) {
-            socket.eventId = eventId;
+            socket.join(eventId)
         })
     });
     app.set('io', io);//To be used on image post route
