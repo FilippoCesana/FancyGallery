@@ -638,6 +638,8 @@ hr {
 
 #buttonLoggedCreate{
     margin-top: 10px;
+    height: 50px;
+    width: 300px;
     color: rgb(91, 224, 247);
     background-color: #00ccff;
     border-color: transparent;
@@ -650,6 +652,8 @@ hr {
 
 #buttonLoggedCreate:hover{
     color: #00ccff;
+    height: 50px;
+    width: 300px;
     background-color: #ccff00;
     box-shadow: 0 0 20px #ccff00;
     border-color: transparent;
@@ -663,6 +667,8 @@ hr {
 
 #buttonLoggedFilter{
     margin-top: 10px;
+    height: 50px;
+    width: 300px;
     color: rgb(91, 224, 247);
     background-color: #00ccff;
     border-color: transparent;
@@ -675,6 +681,8 @@ hr {
 
 #buttonLoggedFilter:hover{
     color: #00ccff;
+    height: 50px;
+    width: 300px;
     background-color: #ccff00;
     box-shadow: 0 0 20px #ccff00;
     border-color: transparent;
@@ -683,6 +691,10 @@ hr {
     font-weight: bold;
     text-align:center;
     color: white;
+}
+
+.container .row .col-lg-12 .content{
+    height:200px;
 }
 
 .jumbotron .col-xs-2 .btn{
@@ -698,6 +710,11 @@ hr {
     margin-right: 10px;
     /* margin-bottom: 10px; */
 }
+
+.jumbotron .row .container .col-lg-2 .col-md-2 .col-sm-2 .col-xs-12{
+    margin-left: 100px;
+}
+
 
 
 /* .card{
