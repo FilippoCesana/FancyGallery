@@ -15,13 +15,6 @@ function start() {
   let add_btn_collection = document.querySelectorAll(".plus");
   let delete_btn_collection = document.querySelectorAll(".minus");
 
-  // add_btn_collection.forEach(element => {
-  //   element.addEventListener("click", e => h(e, element));
-  // });
-  // delete_btn_collection.forEach(element => {
-  //   element.addEventListener("click", h);
-  // });
-
   // Event Listeners
   search_input.addEventListener("keypress", () => {
     doFetchRequest(
@@ -33,8 +26,13 @@ function start() {
       undefined
     )
       .then(res => {
-        // console.log(res);
         return res.json();
+      })
+      .then(photographers => {
+        let result_photographer = photographers.findIndex(
+          p => p.id === photographer.id
+        );
+        return result_photographer;
       })
       .then(body => {
         document.getElementById("search_result").innerHTML = body;
@@ -49,8 +47,7 @@ function start() {
       element.setAttribute("class", "delete_btn");
       plus_list.removeChild(element);
       element.style.display = "block";
-      // element.style.margin = "top :1em";
-      // element.style.margin = "bottom : 1em";
+
       minus_list.appendChild(element);
 
       console.log(element);
@@ -74,10 +71,4 @@ function start() {
       return myEvent.photographers.splice(photographer_inList, 1);
     });
   });
-
-  // function h(e, elem) {
-  //   e.preventDefault();
-  //   console.log("mehhh");
-  //   console.log(elem);
-  // }
 }
