@@ -5,7 +5,8 @@ body {
 	/*background-size: cover;*/
 	background-position: center;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
+    font-size: 20px;
+    background-color: white;
 }
 
 
@@ -37,6 +38,33 @@ body {
     font-family: 'Montserrat', sans-serif;
     text-shadow: 4px 4px 4px black; */
 }
+
+#log_out_btn{
+    margin-top: 10px;
+    color: rgb(91, 224, 247);
+    background-color: #00ccff;
+    border-color: transparent;
+    overflow:hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align:center;
+    color: white;
+}
+
+#log_out_btn:hover{
+    color: #00ccff;
+    background-color: #ccff00;
+    box-shadow: 0 0 20px #ccff00;
+    border-color: transparent;
+    overflow:hidden;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    text-align:center;
+    text-shadow: 4px 4px 4px black;
+    color: white;
+}
+
+
 
 #log_in_btn{
     margin-top: 10px;
@@ -275,9 +303,7 @@ body {
     background-position: center;
     padding: 20%;
     color: #ccff00;
-    text-shadow: 2px 2px 2px black,
-				 2px 2px 2px purple,
-				 3px 18px 23px rgb(226, 247, 91);
+    text-shadow: 0 0 25px white;
 }
 
 .jumbotron-fluid .container .display-4{
@@ -492,6 +518,13 @@ input:focus{
     text-shadow: 2px 2px 2px #ccff00,
     2px 2px 2px purple,
     3px 2px 2px rgb(46, 47, 34);
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 1030;
 }
 
 

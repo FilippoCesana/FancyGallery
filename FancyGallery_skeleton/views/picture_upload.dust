@@ -2,7 +2,6 @@
 <html>
 <head>
 	<title>Picture upload</title>
-	<!-- //da prendere quello giusto -->
 
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
@@ -39,7 +38,7 @@
 	<br><br><br> -->
 	<div class="container_form_big">
 		<h1>UPLOAD A PICTURE</h1>
-	  <form method="POST" action="/event/newpicture">
+	  <form method="POST" action="/{id}/image">
 
 			<div class="container_form">
 					<div class="description">TAKE PICTURE:</div>
@@ -47,13 +46,6 @@
 			</div>
 
 			<hr>
-
-			<!-- <div class="container_form">
-	        <div class="description">TAKE PICTURE:</div>
-	        <div class="input_field"><button id= "button_small" type="button">CLICK!</button></div>
-	    </div>
-
-			<hr> -->
 
 			<div class="container_form">
 	        <div class="description">PREVIEW:</div>
@@ -76,7 +68,6 @@
 
 	<script src="/entry_points/uploadimagepreview.js"></script>
 	<script src="/components/watermarkjs/dist/watermark.js"></script>
-
 
 </body>
 </html>

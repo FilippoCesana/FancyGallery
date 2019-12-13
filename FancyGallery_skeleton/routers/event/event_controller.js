@@ -64,11 +64,69 @@ async function createEvent(req, res) {
 }
 
 
+
+//ONLY FOR TESTING
+const photos = [
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+]
+
+
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
-        const event = await Event.findById(req.params.id).populate('images').lean();
-        res.status(200).json({event: event, user: req.user})
+        const id = req.url.split("=").pop();
+        const event = await Event.findById(id).populate('images').lean();
+        const model = {
+            event_detail : {},
+            photo_list   : photos
+        }
+        model.event_detail["name"]      = event.name;
+        model.event_detail["place"]     = event.place;
+        model.event_detail["timestamp"] = event.start;
+        model.event_detail["data"]      = event.cover;
+        model.event_detail
+        res.status(200).render("imagesEvent",{model})
     } catch (e) {
         if (e instanceof TypeError) {
             res.status(404).json({error: 'event not found'});
@@ -121,6 +179,9 @@ async function addImage(req, res) {
         });
         image = await image.save();
         event.images.push(image).save();
+        //We grab all the sockets that are connected to the specific event and send the new image data
+        const eventSockets = req.app.get('io').sockets.filter(socket => socket.eventId === event._id);
+        eventSockets.emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
         res.status(500).json({error: "Our bad"});
@@ -131,10 +192,14 @@ async function addImage(req, res) {
 
 async function matchEvent(req, res) {
     try {
-        const s = req.params.name;
-        const regex = new RegExp(s, 'i')
-        const events = await Event.find({name: {$regex: regex}}).lean();
-        console.log(events);
+        const regex = new RegExp(req.params.name, 'i')
+        let events;
+        if(req.params.name) {
+           events = await Event.find({name: {$regex: regex}}).limit(20).lean();
+        } else {
+            events = await Event.find({}).limit(20).lean();
+        }
+        //console.log(events);
         res.status(200).json(events);
     } catch (e) {
         res.status(500).json({error: "Our bad"})

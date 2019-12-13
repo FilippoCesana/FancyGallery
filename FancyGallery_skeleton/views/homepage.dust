@@ -15,10 +15,14 @@
             <!-- 	To make the website responsive on mobile devices.  -->
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <body>
+            <nav class="navbar navbar-inverse navbar-fixed-top"> 
+
     </head>
 
     <body>
-        {#model}
+
+          
             <nav class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -28,7 +32,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+                            <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-nav-demo">
                             <ul class="nav navbar-nav">
@@ -61,6 +65,7 @@
                         </div>
                     </div>
                 </nav>
+                </nav>
 
                 <div class="jumbotron jumbotron-fluid">
                         <div class="container">
@@ -87,14 +92,14 @@
                         <div class="row">
                                 <div class="col-sm-12">
                         <div id="gallery">
-                            {#event_list}
-                                {> "partials/event" name=name place=place id=id timestamp=timestamp dataURL=dataURL /}
-                            {/event_list}
+                            {#events}
+                                {> "partials/event" name=name place=place id=id timestamp=timestamp cover=cover /}
+                            {/events}
                         <div id="open_event_box" class="hidden">  </div>
                         </div>
                     </div>
                     </div>
-                    </div>
+                </div>
 
              <div class="container">
                 <div class="containerSearchButton">
@@ -126,12 +131,13 @@
 
 
 
-{/model}
+
 
     <script src="/utility/dustjs-linkedin/dust-core.js"></script>
     <script src="/views/views.js"></script>
     <script src="/entry_points/homepage_start.js"></script>
 
+  
     </body>
 
 </html>
