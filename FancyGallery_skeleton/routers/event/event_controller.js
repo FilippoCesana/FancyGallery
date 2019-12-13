@@ -189,10 +189,9 @@ async function addImage(req, res) {
 
 async function matchEvent(req, res) {
     try {
-        const s = req.params.name;
-        const regex = new RegExp(s, 'i')
+        const regex = new RegExp(req.params.name, 'i')
         const events = await Event.find({name: {$regex: regex}}).lean();
-        console.log(events);
+        //console.log(events);
         res.status(200).json(events);
     } catch (e) {
         res.status(500).json({error: "Our bad"})

@@ -1,8 +1,7 @@
 
 
-{#model}
 <div class="event_box" >
-    <img src="{dataURL}"> </img>
+    <img src="{cover}"> </img>
     <label class="event_place_label">{place},     </label>
     <label class="event_name_label">{name} </label>
     <label class="event_timestamp_label">{timestamp} </label>
@@ -11,5 +10,5 @@
     <!-- </div> -->
     <input type="hidden" value="{id}" class="event_id_input"> </input>
 </div>
-{/model}
+
 

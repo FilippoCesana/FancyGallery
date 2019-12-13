@@ -1,4 +1,5 @@
 const log = require("debug")(":->Backend:");
+const ftpServer = require("./serverftp.js");
 
 async function run() {
     //Waits until a connection with mongo is established

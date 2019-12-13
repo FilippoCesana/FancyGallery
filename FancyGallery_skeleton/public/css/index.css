@@ -5,7 +5,8 @@ body {
 	/*background-size: cover;*/
 	background-position: center;
 	font-family: 'Montserrat', sans-serif;
-	font-size: 20px;
+    font-size: 20px;
+    background-color: white;
 }
 
 
@@ -492,6 +493,13 @@ input:focus{
     text-shadow: 2px 2px 2px #ccff00,
     2px 2px 2px purple,
     3px 2px 2px rgb(46, 47, 34);
+}
+
+.navbar-fixed-top, .navbar-fixed-bottom {
+        position: absolute;
+        right: 0;
+        left: 0;
+        z-index: 1030;
 }
 
 

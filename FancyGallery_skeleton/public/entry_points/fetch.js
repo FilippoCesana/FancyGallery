@@ -1,9 +1,9 @@
 /* Fetch */
 
-var methods_all = ['POST','PUT','PATCH','GET','OPTIONS','HEAD','DELETE'];
-var methods_string = ['POST','PUT','PATCH'];
-var methods_undefined = ['GET','OPTIONS','HEAD','DELETE'];
-var header_no = ['Content-Type','Accept'];
+var methods_all = ["POST", "PUT", "PATCH", "GET", "OPTIONS", "HEAD", "DELETE"];
+var methods_string = ["POST", "PUT", "PATCH"];
+var methods_undefined = ["GET", "OPTIONS", "HEAD", "DELETE"];
+var header_no = ["Content-Type", "Accept"];
 
 /**
  * @function doFetchRequest
@@ -14,33 +14,67 @@ var header_no = ['Content-Type','Accept'];
  * @returns {Promise} which receives the HTTP response.
  */
 
-function doFetchRequest(method, url, headers, body){
-
-  //  if method not one of: ['POST','PUT','PATCH','GET','OPTIONS','HEAD','DELETE']
-  if (!(methods_all.includes(method))) {
-    throw new Error ( "The " + method + "is not an accepted method");
-    return;
+function doFetchRequest(method, url, headers, body) {
+  if (arguments.length !== 4) {
+    throw err;
   }
+  if (
+    method === "GET" ||
+    method === "POST" ||
+    method === "DELETE" ||
+    method === "PUT"
+  ) {
+    if (method === "GET") {
+      if (body) {
+        throw err;
+      } else {
+        return fetch(url, {
+          method: method,
+          headers: headers
+        });
+      }
+    } else if (method === "POST" || method === "PUT") {
+      if (body === null || typeof body === "string") {
+        if (method === "PUT") {
+          console.log(
+            fetch(url, {
+              method: method,
+              body: body,
+              headers: headers
+            })
+          );
 
-  //if method not one of: 'POST' 'PUT' 'PATCH' and body type is not 'string';
-  if ((methods_string.includes(method)) && typeof body != 'string') {
-    throw new Error ( "The " + method + "is not an accepted method");
-    return;
+          return fetch(url, {
+            method: method,
+            body: body,
+            headers: headers
+          });
+        } else if (method === "POST") {
+          return fetch(url, {
+            method: method,
+            body: body,
+            headers: headers
+          });
+        } else {
+          throw err;
+        }
+      } else {
+        throw err;
+      }
+    } else if (method === "DELETE") {
+      return fetch(url, {
+        method: method,
+        headers: headers
+      });
+    } else {
+      console.log("method not correct");
+      throw err;
+    }
+  } else {
+    console.log("error");
+    throw err;
   }
-
-  //else if method not one of:'GET' 'OPTIONS' 'HEAD' 'DELETE' and body type is not undefined;
-  else if ((methods_undefined.includes(method)) && body !== undefined) {
-    throw new Error ( "The " + method + "is not an accepted method");
-    return;
-  }
-
-  return fetch(url, {
-    method: method,
-    headers: headers,
-    body: body
-  });
 }
-
 
 /** @function doJSONRequest
  * @param {String} method The method of the Fetch request. One of: "GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS", "HEAD"
@@ -50,7 +84,7 @@ function doFetchRequest(method, url, headers, body){
  * @returns {Promise} which receives directly the object parsed from the response JSON.
  */
 
-function doJSONRequest(method, url, headers, body){
+function doJSONRequest(method, url, headers, body) {
   var data = body;
 
   // if (header_no.includes(headers)) { //fare un for
@@ -65,8 +99,11 @@ function doJSONRequest(method, url, headers, body){
   //   }
   // }
 
-  if (('Content-Type' in headers && headers['Content-Type'] !== 'application/json') || 
-      ('Accept' in headers && headers['Accept'] !== 'application/json')) {
+  if (
+    ("Content-Type" in headers &&
+      headers["Content-Type"] !== "application/json") ||
+    ("Accept" in headers && headers["Accept"] !== "application/json")
+  ) {
     throw new Error(`headers object contains Content-Type or Accept`);
     return;
   }
@@ -75,21 +112,21 @@ function doJSONRequest(method, url, headers, body){
     try {
       data = JSON.stringify(data);
     } catch (error) {
-      throw new Error ( "The data can't be transformed to json.");
+      throw new Error("The data can't be transformed to json.");
       return;
     }
-  }
-  else if ((methods_undefined.includes(method)) && data !== undefined) {
-    throw new Error ( "The data is not undefined");
+  } else if (methods_undefined.includes(method) && data !== undefined) {
+    throw new Error("The data is not undefined");
     return;
   }
 
-  headers['Accept'] = 'application/json';
+  headers["Accept"] = "application/json";
 
-  if (methods_string.includes(method)){
-    headers['Content-Type'] = 'application/json';
+  if (methods_string.includes(method)) {
+    headers["Content-Type"] = "application/json";
   }
 
-  return doFetchRequest(method, url, headers, data)
-  .then(res => {return res.json()});
+  return doFetchRequest(method, url, headers, data).then(res => {
+    return res.json();
+  });
 }
