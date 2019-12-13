@@ -35,13 +35,13 @@ const show_more_manager = {
         const end   = (this.times + 1) * 1;
        
         const tmp = this.events.slice(start,end);
-        console.log(tmp)
+        
         
         if(tmp.length === 0){this.hideButton; return}
         
         let finalToBeRendered = "";
         tmp.forEach(event=>{
-            dust.render("partials/event",{event},(err,out)=>{
+            dust.render("partials/event",event,(err,out)=>{
                 if(err)throw err;
     
             finalToBeRendered += out;
