@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </nav>
-                </nav>
+            </nav>
 
                 <div class="jumbotron jumbotron-fluid">
                         <div class="container">
@@ -81,6 +81,25 @@
                           </div>
                         </div>
                 </div>
+
+
+                {?user}
+                <hr>
+                <div class="jumbotron">
+                    <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <button type="button" id="buttonLoggedCreate">Create Event</button></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <button type="button" id="buttonLoggedFilter">Filter My Events</button></div>
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
+                    </div>
+                     
+                </div>
+                <hr>
+                {:else}
+                <div></div>
+                {/user}
 
                 <div class="container">
                         <div class="page-header">
@@ -125,7 +144,6 @@
                             </div>
                         </div>
                     </footer>
-
 
 
 
