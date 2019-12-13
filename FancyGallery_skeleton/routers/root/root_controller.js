@@ -10,7 +10,7 @@ const Event = require("./../../dataModels/Event");
 async function sendHomepage(req, res) {
     log("Sending homepage");
     try {
-        const events = await Event.find({privacy: 'public'}).limit(1).lean();
+        const events = await Event.find({privacy: 'public'}).limit(3).lean();
         if (req.accepts("html")) {
             res.status(200).render("homepage", {events:events, user:req.user});
         } else {
