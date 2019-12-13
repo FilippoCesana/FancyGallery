@@ -115,18 +115,19 @@ const photos = [
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
-        const id = req.url.split("=").pop();
+        const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
-        const model = {
-            event_detail : {},
-            photo_list   : photos
-        }
-        model.event_detail["name"]      = event.name;
-        model.event_detail["place"]     = event.place;
-        model.event_detail["timestamp"] = event.start;
-        model.event_detail["data"]      = event.cover;
-        model.event_detail
-        res.status(200).render("imagesEvent",{model})
+        // const model = {
+        //     event_detail : {},
+        //     photo_list   : photos
+        // }
+        // model.event_detail["name"]      = event.name;
+        // model.event_detail["place"]     = event.place;
+        // model.event_detail["timestamp"] = event.start;
+        // model.event_detail["data"]      = event.cover;
+        // model.event_detail
+        // res.status(200).render("imagesEvent",{model})
+        res.status(200).render("imagesEvent",{event: event, user: req.user})
     } catch (e) {
         if (e instanceof TypeError) {
             res.status(404).json({error: 'event not found'});
@@ -180,8 +181,7 @@ async function addImage(req, res) {
         image = await image.save();
         event.images.push(image).save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-        const eventSockets = req.app.get('io').sockets.filter(socket => socket.eventId === event._id);
-        eventSockets.emit('newImage', image);
+        req.app.get('io').to(event._id).emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
         res.status(500).json({error: "Our bad"});
@@ -190,17 +190,23 @@ async function addImage(req, res) {
 }
 
 
+async function modifyEvent(req, res){
+const event = Event.findById(req.params.id);
+
+}
+
+
 async function matchEvent(req, res) {
     try {
-        const regex = new RegExp(req.params.name, 'i')
+        const regex = new RegExp(req.query.name, 'i')
         let events;
-        if(req.params.name) {
+        if(req.query.name) {
            events = await Event.find({name: {$regex: regex}}).limit(20).lean();
         } else {
             events = await Event.find({}).limit(20).lean();
         }
-        //console.log(events);
         res.status(200).json(events);
+        console.log(events.length)
     } catch (e) {
         res.status(500).json({error: "Our bad"})
     }
