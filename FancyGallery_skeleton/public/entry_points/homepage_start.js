@@ -52,7 +52,12 @@ const show_more_manager = {
         console.log(finalToBeRendered)
         const gallery =  document.getElementById('gallery');
         gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
-
+        setTimeout(()=>{
+            document.querySelectorAll('.event_box').forEach(box=>{
+                box.addEventListener('click', (e)=>showEvent(e,box))
+            });
+        },10)
+        
         this.times = this.times +1;
     },
 
