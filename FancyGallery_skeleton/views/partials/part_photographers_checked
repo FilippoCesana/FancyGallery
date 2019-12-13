@@ -1,6 +1,6 @@
 
-<div class = " plus" id = "partial">
+<div  id = "partial">
   <label for="photographer">{name}</label>
-<input type="image" src="../../public/images/remove.png" width="12" height="12" id="remove{id}"
+<input  class = " minus" type="image" src="../../public/images/remove.png" width="12" height="12" id="remove{id}"
 class = "delete_btn"> <br>
 </div>
