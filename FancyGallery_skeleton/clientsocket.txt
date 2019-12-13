@@ -1,12 +1,14 @@
 TODO
 
-const socket = io.connect();
+const socket = io();
 
-document.onload(function(){
-socket.emit('visiting', {eventId:eventId})
+socket.on('connect') {
+    console.log("connected")
+    socket.emit('visiting', {eventId:eventId})
 }
-}
+
+
 
 socket.on('newimage', function(image){
-writeEvent(image);
+    writeEvent(image);
 })
