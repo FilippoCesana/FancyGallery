@@ -1,0 +1,12 @@
+TODO
+
+const socket = io.connect();
+
+document.onload(function(){
+socket.emit('visiting', {eventId:eventId})
+}
+}
+
+socket.on('newimage', function(image){
+writeEvent(image);
+})
