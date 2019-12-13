@@ -4,24 +4,24 @@ const User = require('../../dataModels/User');
 const Invite = require('../../dataModels/Invite');
 const mongoose = require('mongoose');
 
-async function showMore(req, res) {
-    const n = Number(req.url.split("=").pop());
-    const start = n * 3;
-    const end = (n + 1) * 3;
-    // console.log(start,end);
-
-    try {
-        let found = await Event.find({});
-        console.log(found)
-        found = found.slice(start, end);
-        res.status(200).json(found);
-
-
-    } catch (err) {
-        res.status(200).json(found)
-        throw err;
-    }
-}
+// async function showMore(req, res) {
+//     const n = Number(req.url.split("=").pop());
+//     const start = n * 3;
+//     const end = (n + 1) * 3;
+//     // console.log(start,end);
+//
+//     try {
+//         let found = await Event.find({});
+//         console.log(found)
+//         found = found.slice(start, end);
+//         res.status(200).json(found);
+//
+//
+//     } catch (err) {
+//         res.status(200).json(found)
+//         throw err;
+//     }
+// }
 
 //l'obbiettivo è aggiungere un nuovo evento al databse
 //ora non c'e ancora il db vedi se vuoi iniziare a setupparlo se no lo guardo io piu tardi senza problem
@@ -65,70 +65,12 @@ async function createEvent(req, res) {
 
 
 
-//ONLY FOR TESTING
-const photos = [
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-    {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
-    },
-]
-
-
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
-
-        // const model = {
-        //     event_detail : {},
-        //     photo_list   : photos
-        // }
-        // model.event_detail["name"]      = event.name;
-        // model.event_detail["place"]     = event.place;
-        // model.event_detail["timestamp"] = event.start;
-        // model.event_detail["data"]      = event.cover;
-        // model.event_detail
-        // res.status(200).render("imagesEvent",{model})
-        res.status(200).render("imagesEvent",{event: event, user: req.user})
+        res.status(200).render("imagesEvent", {event: event, user: req.user})
     } catch (e) {
         if (e instanceof TypeError) {
             res.status(404).json({error: 'event not found'});
@@ -169,10 +111,16 @@ async function addImage(req, res) {
         res.status(404).json({error: "Event not found :p"});
         return;
     }
-    if (!(req.user._id === event.admin || event.photographers.includes(req.user._id))) {
+
+    if (!req.user) {
+        if (!(req.user._id === event.admin) || event.photographers.includes(req.user._id)) {
+            res.status(403).json({error: "Permission denied"});
+            return;
+        }
         res.status(403).json({error: "Permission denied"});
-        return;
+        return ;
     }
+
 
     try {
         let image = new Image({
@@ -182,7 +130,7 @@ async function addImage(req, res) {
         image = await image.save();
         event.images.push(image).save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-        req.app.get('io').to(event._id).emit('newImage', image);
+       // req.app.get('io').to(event._id).emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
         res.status(500).json({error: "Our bad"});
@@ -191,18 +139,22 @@ async function addImage(req, res) {
 }
 
 
-async function modifyEvent(req, res){
-const event = Event.findById(req.params.id);
+async function modifyEvent(req, res) {
+    const event = Event.findById(req.params.id);
 
 }
 
+
+function sendEventCreateForm(req, res){
+    res.status(200).render('new_gallery', {user:req.user});
+}
 
 async function matchEvent(req, res) {
     try {
         const regex = new RegExp(req.query.name, 'i')
         let events;
-        if(req.query.name) {
-           events = await Event.find({name: {$regex: regex}}).limit(20).lean();
+        if (req.query.name) {
+            events = await Event.find({name: {$regex: regex}}).limit(20).lean();
         } else {
             events = await Event.find({}).limit(20).lean();
         }
@@ -214,9 +166,9 @@ async function matchEvent(req, res) {
 }
 
 
-module.exports.showMore = showMore;
 module.exports.createEvent = createEvent;
 module.exports.openEvent = openEvent;
 module.exports.findEvent = findEvent;
 module.exports.addImage = addImage;
 module.exports.matchEvent = matchEvent;
+module.exports.sendEventCreateForm = sendEventCreateForm;
