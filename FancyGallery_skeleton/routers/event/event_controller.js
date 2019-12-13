@@ -179,6 +179,9 @@ async function addImage(req, res) {
         });
         image = await image.save();
         event.images.push(image).save();
+        //We grab all the sockets that are connected to the specific event and send the new image data
+        const eventSockets = req.app.get('io').sockets.filter(socket=>socket.eventId === event._id);
+        eventSockets.emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
         res.status(500).json({error: "Our bad"});
