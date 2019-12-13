@@ -6,7 +6,7 @@ body {
   font-family: "Helvetica", "Segoe UI", Arial, serif;
   background-image: url("../images/party_dark.jpg");
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .container_form_big {
@@ -17,65 +17,72 @@ body {
 }
 /* -- Links -- */
 
-
 /* -- Style Elements -- */
 #button {
   border-radius: 1px;
   display: block;
   border-color: transparent;
-  padding:20px 40px;
+  padding: 20px 40px;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-left: auto;
   margin-right: auto;
-  vertical-align:middle;
-  overflow:hidden;
+  vertical-align: middle;
+  overflow: hidden;
   background-color: #00ccff;
-  text-align:center;
+  text-align: center;
   font-size: 1em;
   font-weight: bold;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #button:hover {
   background-color: #ccff00;
   color: #00ccff;
   box-shadow: 0 0 20px #ccff00;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #button_small {
   border-radius: 1px;
   border-color: transparent;
-  padding:10px 20px;
+  padding: 10px 20px;
   margin-left: auto;
   margin-right: auto;
   vertical-align: middle;
   overflow: hidden;
   background-color: #00ccff;
-  text-align:center;
+  text-align: center;
   font-size: 1em;
   font-weight: bold;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 #button_small:hover {
   background-color: #ccff00;
   color: #00ccff;
   box-shadow: 0 0 10px #ccff00;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 canvas {
   max-width: 100%;
 }
 
-.input_field [type="text"], .input_field [type="email"], .input_field textarea,
-.input_field [type="file"], .input_field select, .input_field [type="number"],
-.description [type="text"], .input_field [type="password"], .input_field [type="date"],
-.input_field [type="time"], .description [type="time"], .description [type="date"] {
+.input_field [type="text"],
+.input_field [type="email"],
+.input_field textarea,
+.input_field [type="file"],
+.input_field select,
+.input_field [type="number"],
+.description [type="text"],
+.input_field [type="password"],
+.input_field [type="date"],
+.input_field [type="time"],
+.description [type="time"],
+.description [type="date"] {
   background-color: transparent;
   font-size: 0.8em;
   border: none;
@@ -84,7 +91,9 @@ canvas {
   color: white;
 }
 
-.input_field [type=text]:focus, .description [type="text"]:focus, .input_field [type = "password"]:focus {
+.input_field [type="text"]:focus,
+.description [type="text"]:focus,
+.input_field [type="password"]:focus {
   border-bottom: 2px solid #ccff00;
 }
 
@@ -98,7 +107,7 @@ h1 {
   color: #ccff00;
   font-weight: lighter;
   text-shadow: 0 0 10px #ccff00;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 h3 {
@@ -106,12 +115,14 @@ h3 {
   color: #ccff00;
   font-weight: lighter;
   text-shadow: 0 0 10px #ccff00;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
   /* font-family: "Helvetica", "Segoe UI", Arial, serif; */
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
 .description img {
@@ -124,7 +135,6 @@ input, textarea, select {
 /* ------------- Mobile style settings ------------- */
 
 @media only screen and (max-width: 767px) {
-
   .container {
     flex-direction: column;
   }
@@ -133,8 +143,13 @@ input, textarea, select {
     padding-bottom: 0.8em;
   }
 
-  .input_field [type="text"], .input_field [type="email"], .input_field textarea,
-  .input_field [type="file"], .input_field select, .input_field [type="number"], .description [type="text"] {
+  .input_field [type="text"],
+  .input_field [type="email"],
+  .input_field textarea,
+  .input_field [type="file"],
+  .input_field select,
+  .input_field [type="number"],
+  .description [type="text"] {
     width: 100%;
   }
 
@@ -143,17 +158,15 @@ input, textarea, select {
     bottom: 1%;
     left: 2%;
   }
-
 }
 
 /* ------------- Desktop style settings ------------- */
 
 @media only screen and (min-width: 768px) {
-
   body {
     margin-left: 10%;
     margin-right: 10%;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
   }
 
   .big_container {
@@ -169,7 +182,8 @@ input, textarea, select {
     align-items: stretch;
   }
 
-  .navigation, .sidebar {
+  .navigation,
+  .sidebar {
     flex: 20%;
   }
 
@@ -191,19 +205,27 @@ input, textarea, select {
     flex-direction: row;
   }
 
-  .description, .input_field {
+  .description,
+  .input_field {
     flex: 50%;
     margin-top: 1em;
   }
 
-  .input_field [type="text"], .input_field [type="email"], .input_field textarea,
-  .input_field [type="file"], .input_field select, .input_field [type="number"],
-  .description [type="text"], .input_field [type="password"] {
+  .input_field [type="text"],
+  .input_field [type="email"],
+  .input_field textarea,
+  .input_field [type="file"],
+  .input_field select,
+  .input_field [type="number"],
+  .description [type="text"],
+  .input_field [type="password"] {
     width: 75%;
   }
 
   .input_field [type="date"],
-  .input_field [type="time"], .description [type="time"], .description [type="date"] {
+  .input_field [type="time"],
+  .description [type="time"],
+  .description [type="date"] {
     width: 50%;
   }
 
