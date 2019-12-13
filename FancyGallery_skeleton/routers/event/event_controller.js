@@ -117,6 +117,7 @@ async function openEvent(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
+
         // const model = {
         //     event_detail : {},
         //     photo_list   : photos

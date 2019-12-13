@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", start);
 
 function start() {
   // variables
-  let myEvent = {
+  myEvent = {
     orginainizer: undefined,
     photographers: []
   };
@@ -41,7 +41,7 @@ function start() {
       this.setAttribute("src", "../../public/images/remove.png");
       minus_list.appendChild(this.setAttribute("class", "delete_btn"));
 
-      return myEvent.photographers.push(photographer.id);
+      //return myEvent.photographers.push(photographer.id);
     });
   });
 

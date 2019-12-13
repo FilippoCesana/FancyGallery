@@ -17,7 +17,7 @@
     </head>   
 
     <body> 
-{#model}
+
 
             <nav class="navbar navbar-inverse navbar-fixed-top"> 
                     <div class="container ">
@@ -49,17 +49,17 @@
                 </nav> 
 
         <div class="makeSpace"></div>        
-    {#event_detail}
+    {?event}
         <div class="container">
                 <div class="page-header">
-                  <img src={data}> </img>
-                  <h1> {name} </h1>  
-                  <h1> {place} </h1>  
-                  <h1> {timestamp} </h1>  
+                  <img src="{event.cover}"> </img>
+                  <h1> {event.name} </h1>
+                  <h1> {event.place} </h1>
+                  <h1> {event.start} </h1>
 
                 </div>    
         </div>  
-    {/event_detail}
+    {/event}
 
 
      <!-- Page Content -->
@@ -67,9 +67,9 @@
             <div class="row">
                     <div class="col-sm-12">
                 <div id="photoGallery">
-                    {#photo_list}
-                        {> "partials/image" id_photographer=id_photographer id_image=id_image timestamp=timestamp dataURL=dataURL /}
-                    {/photo_list}
+                    {#event.images}
+                        {> "partials/image" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
+                    {/event.images}
             <div id="open_event_box" class="hidden">  </div>
             </div>
             </div>
@@ -78,7 +78,6 @@
 
 
 
-{/model}
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

@@ -39,3 +39,6 @@ function drawImage() {
 function failedImage() {
   console.error("File not loaded!");
 }
+
+document.getElementById("button")addEventListener('click', e => {
+        doJSONRequest('POST', 'event/{id}/image', {}, {dataURL : canvas.toDataURL()})};

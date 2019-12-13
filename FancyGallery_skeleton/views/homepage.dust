@@ -16,13 +16,13 @@
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <body>
-            <nav class="navbar navbar-inverse navbar-fixed-top"> 
+            <nav class="navbar navbar-inverse navbar-fixed-top">
 
     </head>
 
     <body>
 
-          
+
             <nav class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -132,17 +132,14 @@
                    <footer class="footer-bs">
                         <div class="row">
                           <div class="col-md-6 footer-brand animated fadeInLeft">
-                              <h2>Logo</h2>
-                                <p>Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
-                                <p>© 2014 BS3 UI Kit, All rights reserved</p>
+                              <h2>FancyGallery</h2>
+                                <p>A Fancy project done by some fancy Students for having a live gallery for your pictures of your event! Made with ♥ in Switzerland.</p>
+                                <p>© 2019 SA Group, All rights reserved</p>
                             </div>
                           <div class="col-md-6 footer-social animated fadeInDown">
-                              <h4>Follow Us</h4>
+                              <h4>Contact Us</h4>
                               <ul>
-                                  <li><a href="#">Facebook</a></li>
-                                  <li><a href="#">Twitter</a></li>
-                                  <li><a href="#">Instagram</a></li>
-                                  <li><a href="#">RSS</a></li>
+                                  <li><a href="#">Send us a mail</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -155,7 +152,7 @@
     <script src="/views/views.js"></script>
     <script src="/entry_points/homepage_start.js"></script>
 
-  
+
     </body>
 
 </html>
