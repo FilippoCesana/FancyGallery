@@ -7,7 +7,7 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
+<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
 
 	<!-- // per gestire la ricerca fotografi -->
 <!-- <script src="script.js"></script> -->
@@ -41,7 +41,7 @@
 	<br><br><br> -->
 <div class="container_form_big">
 	<h1>SIGN-IN</h1>
-  <form method="" action="">
+  <form method="POST" action="">
 
 		<div class="container_form">
 			<div class="description">NAME, SURNAME:</div>
@@ -71,10 +71,23 @@
 
 		<div class="container_form">
 			<div class="description">CONFIRM PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="password" id="password" minlength="8" required></div>
+			<div class="input_field"><input type="password" name="confirm_password" id="confirm_password" minlength="8" required></div>
 		</div>
 
+		<div class="container_form" id='message'></div>
+
 		<hr>
+
+		<!-- test -->
+		<!-- <label>password :
+		  <input name="password" id="password" type="password" onkeyup='check();' />
+		</label>
+		<br>
+		<label>confirm password:
+		  <input type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' />
+		  <span id='message'></span>
+		</label> -->
+	<!-- test -->
 
 		<br>
 
@@ -87,5 +100,8 @@
 	<div class="footer navbar-fixed-bottom">
 	        <h5> all rights reserved @FancyGallery</h5>
 	</div> -->
+
+		<script src="../public/entry_points/checkpassword.js"></script>
+
 </body>
 </html>

@@ -38,12 +38,13 @@
 	<br><br><br> -->
 	<div class="container_form_big">
 		<h1>UPLOAD A PICTURE</h1>
-	  <form method="POST" action="/{id}/image">
+	  <form>
 
 			<div class="container_form">
 					<div class="description">TAKE PICTURE:</div>
 					<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" id="imageUpload"></div>
 			</div>
+		</form>
 
 			<hr>
 
@@ -56,9 +57,9 @@
 
 			<br>
 
-			<input id="button" type="submit" name="new" value="OK" />
+			<!-- <input id="button" type="submit" name="new" value="OK" /> -->
+			<button id="button" name="submit">OK</button>
 
-		</form>
 	</div>
 <!--
 	<br><br><br>
@@ -68,6 +69,8 @@
 
 	<script src="/entry_points/uploadimagepreview.js"></script>
 	<script src="/components/watermarkjs/dist/watermark.js"></script>
+	<script src="/entry_points/fetch.js"></script>
+
 
 </body>
 </html>

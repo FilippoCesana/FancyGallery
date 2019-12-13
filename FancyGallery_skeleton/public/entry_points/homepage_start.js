@@ -1,3 +1,6 @@
+
+
+
 //function to count times show more button is pressed
 
 const show_more_manager = {
@@ -60,13 +63,19 @@ const show_more_manager = {
 async function start(){
 
     //login button listen click
-    const login_btn = document.getElementById('log_in_btn');
-    login_btn.addEventListener('click', (e)=>login(e));
-
-    //signin button listen click
-    const sign_in_btn = document.getElementById("sign_in_btn");
-    sign_in_btn.addEventListener('click', (e)=>signUp(e));
-
+    if(document.getElementById('log_in_btn')){
+        const login_btn = document.getElementById('log_in_btn');
+        login_btn.addEventListener('click', (e)=>login(e));
+    
+        //signin button listen click
+        const sign_in_btn = document.getElementById("sign_in_btn");
+        sign_in_btn.addEventListener('click', (e)=>signUp(e));
+    
+    }else{
+        const logout_btn = document.getElementById("log_out_btn");
+        logout_btn.addEventListener('click',()=>logout());
+    }
+   
     //search button listen click
     // const search_btn = document.getElementById('search_btn');
     // search_btn.addEventListener('click',(e)=>searchEventByName(e));
@@ -83,6 +92,15 @@ async function start(){
     event_boxes.forEach(box=>{
         box.addEventListener('click', (e)=>showEvent(e,box))
     });
+
+    //buttonLoggedFilter
+    if(document.getElementById("buttonLoggedCreate")){
+       const button_create = document.getElementById("buttonLoggedCreate");
+       const button_filter = document.getElementById("buttonLoggedFilter");
+
+       button_create.addEventListener("click",()=>createEvent());
+       button_filter.addEventListener('click', ()=> filterUserEvent());
+    }
 
     await show_more_manager.init();
     
@@ -145,11 +163,10 @@ function showLess(){
   document.getElementById("show_more_btn").style.display = 'none';
 }
 
-async function showMore(e){
+function createEvent(){
 
-   
-
-
+    const url = "http://localhost:3000/event/create";
+    window.location.href = url
 }
 
 function showEvent(e,item){
@@ -165,4 +182,5 @@ function showEvent(e,item){
 
 setTimeout(()=>{
   start();
-},10)
+},100)
+
