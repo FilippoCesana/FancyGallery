@@ -111,6 +111,27 @@ const photos = [
     },
 ]
 
+function formatDate(month,day,year){
+    const months = {
+        jan : "january",
+        feb : "february",
+        mar : "march",
+        apr : "april",
+        jun : "june",
+        jul : "july",
+        aug : "august",
+        sep : "september",
+        oct : "october",
+        nov : "november",
+        dec : "december",
+    }
+
+    
+
+    return  day + " " + months[month.toLowerCase()] + " " + year;
+}
+
+
 
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
@@ -118,6 +139,12 @@ async function openEvent(req, res) {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
 
+        const toFormat = event.start.toString().split(" ");
+        toFormat.shift()
+        const month = toFormat.shift();
+        const day = toFormat.shift();
+        const year = toFormat.shift();
+        event.start = formatDate(month,day,year);
         // const model = {
         //     event_detail : {},
         //     photo_list   : photos
