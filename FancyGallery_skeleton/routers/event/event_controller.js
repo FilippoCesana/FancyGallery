@@ -138,6 +138,16 @@ async function openEvent(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
+        //console.log(event)
+        let canPost = false;
+        if(req.user) {
+            console.log(typeof req.user._id, typeof event.admin)
+            console.log(req.user._id, event.admin)
+        }
+        if(req.user && req.user._id.equals(event.admin)){
+            canPost = true;
+        }
+        console.log(canPost);
 
         const toFormat = event.start.toString().split(" ");
         toFormat.shift()
@@ -155,9 +165,11 @@ async function openEvent(req, res) {
         // model.event_detail["data"]      = event.cover;
         // model.event_detail
         // res.status(200).render("imagesEvent",{model})
-        res.status(200).render("imagesEvent",{event: event, user: req.user})
+        res.status(200).render("imagesEvent", {event: event, user: req.user, canPost: canPost})
     } catch (e) {
+        console.log(e)
         if (e instanceof TypeError) {
+
             res.status(404).json({error: 'event not found'});
         } else {
             res.status(500).json({error: 'server error'});
@@ -180,6 +192,11 @@ async function findEvent(req, res) {
 
 async function findEventById(req, res) {
     return await Event.findById(req.params.id).plain();
+}
+
+
+async function sendImageAddForm(req, res){
+    res.status(200).render('picture_upload',{});
 }
 
 
@@ -274,3 +291,5 @@ module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
 module.exports.filter      = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
+module.exports.sendImageAddForm = sendImageAddForm;
+
