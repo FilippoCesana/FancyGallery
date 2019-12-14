@@ -19,7 +19,7 @@ router.get('/open/:id', controller.openEvent);
 
 router.get('/match?',controller.matchEvent)
 
-router.get('/filter',controller.filter);
+
 //fede
 //router.
 module.exports = router;

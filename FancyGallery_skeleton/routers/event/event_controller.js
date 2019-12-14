@@ -184,11 +184,15 @@ function filter(req,res) {
 }
 
 
+
 // module.exports.showMore   = showMore;
 module.exports.createEvent= createEvent;
 module.exports.openEvent  = openEvent;
 module.exports.findEvent  = findEvent;
 module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
+<<<<<<< HEAD
 module.exports.filter      = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
+=======
+>>>>>>> 03335f4f94de62ac53b45335a44c81ea54ce3c45

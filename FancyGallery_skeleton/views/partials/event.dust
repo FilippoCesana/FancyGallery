@@ -5,6 +5,7 @@
     <label class="event_place_label">{place},     </label>
     <label class="event_name_label">{name} </label>
     <label class="event_timestamp_label">{start} </label>
+
     <!-- <div class= "event_btn_toGallery"> -->
     <!-- <a href="imagesEvent.dust" class="btn btn-primary">Visit</a> -->
     <!-- </div> -->
