@@ -13,7 +13,8 @@ ftpServer.on('login', ({connection, username, password}, resolve, reject) => {
   connection.on('STOR', (error, fileName) => {
     console.log("newfile: ", fileName);
 
-    var canon_id = 098767890;
+    var gallery_id = 098767890;
+    var user_id = 007;
 
     new_image = new Image();
     new_image.src = fileName;
@@ -29,7 +30,8 @@ ftpServer.on('login', ({connection, username, password}, resolve, reject) => {
 
     var imgUrl = canvas.toDataURL();
 
-    doJSONRequest('POST', 'event/'+ canon_id +'/image', {}, {dataURL : imgUrl});
+    //fetch normale
+    doJSONRequest('POST', 'event/'+ gallery_id +'/image', {}, {dataURL : imgUrl, user: user_id});
 
   });
 });

@@ -8,7 +8,6 @@ const Test = new Schema({
 
 const ImageSchema = new Schema(
     {
-        _id : {type: Schema.Types.ObjectId},
         dataURL: {type: String, required: true},
         dateCreated: {type: Date, default: Date.now},
         photographer: {type: Schema.Types.ObjectId}
