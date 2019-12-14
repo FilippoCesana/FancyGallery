@@ -1,11 +1,13 @@
 
-
+let filter_value = false;
 
 //function to count times show more button is pressed
 
 const show_more_manager = {
     events : [],
     times  : 0,
+    user_events : [],
+    displayed : [],
     
     init : async ()=>{
         const url = "http://localhost:3000/events"
@@ -18,7 +20,12 @@ const show_more_manager = {
 
         try{
           const res =  await fetch(url,options);
-          this.events = await res.json();
+          console.log(res);
+          const final = await res.json();
+          console.log(final);
+          this.events = final.events;
+          this.displayed = final.events.slice(0,3);
+          this.user_events = (final.user) ? final.user : undefined;
           this.times = 1;
 
         }catch(err){
@@ -26,7 +33,22 @@ const show_more_manager = {
         }
         
     },
-
+    show_already_load : ()=>{
+        let finalToBeRendered = "";
+        this.displayed.forEach(event=>{
+            dust.render("partials/event",event,(err,out)=>{
+                if(err)throw err;
+                finalToBeRendered += out;
+            });
+        });
+        const gallery =  document.getElementById('gallery');
+        gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
+        setTimeout(()=>{
+            document.querySelectorAll('.event_box').forEach(box=>{
+                box.addEventListener('click', (e)=>showEvent(e,box))
+            });
+        },10)
+    },
 
 
     display : ()=>{
@@ -37,8 +59,10 @@ const show_more_manager = {
        
         const tmp = this.events.slice(start,end);
         
-        
+       
         if(tmp.length === 0){ document.getElementById('show_more_btn').style.display = 'none';return}
+        
+        this.displayed = this.displayed.concat(tmp);
         
         let finalToBeRendered = "";
         tmp.forEach(event=>{
@@ -49,7 +73,7 @@ const show_more_manager = {
              
         })
         })
-        console.log(finalToBeRendered)
+        
         const gallery =  document.getElementById('gallery');
         gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
         setTimeout(()=>{
@@ -60,6 +84,25 @@ const show_more_manager = {
         
         this.times = this.times +1;
     },
+
+    display_user_events : ()=>{
+
+        let final = '';
+        this.user_events.forEach(event=>{
+            dust.render("partials/event",event,(err,out)=>{
+                if(err)throw err;
+                final +=  out;
+            })
+        });
+        const gallery =  document.getElementById('gallery');
+        gallery.innerHTML =  final;
+        setTimeout(()=>{
+            document.querySelectorAll('.event_box').forEach(box=>{
+                box.addEventListener('click', (e)=>showEvent(e,box))
+            });
+        },10)
+
+    }
 
 }
 
@@ -101,16 +144,14 @@ async function start(){
     //buttonLoggedFilter
     if(document.getElementById("buttonLoggedCreate")){
        const button_create = document.getElementById("buttonLoggedCreate");
-       const button_filter = document.getElementById("buttonLoggedFilter");
+       const button_filter = document.getElementById("filter_btn");
 
        button_create.addEventListener("click",()=>createEvent());
-       button_filter.addEventListener('click', ()=> filterUserEvent());
+       button_filter.addEventListener('click', (e)=> filterUserEvent(e));
     }
 
     await show_more_manager.init();
     
-
-
 }
 
 function login(){
@@ -183,6 +224,19 @@ function showEvent(e,item){
     const url = "http://localhost:3000/event/open/"+event_id;
     // fetch(url,options);
     window.location.href = url
+}
+
+function filterUserEvent(e){
+    filter_value = !filter_value;
+    
+    if(filter_value){
+        document.getElementById('show_more_btn').style.display = 'none' 
+        show_more_manager.display_user_events();
+        
+    }else{
+        document.getElementById('show_more_btn').style.display = ''
+        show_more_manager.show_already_load();
+    }
 }
 
 setTimeout(()=>{

@@ -17,6 +17,8 @@ router.get('/open/:id', controller.openEvent);
 // /search?event_name=Mio%20Evento
 
 router.get('/match?',controller.matchEvent)
+
+router.get('/filter',controller.filter);
 //fede
 //router.
 module.exports = router;
