@@ -70,13 +70,21 @@ async function openEvent(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
+        //console.log(event)
         let canPost = false;
-        if(req.user && req.user._id === id ){
+        if(req.user) {
+            console.log(typeof req.user._id, typeof event.admin)
+            console.log(req.user._id, event.admin)
+        }
+        if(req.user && req.user._id.equals(event.admin)){
             canPost = true;
         }
+        console.log(canPost);
         res.status(200).render("imagesEvent", {event: event, user: req.user, canPost: canPost})
     } catch (e) {
+        console.log(e)
         if (e instanceof TypeError) {
+
             res.status(404).json({error: 'event not found'});
         } else {
             res.status(500).json({error: 'server error'});
@@ -99,6 +107,11 @@ async function findEvent(req, res) {
 
 async function findEventById(req, res) {
     return await Event.findById(req.params.id).plain();
+}
+
+
+async function sendImageAddForm(req, res){
+    res.status(200).render('picture_upload');
 }
 
 
@@ -191,8 +204,7 @@ module.exports.openEvent  = openEvent;
 module.exports.findEvent  = findEvent;
 module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
-<<<<<<< HEAD
 module.exports.filter      = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
-=======
->>>>>>> 03335f4f94de62ac53b45335a44c81ea54ce3c45
+module.exports.sendImageAddForm = sendImageAddForm;
+

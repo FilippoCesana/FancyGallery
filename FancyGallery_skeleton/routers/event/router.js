@@ -11,6 +11,7 @@ router.post('/create', controller.createEvent);
 router.get('/create', controller.sendEventCreateForm);
 
 router.post('/addImage', controller.addImage);
+router.get('/addImage', controller.sendImageAddForm);
 
 //jaco
 // router.get(/\/open\?id_event=[a-zA-Z0-9]+/, controller.openEvent);

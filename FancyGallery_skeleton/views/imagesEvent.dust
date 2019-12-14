@@ -80,14 +80,14 @@
         </div>
     </div>
 
-    {?photographer}
+    {?canPost}
     <!-- da far vedere se fotografo -->
     <div><input id="add_photo_btn" type="image" src="/images/addPhoto.png" alt="Submit" width="50" height="50"></div>
 
     {:else}
     <!-- da far vedere se non fotografo -->
     <div> </div>
-    {/photographer}
+    {/canPost}
 
          <!-- footer -->
     <footer class="footer-bs">
