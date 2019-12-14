@@ -141,13 +141,11 @@ async function openEvent(req, res) {
         //console.log(event)
         let canPost = false;
         if(req.user) {
-            console.log(typeof req.user._id, typeof event.admin)
-            console.log(req.user._id, event.admin)
         }
         if(req.user && req.user._id.equals(event.admin)){
             canPost = true;
         }
-        console.log(canPost);
+        //console.log(canPost);
 
         const toFormat = event.start.toString().split(" ");
         toFormat.shift()
@@ -196,7 +194,9 @@ async function findEventById(req, res) {
 
 
 async function sendImageAddForm(req, res){
-    res.status(200).render('picture_upload',{});
+    // console.log(req.query.id);
+    // console.log("FFFFFFFFFFFFFFFFF");
+    res.status(200).render('picture_upload',{id: req.query.id});
 }
 
 
@@ -267,7 +267,7 @@ async function matchEvent(req, res) {
             events = await Event.find({}).limit(20).lean();
         }
         res.status(200).json(events);
-        console.log(events.length)
+        //console.log(events.length)
     } catch (e) {
         res.status(500).json({error: "Our bad"})
     }
