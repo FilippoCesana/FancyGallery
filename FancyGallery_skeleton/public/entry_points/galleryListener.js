@@ -7,7 +7,8 @@ if(document.getElementById("add_photo_btn")){
 
 function upload(){
         const value = document.getElementById("event_id").value;
-        console.log(button);
+       console.log(value)
+
         window.location.href = "http://localhost:3000/event/addImage?id="+value;
 }
 

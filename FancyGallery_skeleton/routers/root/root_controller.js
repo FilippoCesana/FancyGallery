@@ -66,7 +66,7 @@ async function sendEvents(req,res){
         let events = await Event.find({privacy: 'public'}).lean();
        
         events = formatEvent(events);
-        console.log(events)
+       // console.log(events)
     if(req.user){
         const user  = events.filter(event=>{
             
