@@ -35,6 +35,7 @@ const show_more_manager = {
     },
     show_already_load : ()=>{
         let finalToBeRendered = "";
+        console.log(this.displayed.length)
         this.displayed.forEach(event=>{
             dust.render("partials/event",event,(err,out)=>{
                 if(err)throw err;
@@ -42,7 +43,7 @@ const show_more_manager = {
             });
         });
         const gallery =  document.getElementById('gallery');
-        gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
+        gallery.innerHTML =  finalToBeRendered;
         setTimeout(()=>{
             document.querySelectorAll('.event_box').forEach(box=>{
                 box.addEventListener('click', (e)=>showEvent(e,box))
@@ -177,7 +178,11 @@ function searchEventByName(e){
         }
     }
 
-
+    if(value == ""){
+       
+        show_more_manager.show_already_load();
+        return;
+    }
 
     const url = "http://localhost:3000/event/match?name="+value;
 
@@ -185,7 +190,7 @@ function searchEventByName(e){
         .then(res=>res.json().then(result=>{
         
             if(result.length == 0) {return;}
-            
+           
             let finalToBeRendered = "";
             result.forEach(event=>{
                 dust.render("partials/event",event,(err,out)=>{
@@ -196,6 +201,13 @@ function searchEventByName(e){
             });
             
             document.getElementById('gallery').innerHTML = finalToBeRendered;
+           
+            const event_boxes = document.querySelectorAll(".event_box");
+            event_boxes.forEach(box=>{
+                box.addEventListener('click', (e)=>showEvent(e,box))
+            });
+
+
         })) 
          
         .catch(err=>{
