@@ -196,7 +196,7 @@ async function findEventById(req, res) {
 
 
 async function sendImageAddForm(req, res){
-    res.status(200).render('picture_upload');
+    res.status(200).render('picture_upload',{});
 }
 
 
