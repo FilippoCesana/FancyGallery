@@ -214,9 +214,16 @@ async function matchEvent(req, res) {
 }
 
 
-module.exports.showMore = showMore;
-module.exports.createEvent = createEvent;
-module.exports.openEvent = openEvent;
-module.exports.findEvent = findEvent;
-module.exports.addImage = addImage;
+function filter(req,res){
+    console.log(req.params.id);
+    res.end();
+}
+
+
+module.exports.showMore   = showMore;
+module.exports.createEvent= createEvent;
+module.exports.openEvent  = openEvent;
+module.exports.findEvent  = findEvent;
+module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
+module.exports.filter      = filter;
