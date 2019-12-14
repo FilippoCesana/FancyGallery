@@ -19,8 +19,8 @@ salta tutto, quindi per il momento lasciamol qui -->
 
 <div class="event_box" >
     <img src="{dataURL}" class="image_box"> </img>
-    <label class="id_photographer">{photographer} </label>
-    <label class="id_image">{_id} </label>
+    <!-- <label class="id_photographer">{photographer} </label> -->
+    <!-- <label class="id_image">{_id} </label> -->
     <br>
     <!-- <label class="image_timestamp_label">{dateCreated} </label> -->
     <br>
