@@ -22,7 +22,7 @@ const EventSchema = new Schema({
         place: {type: String},
         photographers:[{type: Schema.Types.ObjectId}],
         pendingPhotographers:[{type: Schema.Types.ObjectId}],//Photographers Ids
-        cover:{type: String, default:"https://homepages.cae.wisc.edu/~ece533/images/peppers.png"},//Photographers Ids
+        cover:{type: String, default:"/images/default_party.jpg"},//Photographers Ids
         watermark:{type: String, default:""}//Photographers Ids
       //  guests:{type: Schema.Types.Mixed} //TODO
     }
