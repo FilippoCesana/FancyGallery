@@ -3,29 +3,20 @@
   <head>
     <title>New Gallery</title>
 
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="../public/css/stylebrunner.css"
-    />
+    <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" >
 
     <!-- // per gestire la ricerca fotografi -->
-    <script src="../public/entry_points/fetch.js"></script>
-    <script src="../public/entry_points/newevent.js"></script>
+    <script src="/entry_points/fetch.js"></script>
+    <script src="/entry_points/newevent.js"></script>
   </head>
   <body>
     <div class="container_form_big">
       <h1>CREATE NEW EVENT</h1>
-      <form method="" action="">
+      <form method="POST" action="/event/create">
         <div class="container_form">
           <div class="description">EVENT NAME:</div>
           <div class="input_field">
-            <input
-              type="text"
-              name="eventName"
-              placeholder="EVENT NAME"
-              required
-            />
+            <input type="text" name="name" placeholder="EVENT NAME" required/>
           </div>
         </div>
 
@@ -34,12 +25,7 @@
         <div class="container_form">
           <div class="description">EVENT LOCATION:</div>
           <div class="input_field">
-            <input
-              type="text"
-              name="Location"
-              placeholder="EVENT LOCATION"
-              required
-            />
+            <input type="text" name="place" placeholder="EVENT LOCATION" required/>
           </div>
         </div>
 
@@ -66,7 +52,7 @@ ENTER YOUR DESCRIPTION</textarea
               required
             /><br />
             START TIME:
-            <input type="time" name="starttime" placeholder="HH:MM" required />
+            <input type="time" name="starttime" placeholder="HH:MM" />
           </div>
 
           <div class="input_field">
@@ -78,7 +64,7 @@ ENTER YOUR DESCRIPTION</textarea
               required
             /><br />
             END TIME:
-            <input type="time" name="endtime" placeholder="HH:MM" required />
+            <input type="time" name="endtime" placeholder="HH:MM"/>
           </div>
         </div>
 
@@ -98,12 +84,7 @@ ENTER YOUR DESCRIPTION</textarea
         <div class="container_form">
           <div id="plus" class="description">
             SELECT PHOTOGRAPHERS:<br /><br />
-            <input
-              id="search_input"
-              type="text"
-              name="photographer_search_field"
-              placeholder="SEARCH YOUR PHOTOGRAPHER"
-            />
+            <input id="search_input" type="text" name="photographer_search_field" placeholder="SEARCH YOUR PHOTOGRAPHER"/>
             <!-- found photographer -->
 
             <h3>FOUND PHOTOGRAPHERS</h3>
