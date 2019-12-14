@@ -70,7 +70,11 @@ async function openEvent(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
-        res.status(200).render("imagesEvent", {event: event, user: req.user})
+        let canPost = false;
+        if(req.user && req.user._id === id ){
+            canPost = true;
+        }
+        res.status(200).render("imagesEvent", {event: event, user: req.user, canPost: canPost})
     } catch (e) {
         if (e instanceof TypeError) {
             res.status(404).json({error: 'event not found'});

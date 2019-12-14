@@ -24,7 +24,7 @@ async function sendHomepage(req, res) {
 
 async function sendEvents(req,res){
     const events = await Event.find({privacy: 'public'});
-    console.log(events);
+    //console.log(events);
     res.status(200).json(events);
 }
 
