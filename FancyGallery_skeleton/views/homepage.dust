@@ -21,7 +21,7 @@
 
     <body>
 
-
+            <!-- header -->
             <nav class="navbar navbar-inverse navbar-fixed-top">
                     <div class="container ">
                         <div class="navbar-header navbarCharacterColor">
@@ -148,7 +148,7 @@
                 </div>
              </div>
 
-
+                <!-- footer -->
                    <footer class="footer-bs">
                         <div class="row">
                           <div class="col-md-6 footer-brand animated fadeInLeft">
