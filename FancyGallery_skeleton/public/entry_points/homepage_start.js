@@ -136,6 +136,7 @@ async function start(){
     const show_more_btn = document.getElementById('show_more_btn');
     show_more_btn.addEventListener('click',(e)=>show_more_manager.display());
 
+   
     //event open listen click
     const event_boxes = document.querySelectorAll(".event_box");
     event_boxes.forEach(box=>{
@@ -253,5 +254,5 @@ function filterUserEvent(e){
 
 setTimeout(()=>{
   start();
-},100)
+},10)
 
