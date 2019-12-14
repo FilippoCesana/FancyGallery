@@ -404,7 +404,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
 
 }
