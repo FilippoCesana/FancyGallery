@@ -78,6 +78,25 @@
 
 
 
+         <!-- footer -->
+    <footer class="footer-bs">
+        <div class="row">
+          <div class="col-md-6 footer-brand animated fadeInLeft">
+                <h2>FancyGallery</h2>
+                <p>A Fancy project done by some fancy Students for having a live gallery for your pictures of your event! Made with ♥ in Switzerland.</p>
+                <p>© 2019 SA Group, All rights reserved</p>
+           </div>
+            <div class="col-md-6 footer-social animated fadeInDown">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li><a href="#">Send us a mail</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+
+
 
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

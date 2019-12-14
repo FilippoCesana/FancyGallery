@@ -601,17 +601,6 @@ hr {
   color: white;
 }
 
-.container .row .col-lg-12 .content {
-  height: 200px;
-}
-
-
-
-
-.jumbotron .row .container .col-lg-2 .col-md-2 .col-sm-2 .col-xs-12 {
-  margin-left: 100px;
-}
-
 .switch {
   position: relative;
   display: inline-block;
