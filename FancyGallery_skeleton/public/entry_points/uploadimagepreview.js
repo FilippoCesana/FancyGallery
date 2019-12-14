@@ -43,4 +43,6 @@ function failedImage() {
 
 
 document.getElementById("button").addEventListener('click', e => {
-        doJSONRequest('POST', 'http://localhost:3000/event/{id}/image', {}, {dataURL : canvas.toDataURL()})});
+        const value = document.getElementById("event_id").value;
+        console.log(value);});
+        // doJSONRequest('POST', 'http://localhost:3000/event/addImage', {}, {dataURL : canvas.toDataURL(), eventId : value})});
