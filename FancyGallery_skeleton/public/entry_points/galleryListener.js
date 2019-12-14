@@ -6,7 +6,9 @@ if(document.getElementById("add_photo_btn")){
 }
 
 function upload(){
-window.location.href = "http://localhost:3000/event/addImage";
+        const value = document.getElementById("event_id").value;
+        console.log(button);
+        window.location.href = "http://localhost:3000/event/addImage?"+value;
 }
 
 //che cazzo deve fare se schiaccio bottone add image dentro una ga,llery

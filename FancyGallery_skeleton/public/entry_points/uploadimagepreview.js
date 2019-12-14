@@ -40,5 +40,7 @@ function failedImage() {
   console.error("File not loaded!");
 }
 
-document.getElementById("button")addEventListener('click', e => {
-        doJSONRequest('POST', 'event/{id}/image', {}, {dataURL : canvas.toDataURL()})};
+
+
+document.getElementById("button").addEventListener('click', e => {
+        doJSONRequest('POST', 'http://localhost:3000/event/{id}/image', {}, {dataURL : canvas.toDataURL()})});

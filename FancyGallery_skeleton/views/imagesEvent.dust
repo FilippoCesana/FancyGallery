@@ -58,6 +58,7 @@
                     <h1> {event.name} </h1>
                     <h3> {event.place} </h3>
                     <h3> {event.start} </h3>
+                    <input type="hidden" value={event._id} id="event_id">
                   </div>
                 </div>
         </div>
