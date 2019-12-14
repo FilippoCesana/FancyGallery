@@ -6,7 +6,7 @@ body {
 	background-position: center;
 	font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    background-color: white;
+    background-color: rgba(7, 7, 7, 0.931);
 }
 
 
@@ -61,7 +61,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
 }
 
@@ -96,7 +96,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
 
 }
@@ -110,7 +110,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
 
     /* background-color:#040a13;
@@ -361,7 +361,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
     /* text-shadow: 2px 2px 2px black,
     2px 2px 2px purple,
@@ -404,7 +404,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: bold;
     text-align:center;
-    text-shadow: 4px 4px 4px black;
+    /* text-shadow: 4px 4px 4px black; */
     color: white;
 
 }
@@ -513,12 +513,15 @@ input:focus{
 } */
 
 .container .page-header{
-    font-family: 'Montserrat', sans-serif;
-    color: #00ccff;
+    font-size: 40px;
+    color: #ccff00;
+    font-weight: lighter;
+    text-shadow: 0 0 10px #ccff00;
+    font-family: "Montserrat", sans-serif;
     /* text-shadow: rgb(170, 170, 170) 0px 0px 20px; */
-    text-shadow: 2px 2px 2px #ccff00,
+    /* text-shadow: 2px 2px 2px #ccff00,
     2px 2px 2px purple,
-    3px 2px 2px rgb(46, 47, 34);
+    3px 2px 2px rgb(46, 47, 34); */
 }
 
 .navbar-fixed-top, .navbar-fixed-bottom {
@@ -638,6 +641,8 @@ hr {
 
 #buttonLoggedCreate{
     margin-top: 10px;
+    height: 50px;
+    width: 300px;
     color: rgb(91, 224, 247);
     background-color: #00ccff;
     border-color: transparent;
@@ -650,6 +655,8 @@ hr {
 
 #buttonLoggedCreate:hover{
     color: #00ccff;
+    height: 50px;
+    width: 300px;
     background-color: #ccff00;
     box-shadow: 0 0 20px #ccff00;
     border-color: transparent;
@@ -663,6 +670,8 @@ hr {
 
 #buttonLoggedFilter{
     margin-top: 10px;
+    height: 50px;
+    width: 300px;
     color: rgb(91, 224, 247);
     background-color: #00ccff;
     border-color: transparent;
@@ -675,6 +684,8 @@ hr {
 
 #buttonLoggedFilter:hover{
     color: #00ccff;
+    height: 50px;
+    width: 300px;
     background-color: #ccff00;
     box-shadow: 0 0 20px #ccff00;
     border-color: transparent;
@@ -683,6 +694,10 @@ hr {
     font-weight: bold;
     text-align:center;
     color: white;
+}
+
+.container .row .col-lg-12 .content{
+    height:200px;
 }
 
 .jumbotron .col-xs-2 .btn{
@@ -698,6 +713,86 @@ hr {
     margin-right: 10px;
     /* margin-bottom: 10px; */
 }
+
+.jumbotron .row .container .col-lg-2 .col-md-2 .col-sm-2 .col-xs-12{
+    margin-left: 100px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  .switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #ccff00;
+    box-shadow: 0 0 10px #ccff00;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #ccff00;
+    box-shadow: 0 0 10px #ccff00;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+
+  .card .card-img-top{
+    margin-left: 20rem;
+} 
+
+.card .card-body .btn{
+    margin-left: 8rem;
+}
+
+.card .card-body .switch{
+    margin-left: 22rem;
+}
+
+
 
 
 /* .card{

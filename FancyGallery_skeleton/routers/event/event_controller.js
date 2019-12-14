@@ -105,24 +105,28 @@ async function findEventById(req, res) {
 async function addImage(req, res) {
     let event;
     try {
-        event = Event.findById(req.params.id);
+        event = await Event.findById(req.body.eventId);
     } catch (e) {
-        res.status(500).json({error: "Our bad"});
+        res.status(500).json({error: "Our badd"});
         return;
     }
 
+    //console.log("@@@@@@@@", event._id);
     if (!event) {
         res.status(404).json({error: "Event not found :p"});
         return;
     }
 
     if (!req.user) {
-        if (!(req.user._id === event.admin) || event.photographers.includes(req.user._id)) {
+        res.status(403).json({error: "Permission denied: user not logged"});
+        return;
+    }
+    else{
+        //|| event.photographers.includes(req.user._id)) TODO
+        if (!(req.user._id.equals(event.admin))) {
             res.status(403).json({error: "Permission denied"});
             return;
         }
-        res.status(403).json({error: "Permission denied"});
-        return ;
     }
 
 
@@ -132,11 +136,13 @@ async function addImage(req, res) {
             photographer: req.user._id
         });
         image = await image.save();
-        event.images.push(image).save();
+        await event.images.push(image._id);
+        event.save();
         //We grab all the sockets that are connected to the specific event and send the new image data
        // req.app.get('io').to(event._id).emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
+        console.log(e);
         res.status(500).json({error: "Our bad"});
     }
 
@@ -170,9 +176,19 @@ async function matchEvent(req, res) {
 }
 
 
-module.exports.createEvent = createEvent;
-module.exports.openEvent = openEvent;
-module.exports.findEvent = findEvent;
-module.exports.addImage = addImage;
+
+
+function filter(req,res) {
+    console.log(req.params.id);
+    res.end();
+}
+
+
+// module.exports.showMore   = showMore;
+module.exports.createEvent= createEvent;
+module.exports.openEvent  = openEvent;
+module.exports.findEvent  = findEvent;
+module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
+module.exports.filter      = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;

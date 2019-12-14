@@ -24,8 +24,16 @@ async function sendHomepage(req, res) {
 
 async function sendEvents(req,res){
     const events = await Event.find({privacy: 'public'});
-    //console.log(events);
-    res.status(200).json(events);
+    if(req.user){
+     
+        const user  = events.filter(event=>{
+            return event.admin === req.user._id;
+        });
+        res.status(200).json({events:events,user:user});
+    }else{
+        res.status(200).json({events:events,user:undefined});
+    }
+   
 }
 
 

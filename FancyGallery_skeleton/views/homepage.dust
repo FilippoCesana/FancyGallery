@@ -6,7 +6,6 @@
             <title>FancyGallery landing page</title>            <!--
             <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"> -->
 
-
             <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
             <link rel="stylesheet" type="text/css" href="/css/index.css">
             <!-- <link rel="stylesheet" type="text/css" href="/css/event.css"> -->
@@ -84,22 +83,43 @@
 
 
                 {?user}
-                <hr>
-                <div class="jumbotron">
-                    <div class="row">
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <button type="button" id="buttonLoggedCreate">Create Event</button></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 "></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"> <button type="button" id="buttonLoggedFilter">Filter My Events</button></div>
-                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2"></div>
-                    </div>
-                     
-                </div>
-                <hr>
+                
+    <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                        <hr>
+                        <div class="row">
+                            <div class="col-sm-6">
+                              <div class="card">
+                                  <img class="card-img-top" style="height: 10rem;"  src="/images/create.png" alt="Card image cap">
+                                <div class="card-body"> 
+                                    <button type="button" class="btn btn-primary" id="buttonLoggedCreate">Create New Event</button>
+                                </div>
+                                <hr>
+                              </div>
+                            </div>
+                            <div class="col-sm-6">
+                              <div class="card">
+                                  <img class="card-img-top" style="height: 10rem;" src="/images/filter.png" alt="Card image cap">
+                                <div class="card-body">   
+                                    <div class="makeMiniSpace" style="height: 2rem"></div>           
+                                        <label class="switch">
+                                                <input type="checkbox" id="filter_btn">
+                                                <span class="slider round"></span>
+                                        </label>
+                                </div>
+                                <hr>    
+                              </div>
+                            </div>
+                          </div>
+                </div>	
+            </div>
+        </div>
                 {:else}
                 <div></div>
                 {/user}
+
+                <div class="makeSpace3" style="height: 3rem"></div>
 
                 <div class="container">
                         <div class="page-header">
@@ -144,7 +164,6 @@
                             </div>
                         </div>
                     </footer>
-
 
 
 

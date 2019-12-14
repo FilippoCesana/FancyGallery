@@ -10,7 +10,7 @@ router.get('/search?', controller.findEvent);
 router.post('/create', controller.createEvent);
 router.get('/create', controller.sendEventCreateForm);
 
-router.post('/:id/image', controller.addImage);
+router.post('/addImage', controller.addImage);
 
 //jaco
 // router.get(/\/open\?id_event=[a-zA-Z0-9]+/, controller.openEvent);
@@ -18,6 +18,8 @@ router.get('/open/:id', controller.openEvent);
 // /search?event_name=Mio%20Evento
 
 router.get('/match?',controller.matchEvent)
+
+router.get('/filter',controller.filter);
 //fede
 //router.
 module.exports = router;
