@@ -34,11 +34,7 @@
                             <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-nav-demo">
-                            <ul class="nav navbar-nav">
-                                <!-- <li class="active"><a href="#">Home</a></li> -->
-                                <li><a href="#">About</a></li>
-                                <li><a href="#">Contact</a></li>
-                            </ul>
+                       
 
 
                             {?user}
@@ -91,7 +87,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                               <div class="card">
-                                  <img class="card-img-top" style="height: 10rem;"  src="/images/create.png" alt="Card image cap">
+                                  <img class="card-img-top" style="height: 13rem;"  src="/images/create_neon.png" alt="Card image cap">
                                 <div class="card-body"> 
                                     <button type="button" class="btn btn-primary" id="buttonLoggedCreate">Create New Event</button>
                                 </div>
@@ -100,7 +96,7 @@
                             </div>
                             <div class="col-sm-6">
                               <div class="card">
-                                  <img class="card-img-top" style="height: 10rem;" src="/images/filter.png" alt="Card image cap">
+                                  <img class="card-img-top" style="height: 13rem;" src="/images/filter_neon.png" alt="Card image cap">
                                 <div class="card-body">   
                                     <div class="makeMiniSpace" style="height: 2rem"></div>           
                                         <label class="switch">
