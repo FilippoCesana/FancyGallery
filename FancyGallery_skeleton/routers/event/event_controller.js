@@ -65,6 +65,74 @@ async function createEvent(req, res) {
 
 
 
+//ONLY FOR TESTING
+const photos = [
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+    {
+        id_image        : "1234IDIMAGE",
+        id_photographer : "testID",
+        timestamp       : "4:40",
+        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+    },
+]
+
+function formatDate(month,day,year){
+    const months = {
+        jan : "january",
+        feb : "february",
+        mar : "march",
+        apr : "april",
+        jun : "june",
+        jul : "july",
+        aug : "august",
+        sep : "september",
+        oct : "october",
+        nov : "november",
+        dec : "december",
+    }
+
+    
+
+    return  day + " " + months[month.toLowerCase()] + " " + year;
+}
+
+
+
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
@@ -80,6 +148,23 @@ async function openEvent(req, res) {
             canPost = true;
         }
         console.log(canPost);
+
+        const toFormat = event.start.toString().split(" ");
+        toFormat.shift()
+        const month = toFormat.shift();
+        const day = toFormat.shift();
+        const year = toFormat.shift();
+        event.start = formatDate(month,day,year);
+        // const model = {
+        //     event_detail : {},
+        //     photo_list   : photos
+        // }
+        // model.event_detail["name"]      = event.name;
+        // model.event_detail["place"]     = event.place;
+        // model.event_detail["timestamp"] = event.start;
+        // model.event_detail["data"]      = event.cover;
+        // model.event_detail
+        // res.status(200).render("imagesEvent",{model})
         res.status(200).render("imagesEvent", {event: event, user: req.user, canPost: canPost})
     } catch (e) {
         console.log(e)
