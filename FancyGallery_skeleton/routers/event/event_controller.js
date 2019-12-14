@@ -4,24 +4,24 @@ const User = require('../../dataModels/User');
 const Invite = require('../../dataModels/Invite');
 const mongoose = require('mongoose');
 
-async function showMore(req, res) {
-    const n = Number(req.url.split("=").pop());
-    const start = n * 3;
-    const end = (n + 1) * 3;
-    // console.log(start,end);
-
-    try {
-        let found = await Event.find({});
-        console.log(found)
-        found = found.slice(start, end);
-        res.status(200).json(found);
-
-
-    } catch (err) {
-        res.status(200).json(found)
-        throw err;
-    }
-}
+// async function showMore(req, res) {
+//     const n = Number(req.url.split("=").pop());
+//     const start = n * 3;
+//     const end = (n + 1) * 3;
+//     // console.log(start,end);
+//
+//     try {
+//         let found = await Event.find({});
+//         console.log(found)
+//         found = found.slice(start, end);
+//         res.status(200).json(found);
+//
+//
+//     } catch (err) {
+//         res.status(200).json(found)
+//         throw err;
+//     }
+// }
 
 //l'obbiettivo è aggiungere un nuovo evento al databse
 //ora non c'e ancora il db vedi se vuoi iniziare a setupparlo se no lo guardo io piu tardi senza problem
@@ -111,13 +111,48 @@ const photos = [
     },
 ]
 
+function formatDate(month,day,year){
+    const months = {
+        jan : "january",
+        feb : "february",
+        mar : "march",
+        apr : "april",
+        jun : "june",
+        jul : "july",
+        aug : "august",
+        sep : "september",
+        oct : "october",
+        nov : "november",
+        dec : "december",
+    }
+
+    
+
+    return  day + " " + months[month.toLowerCase()] + " " + year;
+}
+
+
 
 async function openEvent(req, res) {
     // res.render('imagesEvent', {});
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
+        //console.log(event)
+        let canPost = false;
+        if(req.user) {
+        }
+        if(req.user && req.user._id.equals(event.admin)){
+            canPost = true;
+        }
+        //console.log(canPost);
 
+        const toFormat = event.start.toString().split(" ");
+        toFormat.shift()
+        const month = toFormat.shift();
+        const day = toFormat.shift();
+        const year = toFormat.shift();
+        event.start = formatDate(month,day,year);
         // const model = {
         //     event_detail : {},
         //     photo_list   : photos
@@ -128,9 +163,11 @@ async function openEvent(req, res) {
         // model.event_detail["data"]      = event.cover;
         // model.event_detail
         // res.status(200).render("imagesEvent",{model})
-        res.status(200).render("imagesEvent",{event: event, user: req.user})
+        res.status(200).render("imagesEvent", {event: event, user: req.user, canPost: canPost})
     } catch (e) {
+        console.log(e)
         if (e instanceof TypeError) {
+
             res.status(404).json({error: 'event not found'});
         } else {
             res.status(500).json({error: 'server error'});
@@ -156,23 +193,40 @@ async function findEventById(req, res) {
 }
 
 
+async function sendImageAddForm(req, res){
+    // console.log(req.query.id);
+    // console.log("FFFFFFFFFFFFFFFFF");
+    res.status(200).render('picture_upload',{id: req.query.id});
+}
+
+
 async function addImage(req, res) {
     let event;
     try {
-        event = Event.findById(req.params.id);
+        event = await Event.findById(req.body.eventId);
     } catch (e) {
-        res.status(500).json({error: "Our bad"});
+        res.status(500).json({error: "Our badd"});
         return;
     }
 
+    //console.log("@@@@@@@@", event._id);
     if (!event) {
         res.status(404).json({error: "Event not found :p"});
         return;
     }
-    if (!(req.user._id === event.admin || event.photographers.includes(req.user._id))) {
-        res.status(403).json({error: "Permission denied"});
+
+    if (!req.user) {
+        res.status(403).json({error: "Permission denied: user not logged"});
         return;
     }
+    else{
+        //|| event.photographers.includes(req.user._id)) TODO
+        if (!(req.user._id.equals(event.admin))) {
+            res.status(403).json({error: "Permission denied"});
+            return;
+        }
+    }
+
 
     try {
         let image = new Image({
@@ -180,50 +234,62 @@ async function addImage(req, res) {
             photographer: req.user._id
         });
         image = await image.save();
-        event.images.push(image).save();
+        await event.images.push(image._id);
+        event.save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-        req.app.get('io').to(event._id).emit('newImage', image);
+       // req.app.get('io').to(event._id).emit('newImage', image);
         res.status(201).json(image);
     } catch (e) {
+        console.log(e);
         res.status(500).json({error: "Our bad"});
     }
 
 }
 
 
-async function modifyEvent(req, res){
-const event = Event.findById(req.params.id);
+async function modifyEvent(req, res) {
+    const event = Event.findById(req.params.id);
 
 }
 
+
+function sendEventCreateForm(req, res){
+    res.status(200).render('new_gallery', {user:req.user});
+}
 
 async function matchEvent(req, res) {
     try {
         const regex = new RegExp(req.query.name, 'i')
         let events;
-        if(req.query.name) {
-           events = await Event.find({name: {$regex: regex}}).limit(20).lean();
+        if (req.query.name) {
+            events = await Event.find({name: {$regex: regex}}).limit(20).lean();
         } else {
             events = await Event.find({}).limit(20).lean();
         }
         res.status(200).json(events);
-        console.log(events.length)
+        //console.log(events.length)
     } catch (e) {
         res.status(500).json({error: "Our bad"})
     }
 }
 
 
-function filter(req,res){
+
+
+function filter(req,res) {
     console.log(req.params.id);
     res.end();
 }
 
 
-module.exports.showMore   = showMore;
+
+// module.exports.showMore   = showMore;
 module.exports.createEvent= createEvent;
 module.exports.openEvent  = openEvent;
 module.exports.findEvent  = findEvent;
 module.exports.addImage   = addImage;
 module.exports.matchEvent = matchEvent;
 module.exports.filter      = filter;
+module.exports.sendEventCreateForm = sendEventCreateForm;
+module.exports.sendImageAddForm = sendImageAddForm;
+

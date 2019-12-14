@@ -59,7 +59,10 @@
 
 			<!-- <input id="button" type="submit" name="new" value="OK" /> -->
 			<button id="button" name="submit">OK</button>
-
+			
+			{?id}
+			<input type="hidden" value="{id}" id="event_id"> </input>
+			{/id}
 	</div>
 <!--
 	<br><br><br>
