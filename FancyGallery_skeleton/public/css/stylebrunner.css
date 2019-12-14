@@ -110,11 +110,27 @@ h1 {
   font-family: "Montserrat", sans-serif;
 }
 
+.container .page-header .event-description h1 {
+  font-size: 40px;
+  color: #ccff00;
+  font-weight: lighter;
+  text-shadow: 0 0 10px #ccff00;
+  font-family: "Montserrat", sans-serif;
+}
+
 h3 {
   font-size: 20px;
   color: #ccff00;
   font-weight: lighter;
   text-shadow: 0 0 10px #ccff00;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container .page-header .event-description h1 {
+  font-size: 20px;
+  color: #00ccff;
+  font-weight: lighter;
+  text-shadow: 0 0 10px #00ccff;
   font-family: "Montserrat", sans-serif;
 }
 
