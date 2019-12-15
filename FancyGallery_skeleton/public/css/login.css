@@ -32,7 +32,7 @@ body {
   background-color: #00ccff;
   text-align: center;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: lighter;
   color: white;
   font-family: "Montserrat", sans-serif;
 }
@@ -55,7 +55,7 @@ body {
   background-color: #00ccff;
   text-align: center;
   font-size: 1em;
-  font-weight: bold;
+  font-weight: lighter;
   color: white;
   font-family: "Montserrat", sans-serif;
 }
@@ -148,7 +148,7 @@ select {
   border-color: black;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
   padding: 1px 7px 2px;
@@ -5899,13 +5899,13 @@ a.list-group-item-info .list-group-item-heading,
 button.list-group-item-info .list-group-item-heading {
   color: inherit;
 }
-/* a.list-group-item-info:hover,
+a.list-group-item-info:hover,
 button.list-group-item-info:hover,
 a.list-group-item-info:focus,
 button.list-group-item-info:focus {
   color: #31708f;
   background-color: #c4e3f3;
-} */
+}
 a.list-group-item-info.active,
 button.list-group-item-info.active,
 a.list-group-item-info.active:hover,
