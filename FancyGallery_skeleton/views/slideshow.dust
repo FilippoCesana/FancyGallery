@@ -29,16 +29,18 @@
           </ol>
 
           <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-
-            <div class="item">
-                 <div id="photoGallery">
-                            {#photo_list}
-                                {> "partials/image" id_photographer=id_photographer id_image=id_image timestamp=timestamp dataURL=dataURL /}
-                            {/photo_list}
-                        </div>
+          <div class="container .fluid">
+              <div class="row">
+                      <div class="col-sm-12">
+                  <div id="photoGallery">
+                      {#event.images}
+                          {> "partials/slide" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
+                      {/event.images}
+              <div id="open_event_box" class="hidden">  </div>
               </div>
-            </div>
+              </div>
+          </div>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
