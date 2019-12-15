@@ -6,46 +6,11 @@
 	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="../css/stylebrunner.css" />
+	<link rel="stylesheet" type="text/css" href="../css/index.css" />
     <link rel="stylesheet" type="text/css" href="../css/login.css" />
 
 </head>
 <body>
-
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container ">
-		  <div class="navbar-header navbarCharacterColor">
-			<button
-			  type="button"
-			  class="navbar-toggle collapsed"
-			  data-toggle="collapse"
-			  data-target="#bs-nav-demo"
-			  aria-expanded="false"
-			>
-			  <span class="sr-only">Toggle navigation</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			<a href="homepage.html" class="navbar-brand"
-			  ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
-			>
-		  </div>
-		  <div class="collapse navbar-collapse" id="bs-nav-demo">
-			
-			<ul class="nav navbar-nav navbar-right">
-			  <li><button id="sign_up_btn">Sign up</button></li>
-			  <li><div class="makeSpaceNav"></div></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-			  <li><div class="makeSpaceNav"></div></li>
-			  <li><button id="login_btn" href="">Login</button></li>
-			</ul>
-		  </div>
-		</div>
-	  </nav>
-  
-	  <br /><br /><br />
 	<nav class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container ">
 			<div class="navbar-header navbarCharacterColor">
@@ -55,7 +20,7 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+				<a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
 			</div>
 			<div class="collapse navbar-collapse" id="bs-nav-demo">
 				<ul class="nav navbar-nav">
@@ -66,51 +31,47 @@
 					<li> <div class="makeSpaceNav"></div></li>
 					<li><button id="log_out_btn" href="">Logout</button></li>
 				</ul>
-
-				{:else}
-				<!-- da far vedere se non loggato -->
-				  <ul class="nav navbar-nav navbar-right">
-					  <li><button id="sign_in_btn">Sign up</button></li>
-					  <li> <div class="makeSpaceNav"></div></li>
-				  </ul>
-				  <ul class="nav navbar-nav navbar-right">
-					  <li> <div class="makeSpaceNav"></div></li>
-					  <li><button id="log_in_btn" href="">Login</button></li>
-				  </ul>
-
 				{/user}
 			</div>
 		</div>
 	</nav>
+
 	<br><br><br>
-	<div class="container_form_big">
-		<h1>UPLOAD A PICTURE</h1>
-	  <form>
 
-			<div class="container_form">
-					<div class="description">TAKE PICTURE:</div>
-					<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" id="imageUpload"></div>
+	<div class="container">
+		<div clas="jumbotron">
+			<div class="container_form_big">
+				<h1 id = "h1">UPLOAD A PICTURE</h1>
+			  <form>
+
+					<div class="container_form">
+							<div class="description">TAKE PICTURE:</div>
+							<div class="input_field"><input type="file" accept="image/*" capture="camera" name="ImageToUpload" id="imageUpload"></div>
+					</div>
+				</form>
+
+					<hr>
+
+					<div class="container_form">
+			        <div class="description">PREVIEW:</div>
+			        <div class="input_field"><canvas id="canvas"> </canvas></div>
+			    </div>
+
+					<hr>
+
+					<br>
+
+					<!-- <input id="button" type="submit" name="new" value="OK" /> -->
+					<button id="button" name="submit">OK</button>
+
+					{?id}
+					<input type="hidden" value="{id}" id="event_id"> </input>
+					{/id}
 			</div>
-		</form>
-
-			<hr>
-
-			<div class="container_form">
-	        <div class="description">PREVIEW:</div>
-	        <div class="input_field"><canvas id="canvas"> </canvas></div>
-	    </div>
-
-			<hr>
-
-			<br>
-
-			<!-- <input id="button" type="submit" name="new" value="OK" /> -->
-			<button id="button" name="submit">OK</button>
-			
-			{?id}
-			<input type="hidden" value="{id}" id="event_id"> </input>
-			{/id}
+		</div>
 	</div>
+
+	<br><br><br>
 	<br><br><br>
 
 <!--footer-->

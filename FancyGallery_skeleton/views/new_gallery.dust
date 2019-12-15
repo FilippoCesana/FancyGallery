@@ -3,15 +3,13 @@
   <head>
     <title>New Gallery</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
     <!-- // per gestire la ricerca fotografi -->
     <script src="/entry_points/fetch.js"></script>
     <script src="/entry_points/newevent.js"></script>
   </head>
   <body>
-
-     <!--navbar-->
      <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container ">
         <div class="navbar-header navbarCharacterColor">
@@ -21,124 +19,127 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="/" class="navbar-brand"
-            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
-          >
+          <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
         </div>
       </div>
     </nav>
+
     <br /><br /><br />
 
-    <div class="container_form_big">
-      <h1>CREATE NEW EVENT</h1>
-      <form method="POST" action="/event/create">
-        <div class="container_form">
-          <div class="description">EVENT NAME:</div>
-          <div class="input_field">
-            <input type="text" name="name" placeholder="EVENT NAME" required />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="container_form">
-          <div class="description">EVENT LOCATION:</div>
-          <div class="input_field">
-            <input type="text" name="place" placeholder="EVENT LOCATION" required />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="container_form">
-          <div class="description">EVENT DESCRIPTION:</div>
-          <div class="input_field">
-            <textarea name="Comments" rows="2" cols="60">ENTER YOUR DESCRIPTION</textarea><br />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="container_form">
-          <div class="description">
-            START DATE:
-            <input type="date" name="startdate" placeholder="DD/MM/YYYY" required/><br />
-            START TIME:
-            <input type="time" name="starttime" placeholder="HH:MM" />
-          </div>
-
-          <div class="input_field">
-            END DATE:
-            <input type="date" name="enddate" placeholder="DD/MM/YYYY" required /><br />
-            END TIME:
-            <input type="time" name="endtime" placeholder="HH:MM" />
-          </div>
-        </div>
-
-        <hr/>
-
-        <div class="container_form">
-          <div class="description">SELECT PRIVATNESS:</div>
-          <div class="input_field">
-            <input type="radio" name="Privatness" value="PUBLIC" checked />
-            PUBLIC<br />
-            <input type="radio" name="Privatness" value="HIDDEN" /> HIDDEN<br />
-          </div>
-        </div>
-
-        <hr/>
-
-        <div class="container_form">
-          <div id="plus" class="description">
-            SELECT PHOTOGRAPHERS:<br /><br />
-            <input id="search_input" type="text" name="photographer_search_field" placeholder="SEARCH YOUR PHOTOGRAPHER"/>
-            <!-- found photographer -->
-
-            <h3>FOUND PHOTOGRAPHERS</h3>
-            <div id="search_result">
-              {#foundphotographers} {>"partials/part_photographers_search" /}
-              {:else}
-              <p>No photographers found.</p>
-              {/foundphotographers}
+    <div class="container">
+      <div clas="jumbotron">
+        <div class="container_form_big">
+          <h1 id = "h1">CREATE NEW EVENT</h1>
+          <form method="POST" action="/event/create">
+            <div class="container_form">
+              <div class="description">EVENT NAME:</div>
+              <div class="input_field">
+                <input type="text" name="name" placeholder="EVENT NAME" required />
+              </div>
             </div>
-          </div>
 
-          <div id="minus" class="input_field">
-            <!-- checked photographer -->
-            <h3>SELECTED PHOTOGRAPHERS</h3>
-            <div id="selected_photographers">
-              {#checkedphotographers} {>"partials/part_photographers_checked" /}
-              {:else}
-              <p>No photographers selected.</p>
-              {/checkedphotographers}
+            <hr />
+
+            <div class="container_form">
+              <div class="description">EVENT LOCATION:</div>
+              <div class="input_field">
+                <input type="text" name="place" placeholder="EVENT LOCATION" required />
+              </div>
             </div>
-          </div>
+
+            <hr />
+
+            <div class="container_form">
+              <div class="description">EVENT DESCRIPTION:</div>
+              <div class="input_field">
+                <textarea name="Comments" rows="2" cols="60">ENTER YOUR DESCRIPTION</textarea><br />
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="container_form">
+              <div class="description">
+                START DATE:
+                <input type="date" name="startdate" placeholder="DD/MM/YYYY" required/><br />
+                START TIME:
+                <input type="time" name="starttime" placeholder="HH:MM" />
+              </div>
+
+              <div class="input_field">
+                END DATE:
+                <input type="date" name="enddate" placeholder="DD/MM/YYYY" required /><br />
+                END TIME:
+                <input type="time" name="endtime" placeholder="HH:MM" />
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="container_form">
+              <div class="description">SELECT PRIVATNESS:</div>
+              <div class="input_field">
+                <input type="radio" name="Privatness" value="PUBLIC" checked />
+                PUBLIC<br />
+                <input type="radio" name="Privatness" value="HIDDEN" /> HIDDEN<br />
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="container_form">
+              <div id="plus" class="description">
+                SELECT PHOTOGRAPHERS:<br /><br />
+                <input id="search_input" type="text" name="photographer_search_field" placeholder="SEARCH YOUR PHOTOGRAPHER"/>
+                <!-- found photographer -->
+
+                <h3>FOUND PHOTOGRAPHERS</h3>
+                <div id="search_result">
+                  {#foundphotographers} {>"partials/part_photographers_search" /}
+                  {:else}
+                  <p>No photographers found.</p>
+                  {/foundphotographers}
+                </div>
+              </div>
+
+              <div id="minus" class="input_field">
+                <!-- checked photographer -->
+                <h3>SELECTED PHOTOGRAPHERS</h3>
+                <div id="selected_photographers">
+                  {#checkedphotographers} {>"partials/part_photographers_checked" /}
+                  {:else}
+                  <p>No photographers selected.</p>
+                  {/checkedphotographers}
+                </div>
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="container_form">
+              <div class="description">UPLOAD THE WATERMARK:</div>
+              <div class="input_field">
+                <input type="file" name="WatermarkToUpload" />
+              </div>
+            </div>
+
+            <hr />
+
+            <div class="container_form">
+              <div class="description">UPLOAD THE COVER IMAGE:</div>
+              <div class="input_field">
+                <input type="file" name="CoverImageToUpload" />
+              </div>
+            </div>
+
+            <hr />
+
+            <br />
+
+            <input id="button" type="submit" name="new" value="CREATE GALLERY!" />
+          </form>
         </div>
-
-        <hr />
-
-        <div class="container_form">
-          <div class="description">UPLOAD THE WATERMARK:</div>
-          <div class="input_field">
-            <input type="file" name="WatermarkToUpload" />
-          </div>
-        </div>
-
-        <hr />
-
-        <div class="container_form">
-          <div class="description">UPLOAD THE COVER IMAGE:</div>
-          <div class="input_field">
-            <input type="file" name="CoverImageToUpload" />
-          </div>
-        </div>
-
-        <hr />
-
-        <br />
-
-        <input id="button" type="submit" name="new" value="CREATE GALLERY!" />
-      </form>
+      </div>
     </div>
       <!-- footer -->
       <footer class="footer-bs">
