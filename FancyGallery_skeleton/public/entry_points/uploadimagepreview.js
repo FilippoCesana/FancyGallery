@@ -42,7 +42,19 @@ function failedImage() {
 
 
 
-document.getElementById("button").addEventListener('click', e => {
-        const value = document.getElementById("event_id").value;
-        
-        doJSONRequest('POST', 'http://localhost:3000/event/addImage', {}, {dataURL :JSON.stringify(canvas.toDataURL()), eventId : value})});
+document.getElementById("button").addEventListener('click', async (e) => {
+      const value = document.getElementById("event_id").value;
+      console.log(value, value.length);
+      // await doFetchRequest('POST', 'http://localhost:3000/event/addImage', {}, {
+      //   dataURL: canvas.toDataURL(),
+      //   eventId: value
+      // })
+
+      const options = {
+        method: "POST",
+        body: {dataURL: canvas.toDataURL(), eventId: value}
+      };
+
+      await fetch('http://localhost:3000/event/addImage', options);
+      window.location.href = "http://localhost:3000/event/open/" + value;
+    })

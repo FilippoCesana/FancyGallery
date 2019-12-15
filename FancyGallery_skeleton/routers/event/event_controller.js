@@ -64,73 +64,70 @@ async function createEvent(req, res) {
 }
 
 
-
 //ONLY FOR TESTING
 const photos = [
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
     {
-        id_image        : "1234IDIMAGE",
-        id_photographer : "testID",
-        timestamp       : "4:40",
-        dataURL         : "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
+        id_image: "1234IDIMAGE",
+        id_photographer: "testID",
+        timestamp: "4:40",
+        dataURL: "https://homepages.cae.wisc.edu/~ece533/images/goldhill.png"
     },
 ]
 
-function formatDate(month,day,year){
+function formatDate(month, day, year) {
     const months = {
-        jan : "january",
-        feb : "february",
-        mar : "march",
-        apr : "april",
-        jun : "june",
-        jul : "july",
-        aug : "august",
-        sep : "september",
-        oct : "october",
-        nov : "november",
-        dec : "december",
+        jan: "january",
+        feb: "february",
+        mar: "march",
+        apr: "april",
+        jun: "june",
+        jul: "july",
+        aug: "august",
+        sep: "september",
+        oct: "october",
+        nov: "november",
+        dec: "december",
     }
 
-    
 
-    return  day + " " + months[month.toLowerCase()] + " " + year;
+    return day + " " + months[month.toLowerCase()] + " " + year;
 }
-
 
 
 async function openEvent(req, res) {
@@ -140,9 +137,9 @@ async function openEvent(req, res) {
         const event = await Event.findById(id).populate('images').lean();
         //console.log(event)
         let canPost = false;
-        if(req.user) {
+        if (req.user) {
         }
-        if(req.user && req.user._id.equals(event.admin)){
+        if (req.user && req.user._id.equals(event.admin)) {
             canPost = true;
         }
         //console.log(canPost);
@@ -152,7 +149,7 @@ async function openEvent(req, res) {
         const month = toFormat.shift();
         const day = toFormat.shift();
         const year = toFormat.shift();
-        event.start = formatDate(month,day,year);
+        event.start = formatDate(month, day, year);
         // const model = {
         //     event_detail : {},
         //     photo_list   : photos
@@ -193,10 +190,10 @@ async function findEventById(req, res) {
 }
 
 
-async function sendImageAddForm(req, res){
+async function sendImageAddForm(req, res) {
     // console.log(req.query.id);
     // console.log("FFFFFFFFFFFFFFFFF");
-    res.status(200).render('picture_upload',{id: req.query.id});
+    res.status(200).render('picture_upload', {id: req.query.id});
 }
 
 
@@ -212,14 +209,16 @@ async function addImage(req, res) {
     //console.log("@@@@@@@@", event._id);
     if (!event) {
         res.status(404).json({error: "Event not found :p"});
+        console.log("THIS404");
+        console.log(req.body.eventId);
+        console.log(req.body.dataURL);
         return;
     }
 
     if (!req.user) {
         res.status(403).json({error: "Permission denied: user not logged"});
         return;
-    }
-    else{
+    } else {
         //|| event.photographers.includes(req.user._id)) TODO
         if (!(req.user._id.equals(event.admin))) {
             res.status(403).json({error: "Permission denied"});
@@ -237,8 +236,15 @@ async function addImage(req, res) {
         await event.images.push(image._id);
         event.save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-       // req.app.get('io').to(event._id).emit('newImage', image);
-        res.status(201).json(image);
+        // req.app.get('io').to(event._id).emit('newImage', image);
+        if (req.accepts('text/html')) {
+            res.redirect('/event/open/' + req.body.eventId);
+        } else {
+            res.redirect('/event/open/' + req.body.eventId);
+            //res.status(201).json(image); //TODO
+        }
+
+
     } catch (e) {
         console.log(e);
         res.status(500).json({error: "Our bad"});
@@ -253,8 +259,8 @@ async function modifyEvent(req, res) {
 }
 
 
-function sendEventCreateForm(req, res){
-    res.status(200).render('new_gallery', {user:req.user});
+function sendEventCreateForm(req, res) {
+    res.status(200).render('new_gallery', {user: req.user});
 }
 
 async function matchEvent(req, res) {
@@ -274,22 +280,19 @@ async function matchEvent(req, res) {
 }
 
 
-
-
-function filter(req,res) {
+function filter(req, res) {
     console.log(req.params.id);
     res.end();
 }
 
 
-
 // module.exports.showMore   = showMore;
-module.exports.createEvent= createEvent;
-module.exports.openEvent  = openEvent;
-module.exports.findEvent  = findEvent;
-module.exports.addImage   = addImage;
+module.exports.createEvent = createEvent;
+module.exports.openEvent = openEvent;
+module.exports.findEvent = findEvent;
+module.exports.addImage = addImage;
 module.exports.matchEvent = matchEvent;
-module.exports.filter      = filter;
+module.exports.filter = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
 module.exports.sendImageAddForm = sendImageAddForm;
 
