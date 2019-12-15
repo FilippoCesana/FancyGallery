@@ -1384,11 +1384,14 @@ html {
 
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+#h1{
+  color:#ccff00;
+}
 body {
   /* font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; */
   font-size: 20px;
   line-height: 1.42857143;
-  color: #333;
+  
   background-color: #fff;
 }
 input,
@@ -1487,7 +1490,7 @@ h6,
 .h5,
 .h6 {
   font-family: inherit;
-  font-weight: 500;
+
   line-height: 1.1;
   color: inherit;
 }
