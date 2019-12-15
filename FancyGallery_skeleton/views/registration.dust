@@ -7,8 +7,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="../css/stylebrunner.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="../public/css/index.css" />
 
     <!-- // per gestire la ricerca fotografi -->
     <!-- <script src="script.js"></script> -->
@@ -35,11 +35,6 @@
           >
         </div>
         <div class="collapse navbar-collapse" id="bs-nav-demo">
-          <ul class="nav navbar-nav">
-            <!-- <li class="active"><a href="#">Home</a></li> -->
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><button id="sign_up_btn">Sign up</button></li>
             <li><div class="makeSpaceNav"></div></li>

@@ -144,7 +144,7 @@ select {
 #login_btn {
   margin-top: 10px;
   color: rgb(91, 224, 247);
-  background-color: #00ccff;
+  /* background-color: #00ccff; */
   border-color: black;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
@@ -156,15 +156,28 @@ select {
   border-style: solid;
   display: inline-block;
 }
-#sign_up_btn :hover {
-  color: #fff;
-  background-color: #3c763d;
-  border-color: #3c763d;
+#log_in_btn:hover {
+  color: #00ccff;
+  background-color: #ccff00;
+  box-shadow: 0 0 20px #ccff00;
+  border-color: transparent;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
-#login_btn :hover {
-  color: #fff;
-  background-color: #3c763d;
-  border-color: #3c763d;
+
+#sign_in_btn:hover {
+  color: #00ccff;
+  background-color: #ccff00;
+  box-shadow: 0 0 20px #ccff00;
+  border-color: transparent;
+  overflow: hidden;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: white;
 }
 
 .description img {
