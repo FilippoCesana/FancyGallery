@@ -11,6 +11,10 @@ function upload(){
         window.location.href = "http://localhost:3000/event/addImage?id="+value;
 }
 
+
+
+
+
 //che cazzo deve fare se schiaccio bottone add image dentro una ga,llery
 
 
