@@ -71,7 +71,7 @@
     <footer class="footer-bs">
       <div class="row">
         <div class="col-md-6 footer-brand animated fadeInLeft">
-          <h2>FancyGallery</h2>
+          <h2 id = "h2">FancyGallery</h2>
           <p>
             A Fancy project done by some fancy Students for having a live
             gallery for your pictures of your event! Made with ♥ in Switzerland.

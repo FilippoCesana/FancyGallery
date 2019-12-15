@@ -3,6 +3,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 20px;
   background-color: rgba(7, 7, 7, 0.931);
+  font-weight: lighter;
 }
 
 .content {
@@ -454,6 +455,7 @@ hr {
 }
 .footer-bs .footer-brand h2 {
   margin: 0px 0px 10px;
+  font-weight: lighter;
 }
 .footer-bs .footer-brand p {
   font-size: 8px;
@@ -470,7 +472,7 @@ hr {
 }
 .footer-bs .footer-nav ul.pages a {
   color: rgba(255, 255, 255, 1);
-  font-weight: bold;
+  font-weight: lighter;
   text-transform: uppercase;
 }
 .footer-bs .footer-nav ul.pages a:hover {

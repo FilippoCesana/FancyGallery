@@ -74,7 +74,6 @@
                       {/event.images}
               <div id="open_event_box" class="hidden">  </div>
               </div>
-<<<<<<< HEAD
             </div>
             <br />
             <br />
@@ -99,11 +98,6 @@
                 </div>
               </div>
             </footer>
-=======
-              </div>
-          </div>
-      </div>
->>>>>>> 55c7947c301f4e87bb71d7b914ad20529ffd07d5
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

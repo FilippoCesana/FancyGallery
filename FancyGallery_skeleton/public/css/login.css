@@ -535,6 +535,9 @@ th {
   h3 {
     page-break-after: avoid;
   }
+  #h2{
+    font-weight: lighter;
+  }
   .navbar {
     display: none;
   }
@@ -1492,7 +1495,7 @@ h6,
   font-family: inherit;
 
   line-height: 1.1;
-  color: inherit;
+  
 }
 h1 small,
 h2 small,
@@ -7487,7 +7490,7 @@ button.close {
 }
 .footer-bs .footer-nav ul.pages a {
   color: rgba(255, 255, 255, 1);
-  font-weight: bold;
+  font-weight: lighter;
   text-transform: uppercase;
 }
 .footer-bs .footer-nav ul.pages a:hover {
@@ -7525,6 +7528,9 @@ button.close {
   font-size: 8px;
   text-transform: uppercase;
   letter-spacing: 3px;
+}
+.footer-bs .footer-social h2 {
+  font-weight: lighter;
 }
 .footer-bs .footer-social li {
   padding: 5px 4px;
