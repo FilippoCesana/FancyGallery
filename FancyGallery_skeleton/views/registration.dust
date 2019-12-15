@@ -1,85 +1,138 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Sign up</title>
-	<!-- //da prendere quello giusto -->
+  <head>
+    <title>Sign up</title>
+    <!-- //da prendere quello giusto -->
 
-	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylebrunner.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
 
-	<!-- // per gestire la ricerca fotografi -->
-<!-- <script src="script.js"></script> -->
-</head>
-<body>
+    <!-- // per gestire la ricerca fotografi -->
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
+    <!--navbar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="homepage.html" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br />
+    <div class="container_form_big">
+      <h1>SIGN UP</h1>
+      <form method="POST" action="">
+        <div class="container_form">
+          <div class="description">NAME, SURNAME:</div>
+          <div class="input_field">
+            <input
+              type="text"
+              name="nameSurname"
+              id="nameSurname"
+              placeholder="NAME, SURNAME"
+              required
+            />
+          </div>
+        </div>
 
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container ">
-			<div class="navbar-header navbarCharacterColor">
-			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-			<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Sign up</a></li>
-					<li><a href="#">Login</a></li>
-			</ul>
-			</div>
-			</div>
-	</nav>
+        <hr />
 
-	<br><br><br> -->
-<div class="container_form_big">
-	<h1>SIGN UP</h1>
-  <form method="POST" action="">
+        <div class="container_form">
+          <div class="description">USERNAME:</div>
+          <div class="input_field">
+            <input
+              type="text"
+              name="username"
+              id="username"
+              placeholder="USERNAME"
+              required
+            />
+          </div>
+        </div>
 
-		<div class="container_form">
-			<div class="description">NAME, SURNAME:</div>
-			<div class="input_field"><input type="text" name="nameSurname" id="nameSurname" placeholder="NAME, SURNAME" required></div>
-		</div>
+        <hr />
 
-		<hr>
+        <div class="container_form">
+          <div class="description">E-MAIL:</div>
+          <div class="input_field">
+            <input
+              type="email"
+              id="email"
+              placeholder="ENTER YOUR E-MAIL"
+              required
+            />
+          </div>
+        </div>
 
-		<div class="container_form">
-			<div class="description">USERNAME:</div>
-			<div class="input_field"><input type="text" name="username" id="username" placeholder="USERNAME" required></div>
-		</div>
+        <hr />
 
-		<hr>
+        <div class="container_form">
+          <div class="description">PASSWORD (8 characters minimum):</div>
+          <div class="input_field">
+            <input
+              type="password"
+              name="password"
+              id="password"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
 
-		<div class="container_form">
-			<div class="description">E-MAIL:</div>
-			<div class="input_field"><input type="email" id="email" placeholder="ENTER YOUR E-MAIL" required></div>
-		</div>
+        <div class="container_form">
+          <div class="description">
+            CONFIRM PASSWORD (8 characters minimum):
+          </div>
+          <div class="input_field">
+            <input
+              type="password"
+              name="confirm_password"
+              id="confirm_password"
+              minlength="8"
+              required
+            />
+          </div>
+        </div>
 
-		<hr>
+        <div class="container_form" id="message"></div>
 
-		<div class="container_form">
-			<div class="description">PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="password" id="password" minlength="8" required></div>
-		</div>
+        <hr />
 
-		<div class="container_form">
-			<div class="description">CONFIRM PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="confirm_password" id="confirm_password" minlength="8" required></div>
-		</div>
-
-		<div class="container_form" id='message'></div>
-
-		<hr>
-
-		<!-- test -->
-		<!-- <label>password :
+        <!-- test -->
+        <!-- <label>password :
 		  <input name="password" id="password" type="password" onkeyup='check();' />
 		</label>
 		<br>
@@ -87,21 +140,33 @@
 		  <input type="password" name="confirm_password" id="confirm_password"  onkeyup='check();' />
 		  <span id='message'></span>
 		</label> -->
-	<!-- test -->
+        <!-- test -->
 
-		<br>
+        <br />
 
-		<input id="button" type="submit" name="new" value="LOGIN" />
+        <input id="button" type="submit" name="new" value="LOGIN" />
+      </form>
+    </div>
+    <!-- footer -->
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-6 footer-brand animated fadeInLeft">
+          <h2>FancyGallery</h2>
+          <p>
+            A Fancy project done by some fancy Students for having a live
+            gallery for your pictures of your event! Made with ♥ in Switzerland.
+          </p>
+          <p>© 2019 SA Group, All rights reserved</p>
+        </div>
+        <div class="col-md-6 footer-social animated fadeInDown">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Send us a mail</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
 
-	</form>
-</div>
-<!--
-	<br><br><br>
-	<div class="footer navbar-fixed-bottom">
-	        <h5> all rights reserved @FancyGallery</h5>
-	</div> -->
-
-		<script src="/entry_points/checkpassword.js"></script>
-
-</body>
+    <script src="/entry_points/checkpassword.js"></script>
+  </body>
 </html>

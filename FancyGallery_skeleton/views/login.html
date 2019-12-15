@@ -1,79 +1,123 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Login</title>
-	<!-- //da prendere quello giusto -->
+  <head>
+    <title>Login</title>
+    <!-- //da prendere quello giusto -->
 
-	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css"> 
-	<!-- <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">  -->
-	
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">  -->
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/nav_foot.css"> -->
 
-	<!-- // per gestire la ricerca fotografi -->
-<!-- <script src="script.js"></script> -->
-</head>
-<body>
+    <!-- // per gestire la ricerca fotografi -->
+    <!-- <script src="script.js"></script> -->
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="homepage.html" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br />
 
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container ">
-			<div class="navbar-header navbarCharacterColor">
-			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-			<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Sign up</a></li>
-					<li><a href="#">Login</a></li>
-			</ul>
-			</div>
-			</div>
-	</nav>
+    <div class="container">
+      <div clas="jumbotron">
+        <div class="container_form_big">
+          <h1>LOGIN</h1>
+          <hr />
+          <form method="" action="">
+            <div class="container_form">
+              <div class="description">USERNAME:</div>
+              <div class="input_field">
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="USERNAME"
+                  required
+                />
+              </div>
+            </div>
 
-	<br><br><br> -->
+            <hr />
 
-<div class="container">
-	<div clas="jumbotron">
-<div class="container_form_big">
-	<h1>LOGIN</h1>
-	<hr>
-  <form method="" action="">
-		<div class="container_form">
-			<div class="description">USERNAME:</div>
-			<div class="input_field"><input type="text" name="username" id="username" placeholder="USERNAME" required></div>
-		</div>
+            <div class="container_form">
+              <div class="description">PASSWORD (8 characters minimum):</div>
+              <div class="input_field">
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  minlength="8"
+                  required
+                />
+              </div>
+            </div>
 
-		<hr>
+            <hr />
 
-		<div class="container_form">
-			<div class="description">PASSWORD (8 characters minimum):</div>
-			<div class="input_field"><input type="password" name="password" id="password" minlength="8" required></div>
-		</div>
+            <br />
 
-		<hr>
+            <input id="button" type="submit" name="new" value="LOGIN" />
+          </form>
+        </div>
+      </div>
+    </div>
+    <br />
+    <br />
+    <br />
 
-		<br>
-
-		<input id="button" type="submit" name="new" value="LOGIN" />
-
-	</form>
-</div>
-</div>
-</div>
-<!--
-	<br><br><br>
-	<div class="footer navbar-fixed-bottom">
-	        <h5> all rights reserved @FancyGallery</h5>
-	</div> -->
-</body>
+    <!-- footer -->
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-6 footer-brand animated fadeInLeft">
+          <h2>FancyGallery</h2>
+          <p>
+            A Fancy project done by some fancy Students for having a live
+            gallery for your pictures of your event! Made with ♥ in Switzerland.
+          </p>
+          <p>© 2019 SA Group, All rights reserved</p>
+        </div>
+        <div class="col-md-6 footer-social animated fadeInDown">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Send us a mail</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
