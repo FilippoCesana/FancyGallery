@@ -1,6 +1,7 @@
 const log = require("debug")(":->Backend:");
 const ftpServer = require("./serverftp.js");
 const socket = require("socket.io")
+//const b_parse = require('body-parser');
 
 async function run() {
     //Waits until a connection with mongo is established
@@ -19,6 +20,7 @@ async function run() {
         })
     });
     app.set('io', io);//To be used on image post route
+    //app.use(b_parse({limit:'50mb'}))
 }
 
 

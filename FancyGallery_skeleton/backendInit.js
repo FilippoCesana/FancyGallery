@@ -6,7 +6,7 @@ const logger = require('morgan');
 // const m_override = require('method-override'); //to ovveride get/post in form se serve è da aggiungere anche in package.json
 const routers = require("./routers/router_list.js");
 const mongoose = require('mongoose');
-const b_parse = require('body-parser');
+const bodyParser = require('body-parser');
 const flash = require('express-flash');
 const log = require("debug")(":->Backend:");
 const session = require("express-session");
@@ -36,10 +36,10 @@ app.set('view engine', 'dust'); //register template engine
 
 //middleware utilities
 app.use(logger('dev'));
-app.use(b_parse({limit: '50mb'}));
-app.use(b_parse.json({type: 'application/json'})); //parse only post data content-type = app/json
-app.use(b_parse.text()); // to access fetch body
-app.use(b_parse.urlencoded({extended: true})); //parse only post data in x-www-form...
+
+app.use(bodyParser.json({limit:'50mb', type: 'application/json', parameterLimit: 100000})); //parse only post data content-type = app/json
+app.use(bodyParser.urlencoded({ limit:'50mb', extended: true, parameterLimit: 100000})); //parse only post data in x-www-form...
+app.use(bodyParser.text({limit:'50mb',parameterLimit: 100000})); // to access fetch body
 app.use(flash());
 app.use(session({
     secret: 'the cat is on the table',
