@@ -234,9 +234,12 @@ async function addImage(req, res) {
         });
         image = await image.save();
         await event.images.push(image._id);
-        event.save();
+        await event.save();
         //We grab all the sockets that are connected to the specific event and send the new image data
-        // req.app.get('io').to(event._id).emit('newImage', image);
+        console.log('sending newImage to room',event._id.toString() );
+        const io = req.app.get('io');
+        console.log(io);
+        io.to(event._id.toString()).emit('newImage', image);
         if (req.accepts('text/html')) {
             res.redirect('/event/open/' + req.body.eventId);
         } else {

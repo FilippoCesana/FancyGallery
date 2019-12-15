@@ -31,7 +31,7 @@
       </div>
     </nav>
 
-    <br /><br /><br />
+    <br><br><br>
 
     <div class="container">
       <div clas="jumbotron">
@@ -42,7 +42,7 @@
             <div class="container_form">
               <div class="description">EMAIL:</div>
               <div class="input_field">
-                <input  type="text"name="email"id="username" placeholder="EMAIL"required />
+                <input  type="text"name="email" id="username" placeholder="EMAIL"required />
               </div>
             </div>
 

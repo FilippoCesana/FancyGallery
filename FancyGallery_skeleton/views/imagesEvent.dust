@@ -1,85 +1,98 @@
 <!DOCTYPE html>
 <html>
 
-    <head>
-            <title>FancyGallery Gallery</title>
-            <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
-            <!-- <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css"> -->
-            <link rel="stylesheet" type="text/css" href="/css/index.css">
+<head>
+    <title>FancyGallery Gallery</title>
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
 
-            <!-- <link rel="stylesheet" type="text/css" href="../css/event.css"> -->
-            <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-            <!-- 	To make the website responsive on mobile devices.  -->
-            <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" href="../css/event.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <!-- 	To make the website responsive on mobile devices.  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    </head>
+</head>
 
-    <body>
-            <nav class="navbar navbar-inverse navbar-fixed-top">
-                    <div class="container ">
-                        <div class="navbar-header navbarCharacterColor">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="bs-nav-demo">
-                            <ul class="nav navbar-nav">
-                            </ul>
-                            {?user}
-                            <!-- da far vedere se loggato -->
-                            <ul class="nav navbar-nav navbar-right">
-                                <li> <div class="makeSpaceNav"></div></li>
-                                <li><button id="log_out_btn" href="">Logout</button></li>
-                            </ul>
-
-                            {:else}
-                            <!-- da far vedere se non loggato -->
-                              <ul class="nav navbar-nav navbar-right">
-                                  <li><button id="sign_in_btn">Sign up</button></li>
-                                  <li> <div class="makeSpaceNav"></div></li>
-                              </ul>
-                              <ul class="nav navbar-nav navbar-right">
-                                  <li> <div class="makeSpaceNav"></div></li>
-                                  <li><button id="log_in_btn" href="">Login</button></li>
-                              </ul>
-
-                            {/user}
-                        </div>
-                    </div>
-                </nav>
-
-        <div class="makeSpace"></div>
-    {?event}
-        <div class="container">
-                <div class="page-header">
-                  <div class="event-description">
-                    <h1> {event.name} </h1>
-                    <h3> {event.place} </h3>
-                    <h3> {event.start} </h3>
-                    <input type="hidden" value={event._id} id="event_id">
-                  </div>
-                </div>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
+                    aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
         </div>
-    {/event}
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+            <ul class="nav navbar-nav">
+            </ul>
+            {?user}
+                <!-- da far vedere se loggato -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="makeSpaceNav"></div>
+                    </li>
+                    <li>
+                        <button id="log_out_btn" href="">Logout</button>
+                    </li>
+                </ul>
 
+            {:else}
+                <!-- da far vedere se non loggato -->
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button id="sign_in_btn">Sign up</button>
+                    </li>
+                    <li>
+                        <div class="makeSpaceNav"></div>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <div class="makeSpaceNav"></div>
+                    </li>
+                    <li>
+                        <button id="log_in_btn" href="">Login</button>
+                    </li>
+                </ul>
 
-     <!-- Page Content -->
-    <div class="container .fluid">
-            <div class="row">
-                    <div class="col-sm-12">
-                <div id="photoGallery">
-                    {#event.images}
-                        {> "partials/image" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
-                    {/event.images}
-            <div id="open_event_box" class="hidden">  </div>
-            </div>
+            {/user}
+        </div>
+    </div>
+</nav>
+
+<div class="makeSpace"></div>
+    {?event}
+    <div class="container">
+        <div class="page-header">
+            <div class="event-description">
+                <h1> {event.name} </h1>
+                <h3> {event.place} </h3>
+                <h3> {event.start} </h3>
+                <input type="hidden" value={event._id} id="event_id">
             </div>
         </div>
     </div>
+    {/event}
+
+
+<!-- Page Content -->
+<div class="container .fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div id="photoGallery">
+                {#event.images}
+                    {> "partials/image" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
+                {/event.images}
+                <div id="open_event_box" class="hidden"></div>
+            </div>
+        </div>
+    </div>
+</div>
 
     {?canPost}
     <!-- da far vedere se fotografo -->
@@ -87,31 +100,43 @@
 
     {:else}
     <!-- da far vedere se non fotografo -->
-    <div> </div>
+    <div></div>
     {/canPost}
 
-         <!-- footer -->
-    <footer class="footer-bs">
-        <div class="row">
-          <div class="col-md-6 footer-brand animated fadeInLeft">
-                <h2>FancyGallery</h2>
-                <p>A Fancy project done by some fancy Students for having a live gallery for your pictures of your event! Made with ♥ in Switzerland.</p>
-                <p>© 2019 SA Group, All rights reserved</p>
-           </div>
-            <div class="col-md-6 footer-social animated fadeInDown">
-                <h4>Contact Us</h4>
-                <ul>
-                    <li><a href="#">Send us a mail</a></li>
-                </ul>
-            </div>
+<!-- footer -->
+<footer class="footer-bs">
+    <div class="row">
+        <div class="col-md-6 footer-brand animated fadeInLeft">
+            <h2>FancyGallery</h2>
+            <p>A Fancy project done by some fancy Students for having a live gallery for your pictures of your event!
+                Made with ♥ in Switzerland.</p>
+            <p>© 2019 SA Group, All rights reserved</p>
         </div>
-    </footer>
+        <div class="col-md-6 footer-social animated fadeInDown">
+            <h4>Contact Us</h4>
+            <ul>
+                <li><a href="#">Send us a mail</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
 
-  <script src="/entry_points/galleryListener.js"></script>
-  <script src="/entry_points/fetch.js"></script>
-  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  <script src="/entry_points/open_gallery_start.js"></script>
-  </body>
+
+<script src="/utility/dustjs-linkedin/dust-core.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/views/views.js"></script>
+<script src="/entry_points/eventSocket.js"></script>
+<script src="/entry_points/galleryListener.js"></script>
+<script src="/entry_points/fetch.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+<script src="/entry_points/open_gallery_start.js"></script>
+</body>
 </html>
