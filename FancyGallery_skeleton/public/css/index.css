@@ -18,7 +18,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -30,7 +30,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -42,7 +42,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -54,7 +54,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -78,7 +78,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -121,7 +121,7 @@ body {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:focus {
   color: rgb(91, 224, 247);
-  background-color: #040a13;
+  background-color: #ccff00;
   text-shadow: 4px 4px 4px black;
 }
 
@@ -273,7 +273,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -283,7 +283,7 @@ body {
   background-color: #ccff00;
   box-shadow: 0 0 20px #ccff00;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -294,7 +294,8 @@ body {
 
 #search_text_field {
   text-align: center;
-  border-color: #ff00cc;
+  border-color: #ccff00;
+  box-shadow: 0 0 25px white;
 }
 
 #search_btn {
@@ -303,7 +304,7 @@ body {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -313,7 +314,7 @@ body {
   background-color: #ccff00;
   box-shadow: 0 0 20px #ccff00;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -324,7 +325,7 @@ button {
   border-color: transparent;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
-  font-weight: bold;
+  font-weight: lighter;
   text-align: center;
   color: white;
 }
@@ -358,9 +359,9 @@ button:hover {
 }
 
 input:hover {
-  background: #ccff009f;
+  background: white;
+  color: white;
   border-color: transparent;
-  color: black;
 }
 
 .container .page-header {
@@ -386,7 +387,7 @@ html {
 h1,
 h3 {
   font-family: "Montserrat", sans-serif;
-  font-weight: 700;
+  
 }
 
 hr {

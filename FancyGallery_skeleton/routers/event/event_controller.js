@@ -295,4 +295,3 @@ module.exports.matchEvent = matchEvent;
 module.exports.filter = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
 module.exports.sendImageAddForm = sendImageAddForm;
-

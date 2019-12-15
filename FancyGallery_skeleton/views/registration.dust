@@ -7,8 +7,8 @@
     <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-    <link rel="stylesheet" type="text/css" href="../css/stylebrunner.css" />
-    <link rel="stylesheet" type="text/css" href="../css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
 
     <!-- // per gestire la ricerca fotografi -->
     <!-- <script src="script.js"></script> -->
@@ -18,28 +18,17 @@
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container ">
         <div class="navbar-header navbarCharacterColor">
-          <button
-            type="button"
-            class="navbar-toggle collapsed"
-            data-toggle="collapse"
-            data-target="#bs-nav-demo"
-            aria-expanded="false"
-          >
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
             <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a href="homepage.html" class="navbar-brand"
+          <a href="/" class="navbar-brand"
             ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
           >
         </div>
         <div class="collapse navbar-collapse" id="bs-nav-demo">
-          <ul class="nav navbar-nav">
-            <!-- <li class="active"><a href="#">Home</a></li> -->
-            <li><a href="#">About</a></li>
-            <li><a href="#">Contact</a></li>
-          </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><button id="sign_up_btn">Sign up</button></li>
             <li><div class="makeSpaceNav"></div></li>
@@ -58,13 +47,7 @@
         <div class="container_form">
           <div class="description">NAME, SURNAME:</div>
           <div class="input_field">
-            <input
-              type="text"
-              name="nameSurname"
-              id="nameSurname"
-              placeholder="NAME, SURNAME"
-              required
-            />
+            <input type="text" name="nameSurname" id="nameSurname" placeholder="NAME, SURNAME" required/>
           </div>
         </div>
 
@@ -73,13 +56,7 @@
         <div class="container_form">
           <div class="description">USERNAME:</div>
           <div class="input_field">
-            <input
-              type="text"
-              name="username"
-              id="username"
-              placeholder="USERNAME"
-              required
-            />
+            <input type="text" name="username" id="username" placeholder="USERNAME" required/>
           </div>
         </div>
 
@@ -88,27 +65,16 @@
         <div class="container_form">
           <div class="description">E-MAIL:</div>
           <div class="input_field">
-            <input
-              type="email"
-              id="email"
-              placeholder="ENTER YOUR E-MAIL"
-              required
-            />
+            <input type="email" id="email" placeholder="ENTER YOUR E-MAIL" required/>
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div class="container_form">
           <div class="description">PASSWORD (8 characters minimum):</div>
           <div class="input_field">
-            <input
-              type="password"
-              name="password"
-              id="password"
-              minlength="8"
-              required
-            />
+            <input type="password" name="password" id="password" minlength="8" required/>
           </div>
         </div>
 
@@ -117,19 +83,13 @@
             CONFIRM PASSWORD (8 characters minimum):
           </div>
           <div class="input_field">
-            <input
-              type="password"
-              name="confirm_password"
-              id="confirm_password"
-              minlength="8"
-              required
-            />
+            <input type="password" name="confirm_password" id="confirm_password" minlength="8" required/>
           </div>
         </div>
 
         <div class="container_form" id="message"></div>
 
-        <hr />
+        <hr/>
 
         <!-- test -->
         <!-- <label>password :
@@ -142,7 +102,7 @@
 		</label> -->
         <!-- test -->
 
-        <br />
+        <br/>
 
         <input id="button" type="submit" name="new" value="LOGIN" />
       </form>
