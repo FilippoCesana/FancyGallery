@@ -9,6 +9,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../css/event.css">
+    <link rel="stylesheet" type="text/css" href="../css/stylebrunner.css" />
+    <link rel="stylesheet" type="text/css" href="../css/login.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -17,6 +19,44 @@
 
 
 <body>
+     <!--navbar-->
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="homepage.html" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br />
 
   <div class="container">
         <h2>SlideShow</h2>
@@ -29,16 +69,45 @@
           </ol>
 
           <!-- Wrapper for slides -->
-          <div class="carousel-inner">
-
-            <div class="item">
-                 <div id="photoGallery">
-                            {#photo_list}
-                                {> "partials/image" id_photographer=id_photographer id_image=id_image timestamp=timestamp dataURL=dataURL /}
-                            {/photo_list}
-                        </div>
+          <div class="container .fluid">
+              <div class="row">
+                      <div class="col-sm-12">
+                  <div id="photoGallery">
+                      {#event.images}
+                          {> "partials/slide" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
+                      {/event.images}
+              <div id="open_event_box" class="hidden">  </div>
               </div>
+<<<<<<< HEAD
             </div>
+            <br />
+            <br />
+            <br />
+        
+            <!-- footer -->
+            <footer class="footer-bs">
+              <div class="row">
+                <div class="col-md-6 footer-brand animated fadeInLeft">
+                  <h2>FancyGallery</h2>
+                  <p>
+                    A Fancy project done by some fancy Students for having a live
+                    gallery for your pictures of your event! Made with ♥ in Switzerland.
+                  </p>
+                  <p>© 2019 SA Group, All rights reserved</p>
+                </div>
+                <div class="col-md-6 footer-social animated fadeInDown">
+                  <h4>Contact Us</h4>
+                  <ul>
+                    <li><a href="#">Send us a mail</a></li>
+                  </ul>
+                </div>
+              </div>
+            </footer>
+=======
+              </div>
+          </div>
+      </div>
+>>>>>>> 55c7947c301f4e87bb71d7b914ad20529ffd07d5
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -152,7 +152,7 @@ body {
 
 #gallery .event_place_label {
   color: grey;
-  margin-left: 90px;
+  margin-left: 10px;
   font-size: 10px;
   font-family: "Montserrat", sans-serif;
 }
@@ -164,12 +164,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-#gallery .event_btn_toGallery {
+/* #gallery .event_btn_toGallery {
   margin-left: 55px;
-}
+} */
 
 #gallery .event_timestamp_label {
-  margin-left: 40px;
+  margin-left: 10px;
   font-size: 10px;
   color: grey;
 }
@@ -674,3 +674,21 @@ input:checked + .slider:before {
 .card .card-body .switch {
   margin-left: 23rem;
 }
+
+
+.container .page-header .event-description h1 {
+    font-size: 40px;
+    color: #ccff00;
+    font-weight: lighter;
+    text-shadow: 0 0 10px #ccff00;
+    font-family: "Montserrat", sans-serif;
+  }
+
+
+  .container .page-header .event-description h3 {
+    font-size: 20px;
+    color: #00ccff;
+    font-weight: lighter;
+    text-shadow: 0 0 10px #00ccff;
+    font-family: "Montserrat", sans-serif;
+  }

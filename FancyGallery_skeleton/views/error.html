@@ -1,118 +1,85 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Picture upload</title>
-	<!-- //da prendere quello giusto -->
+  <head>
+    <title>Picture upload</title>
+    <!-- //da prendere quello giusto -->
 
-	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="../public/css/stylebrunner.css">
-	<link rel="stylesheet" type="text/css" href="../public/css/nav_foot.css">
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
 
-	<!-- // per gestire la ricerca fotografi -->
+    <!-- // per gestire la ricerca fotografi -->
+  </head>
+  <body>
+    <!-- navbar -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="homepage.html" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-</head>
-<body>
-	<!-- navbar -->
-	<nav class="navbar navbar-inverse navbar-fixed-top">
-		<div class="container ">
-			<div class="navbar-header navbarCharacterColor">
-				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo"
-					aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-				<ul class="nav navbar-nav">
-					<!-- <li class="active"><a href="#">Home</a></li> -->
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-	
-	
-				{?user}
-				<!-- da far vedere se loggato -->
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<div class="makeSpaceNav"></div>
-					</li>
-					<li><button id="log_out_btn" href="">Logout</button></li>
-				</ul>
-	
-				{:else}
-				<!-- da far vedere se non loggato -->
-				<ul class="nav navbar-nav navbar-right">
-					<li><button id="sign_in_btn">Sign up</button></li>
-					<li>
-						<div class="makeSpaceNav"></div>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li>
-						<div class="makeSpaceNav"></div>
-					</li>
-					<li><button id="log_in_btn" href="">Login</button></li>
-				</ul>
-	
-				{/user}
-	
-			</div>
-		</div>
-	</nav>
-	</nav>
-			<div class="container ">
-			<div class="navbar-header navbarCharacterColor">
-			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-			<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Sign up</a></li>
-					<li><a href="#">Login</a></li>
-			</ul>
-			</div>
-			</div>
-	</nav>
-
-	<br><br><br> -->
-<div class="container_form_big">
-
-		<div class="container_form">
-			<div class="description"><img src="../public/images/error.png"></div>
-			<div class="input_field"><h1>AWWW...DON&#39;T CRY.</h1><br><h3>IT'S JUST A 404 ERROR!</h3></div>
-		</div>
-
-</div>
-<!-- footer -->
-<footer class="footer-bs">
-    <div class="row">
+    <br /><br /><br />
+    <div class="container_form_big">
+      <div class="container_form">
+        <div class="description"><img src="../public/images/error.png" /></div>
+        <div class="input_field">
+          <h1>AWWW...DON&#39;T CRY.</h1>
+          <br />
+          <h3>IT'S JUST A 404 ERROR!</h3>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <!-- footer -->
+    <footer class="footer-bs">
+      <div class="row">
         <div class="col-md-6 footer-brand animated fadeInLeft">
-            <h2>FancyGallery</h2>
-            <p>A Fancy project done by some fancy Students for having a live gallery for your pictures of your event!
-                Made with ♥ in Switzerland.</p>
-            <p>© 2019 SA Group, All rights reserved</p>
+          <h2>FancyGallery</h2>
+          <p>
+            A Fancy project done by some fancy Students for having a live
+            gallery for your pictures of your event! Made with ♥ in Switzerland.
+          </p>
+          <p>© 2019 SA Group, All rights reserved</p>
         </div>
         <div class="col-md-6 footer-social animated fadeInDown">
-            <h4>Contact Us</h4>
-            <ul>
-                <li><a href="#">Send us a mail</a></li>
-            </ul>
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Send us a mail</a></li>
+          </ul>
         </div>
-    </div>
-</footer>
-</body>
+      </div>
+    </footer>
+  </body>
 </html>

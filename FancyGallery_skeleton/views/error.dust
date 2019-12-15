@@ -1,56 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>ERROR</title>
-	<!-- //da prendere quello giusto -->
+  <head>
+    <title>ERROR</title>
+    <!-- //da prendere quello giusto -->
 
-	<!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
+    <!-- <link rel="stylesheet" type="text/css" href="../public/css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="../public/css/createGallery.css">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"> -->
-	<link rel="stylesheet" type="text/css" href="/css/stylebrunner.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="homepage.html" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
 
-	<!-- // per gestire la ricerca fotografi -->
-<script src="script.js"></script>
-</head>
-<body>
+    <br /><br /><br />
 
-	<!-- <nav class="navbar navbar-inverse navbar-fixed-top">
-			<div class="container ">
-			<div class="navbar-header navbarCharacterColor">
-			 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				</button>
-				<a href="homepage.html" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
-			</div>
-			<div class="collapse navbar-collapse" id="bs-nav-demo">
-			<ul class="nav navbar-nav">
-					<li><a href="#">About</a></li>
-					<li><a href="#">Contact</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">Sign up</a></li>
-					<li><a href="#">Login</a></li>
-			</ul>
-			</div>
-			</div>
-	</nav>
-
-	<br><br><br> -->
-<div class="container_form_big">
-
-		<div class="container_form">
-			<div class="description"><img src="/images/error.png"></div>
-			<div class="input_field"><h1>AWWW...DON&#39;T PANIC.</h1><br><h3>IT'S JUST AN {error} ERROR!</h3></div>
-		</div>
-
-</div>
-<!--
-	<br><br><br>
-	<div class="footer navbar-fixed-bottom">
-	        <h5> all rights reserved @FancyGallery</h5>
-	</div> -->
-</body>
+    <div class="container_form_big">
+      <div class="container_form">
+        <div class="description"><img src="/images/error.png" /></div>
+        <div class="input_field">
+          <h1>AWWW...DON&#39;T PANIC.</h1>
+          <br />
+          <h3>IT'S JUST AN {error} ERROR!</h3>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br />
+    <!-- footer -->
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-6 footer-brand animated fadeInLeft">
+          <h2>FancyGallery</h2>
+          <p>
+            A Fancy project done by some fancy Students for having a live
+            gallery for your pictures of your event! Made with ♥ in Switzerland.
+          </p>
+          <p>© 2019 SA Group, All rights reserved</p>
+        </div>
+        <div class="col-md-6 footer-social animated fadeInDown">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Send us a mail</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
