@@ -3,20 +3,39 @@
   <head>
     <title>New Gallery</title>
 
-    <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" >
-
+    <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
     <!-- // per gestire la ricerca fotografi -->
     <script src="/entry_points/fetch.js"></script>
     <script src="/entry_points/newevent.js"></script>
   </head>
   <body>
+
+     <!--navbar-->
+     <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-nav-demo" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br />
+
     <div class="container_form_big">
       <h1>CREATE NEW EVENT</h1>
       <form method="POST" action="/event/create">
         <div class="container_form">
           <div class="description">EVENT NAME:</div>
           <div class="input_field">
-            <input type="text" name="name" placeholder="EVENT NAME" required/>
+            <input type="text" name="name" placeholder="EVENT NAME" required />
           </div>
         </div>
 
@@ -25,7 +44,7 @@
         <div class="container_form">
           <div class="description">EVENT LOCATION:</div>
           <div class="input_field">
-            <input type="text" name="place" placeholder="EVENT LOCATION" required/>
+            <input type="text" name="place" placeholder="EVENT LOCATION" required />
           </div>
         </div>
 
@@ -34,9 +53,7 @@
         <div class="container_form">
           <div class="description">EVENT DESCRIPTION:</div>
           <div class="input_field">
-            <textarea name="Comments" rows="2" cols="60">
-ENTER YOUR DESCRIPTION</textarea
-            ><br />
+            <textarea name="Comments" rows="2" cols="60">ENTER YOUR DESCRIPTION</textarea><br />
           </div>
         </div>
 
@@ -45,30 +62,20 @@ ENTER YOUR DESCRIPTION</textarea
         <div class="container_form">
           <div class="description">
             START DATE:
-            <input
-              type="date"
-              name="startdate"
-              placeholder="DD/MM/YYYY"
-              required
-            /><br />
+            <input type="date" name="startdate" placeholder="DD/MM/YYYY" required/><br />
             START TIME:
             <input type="time" name="starttime" placeholder="HH:MM" />
           </div>
 
           <div class="input_field">
             END DATE:
-            <input
-              type="date"
-              name="enddate"
-              placeholder="DD/MM/YYYY"
-              required
-            /><br />
+            <input type="date" name="enddate" placeholder="DD/MM/YYYY" required /><br />
             END TIME:
-            <input type="time" name="endtime" placeholder="HH:MM"/>
+            <input type="time" name="endtime" placeholder="HH:MM" />
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div class="container_form">
           <div class="description">SELECT PRIVATNESS:</div>
@@ -79,7 +86,7 @@ ENTER YOUR DESCRIPTION</textarea
           </div>
         </div>
 
-        <hr />
+        <hr/>
 
         <div class="container_form">
           <div id="plus" class="description">
@@ -133,5 +140,25 @@ ENTER YOUR DESCRIPTION</textarea
         <input id="button" type="submit" name="new" value="CREATE GALLERY!" />
       </form>
     </div>
+      <!-- footer -->
+      <footer class="footer-bs">
+        <div class="row">
+          <div class="col-md-6 footer-brand animated fadeInLeft">
+            <h2>FancyGallery</h2>
+            <p>
+              A Fancy project done by some fancy Students for having a live
+              gallery for your pictures of your event! Made with ♥ in Switzerland.
+            </p>
+            <p>© 2019 SA Group, All rights reserved</p>
+          </div>
+          <div class="col-md-6 footer-social animated fadeInDown">
+            <h4>Contact Us</h4>
+            <ul>
+              <li><a href="#">Send us a mail</a></li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </body>
   </body>
 </html>

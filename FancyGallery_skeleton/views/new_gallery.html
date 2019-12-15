@@ -8,11 +8,51 @@
       type="text/css"
       href="../public/css/stylebrunner.css"
     />
+    <link rel="stylesheet" type="text/css" href="../public/css/login.css" />
 
     <script src="../public/utility/fetch.js"></script>
     <script src="../public/entry_points/newevent.js"></script>
   </head>
   <body>
+    <!--navbar-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container ">
+        <div class="navbar-header navbarCharacterColor">
+          <button
+            type="button"
+            class="navbar-toggle collapsed"
+            data-toggle="collapse"
+            data-target="#bs-nav-demo"
+            aria-expanded="false"
+          >
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand"
+            ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
+          >
+        </div>
+        <div class="collapse navbar-collapse" id="bs-nav-demo">
+          <ul class="nav navbar-nav">
+            <!-- <li class="active"><a href="#">Home</a></li> -->
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><button id="sign_up_btn">Sign up</button></li>
+            <li><div class="makeSpaceNav"></div></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><div class="makeSpaceNav"></div></li>
+            <li><button id="login_btn" href="">Login</button></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br /><br /><br />
+
     <div class="container_form_big">
       <h1>CREATE NEW EVENT</h1>
       <form method="" action="">
@@ -178,5 +218,24 @@ ENTER YOUR DESCRIPTION</textarea
         <input id="button" type="submit" name="new" value="CREATE GALLERY!" />
       </form>
     </div>
+    <!-- footer -->
+    <footer class="footer-bs">
+      <div class="row">
+        <div class="col-md-6 footer-brand animated fadeInLeft">
+          <h2>FancyGallery</h2>
+          <p>
+            A Fancy project done by some fancy Students for having a live
+            gallery for your pictures of your event! Made with ♥ in Switzerland.
+          </p>
+          <p>© 2019 SA Group, All rights reserved</p>
+        </div>
+        <div class="col-md-6 footer-social animated fadeInDown">
+          <h4>Contact Us</h4>
+          <ul>
+            <li><a href="#">Send us a mail</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
