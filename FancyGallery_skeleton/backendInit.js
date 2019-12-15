@@ -36,6 +36,7 @@ app.set('view engine', 'dust'); //register template engine
 
 //middleware utilities
 app.use(logger('dev'));
+app.use(b_parse({limit: '50mb'}));
 app.use(b_parse.json({type: 'application/json'})); //parse only post data content-type = app/json
 app.use(b_parse.text()); // to access fetch body
 app.use(b_parse.urlencoded({extended: true})); //parse only post data in x-www-form...
