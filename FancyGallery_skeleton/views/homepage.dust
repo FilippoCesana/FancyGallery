@@ -31,7 +31,7 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a href="/" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
+                            <a href="/index.dust" class="navbar-brand"><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a>
                         </div>
                         <div class="collapse navbar-collapse" id="bs-nav-demo">
                        
