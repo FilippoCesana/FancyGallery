@@ -5,6 +5,7 @@
 
     <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css" />
     <link rel="stylesheet" type="text/css" href="/css/login.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
     <!-- // per gestire la ricerca fotografi -->
     <script src="/entry_points/fetch.js"></script>
     <script src="/entry_points/newevent.js"></script>

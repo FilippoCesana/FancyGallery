@@ -34,16 +34,7 @@
             ><i class="fas fa-cloud-upload-alt"></i> FancyGallery</a
           >
         </div>
-        <div class="collapse navbar-collapse" id="bs-nav-demo">
-          <ul class="nav navbar-nav navbar-right">
-            <li><button id="sign_up_btn">Sign up</button></li>
-            <li><div class="makeSpaceNav"></div></li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <li><div class="makeSpaceNav"></div></li>
-            <li><button id="login_btn" href="">Login</button></li>
-          </ul>
-        </div>
+      
       </div>
     </nav>
     <br /><br /><br />
