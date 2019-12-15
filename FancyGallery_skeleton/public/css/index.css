@@ -294,7 +294,8 @@ body {
 
 #search_text_field {
   text-align: center;
-  border-color: #ff00cc;
+  border-color: #ccff00;
+  box-shadow: 0 0 25px white;
 }
 
 #search_btn {
@@ -358,9 +359,9 @@ button:hover {
 }
 
 input:hover {
-  background: #ccff009f;
+  background: white;
+  color: white;
   border-color: transparent;
-  color: black;
 }
 
 .container .page-header {
