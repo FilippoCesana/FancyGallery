@@ -29,38 +29,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-nav-demo">
             <ul class="nav navbar-nav">
-            </ul>
-            {?user}
-                <!-- da far vedere se loggato -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <div class="makeSpaceNav"></div>
-                    </li>
-                    <li>
-                        <button id="log_out_btn" href="">Logout</button>
-                    </li>
-                </ul>
-
-            {:else}
-                <!-- da far vedere se non loggato -->
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <button id="sign_in_btn">Sign up</button>
-                    </li>
-                    <li>
-                        <div class="makeSpaceNav"></div>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <div class="makeSpaceNav"></div>
-                    </li>
-                    <li>
-                        <button id="log_in_btn" href="">Login</button>
-                    </li>
-                </ul>
-
-            {/user}
+            
         </div>
     </div>
 </nav>
