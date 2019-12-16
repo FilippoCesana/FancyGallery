@@ -32,6 +32,9 @@
       </div>
     </nav>
     <br /><br /><br />
+
+    <div class="container">
+      <div clas="jumbotron">
     <div class="container_form_big">
       <h1>SIGN UP</h1>
       <form method="POST" action="">
@@ -98,6 +101,8 @@
         <input id="button" type="submit" name="new" value="LOGIN" />
       </form>
     </div>
+    </div>
+        </div>
     <!-- footer -->
     <footer class="footer-bs">
       <div class="row">
