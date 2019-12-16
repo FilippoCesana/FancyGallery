@@ -289,6 +289,12 @@ function filter(req, res) {
 }
 
 
+
+function sendSlideShow(req,res){
+    console.log("ricevuto", req.query.id);
+    res.status(200).render("slideshow",{});
+}
+
 // module.exports.showMore   = showMore;
 module.exports.createEvent = createEvent;
 module.exports.openEvent = openEvent;
@@ -298,3 +304,4 @@ module.exports.matchEvent = matchEvent;
 module.exports.filter = filter;
 module.exports.sendEventCreateForm = sendEventCreateForm;
 module.exports.sendImageAddForm = sendImageAddForm;
+module.exports.sendSlideShow    = sendSlideShow;
