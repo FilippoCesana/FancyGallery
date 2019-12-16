@@ -27,7 +27,11 @@ async function createUser(req, res) {
         });
 
         const saved = await user.save();
-        res.status(201).json(saved);
+        if(req.accepts('text/html')){
+            res.redirect('/');
+        }else {
+            res.status(201).json(saved);
+        }
     } catch (e) {
         console.log(e);
         if (e instanceof TypeError) {

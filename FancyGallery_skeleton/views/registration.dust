@@ -27,14 +27,15 @@
     <br /><br /><br />
 
     <div class="container">
+{!      DO NOT TOUCH clas!}
       <div clas="jumbotron">
     <div class="container_form_big">
       <h1>SIGN UP</h1>
-      <form method="POST" action="">
+      <form method="POST" action="/user">
         <div class="container_form">
           <div class="description">NAME, SURNAME:</div>
           <div class="input_field">
-            <input type="text" name="nameSurname" id="nameSurname" placeholder="NAME, SURNAME" required/>
+            <input type="text" name="name" id="nameSurname" placeholder="NAME, SURNAME" required/>
           </div>
         </div>
 
@@ -43,7 +44,7 @@
         <div class="container_form">
           <div class="description">USERNAME:</div>
           <div class="input_field">
-            <input type="text" name="username" id="username" placeholder="USERNAME" required/>
+            <input type="text" name="nickname" id="username" placeholder="USERNAME" required/>
           </div>
         </div>
 
@@ -52,7 +53,7 @@
         <div class="container_form">
           <div class="description">E-MAIL:</div>
           <div class="input_field">
-            <input type="email" id="email" placeholder="ENTER YOUR E-MAIL" required/>
+            <input type="email" id="email" name="email" placeholder="ENTER YOUR E-MAIL" required/>
           </div>
         </div>
 

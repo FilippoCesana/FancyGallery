@@ -139,12 +139,16 @@ async function openEvent(req, res) {
     try {
         const id = req.params.id;
         const event = await Event.findById(id).populate('images').lean();
-        //console.log(event)
         let canPost = false;
         if (req.user) {
-        }
-        if (req.user && req.user._id.equals(event.admin)) {
-            canPost = true;
+            if (req.user._id.equals(event.admin)) {
+                canPost = true;
+            }
+            event.photographers.forEach((id)=>{
+                if( id.equals(req.user._id)){
+
+                }
+            })
         }
         //console.log(canPost);
 
@@ -168,7 +172,6 @@ async function openEvent(req, res) {
     } catch (e) {
         console.log(e)
         if (e instanceof TypeError) {
-
             res.status(404).json({error: 'event not found'});
         } else {
             res.status(500).json({error: 'server error'});
@@ -223,8 +226,17 @@ async function addImage(req, res) {
         res.status(403).json({error: "Permission denied: user not logged"});
         return;
     } else {
-        //|| event.photographers.includes(req.user._id)) TODO
-        if (!(req.user._id.equals(event.admin))) {
+        let canPost = false;
+        event.photographers.forEach((id)=>{
+            if(id.equals(req.user._id)) {
+                canPost = true;
+            }
+        });
+        if (req.user._id.equals(event.admin)){
+            canPost = true;
+        }
+
+        if (!canPost){
             res.status(403).json({error: "Permission denied"});
             return;
         }
