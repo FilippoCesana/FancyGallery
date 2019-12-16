@@ -1,6 +1,8 @@
 const log = require("debug")(":->Backend:");
+const socketServer = require("./socketServer");
+
 const ftpServer = require("./serverftp.js");
-const socket = require("socket.io")
+const socket = require("socket.io");
 // const b_parse = require('body-parser');
 
 async function run() {
@@ -21,7 +23,9 @@ async function run() {
             console.log('socket joined room:', data.eventId);
         })
     });
+
     app.set('io', io);//To be used on image post route
+    socketServer.io = io
     // app.use(b_parse({limit:'50mb', parameterLimit:50000}))
 }
 

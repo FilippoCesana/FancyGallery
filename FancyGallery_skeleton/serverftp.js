@@ -1,44 +1,50 @@
-const hostname = '0.0.0.0';
-const port = 21;
+const Event = require('./dataModels/Event');
+const Image = require('./dataModels/Image');
+const User = require('./dataModels/User');
+const watch = require('watch');
+const canvas = require('canvas');
 
-const FtpSrv = require('ftp-srv');
-const ftpServer = new FtpSrv('ftp://' + hostname + ':' + port, {anonymous: true, greeting: "hello"});
+const socketServer = require('./socketServer')
 
-ftpServer.on('login', ({connection, username, password}, resolve, reject) => {
-  console.log("new connection: ", connection);
-  console.log("user: ", username);
-  console.log("psw: ", password);
-  //mettere cartella dove si vogliono salvare i file:
-  resolve ({root : "/Users/nbrunner/Documents/GitHub/FancyGallery/FancyGallery_skeleton/public/images_canon"});
-  connection.on('STOR', (error, fileName) => {
-    console.log("newfile: ", fileName);
 
-    var gallery_id = 098767890;
-    var user_id = 007;
+async function init(){
+var gallery_id = "5df79f810b8be004ad37680b";  //galleria LIVE
+var user_id = "5df23ff7ed0c4f81b5cd33a5"; //brunner
 
-    new_image = new Image();
-    new_image.src = fileName;
-    new_image.onload = drawImage;
 
-    function drawImage() {
-      var canvas = document.createElement("canvas");
-      var ctx = canvas.getContext('2d');
-      canvas.width = this.width;
-      canvas.height = this.height;
-      ctx.drawImage(this, 0,0);
-    }
+watch.createMonitor('./public/images_canon', (monitor) => {
 
-    var imgUrl = canvas.toDataURL();
+  monitor.on("created", (file, stat) => {
 
-    //fetch normale
-    doJSONRequest('POST', 'event/'+ gallery_id +'/image', {}, {dataURL : imgUrl, user: user_id});
+    console.log(file)
 
-  });
+    const { createCanvas, loadImage } = require('canvas')
+    const canvas = createCanvas(720, 480)
+    const ctx = canvas.getContext('2d')
+
+    loadImage(file).then(async (photo) => {
+      ctx.drawImage(photo, 0, 0, 720, 480)
+
+      var imgUrl = canvas.toDataURL();
+
+      let image = new Image({
+          dataURL: imgUrl,
+          photographer: user_id
+      });
+
+      const event = await Event.findById("5df79f810b8be004ad37680b");
+
+      socketServer.io.to(event._id.toString()).emit('newImage', image)
+
+      console.log('EVENT:', event);
+
+      image = await image.save();
+      event.images.push(image._id);
+      await event.save();
+
+    })
+  })
 });
+}
 
-ftpServer.listen()
-.then(r => {
-  console.log(r);
-});
-
-module.exports = ftpServer;
+init();
