@@ -18,7 +18,7 @@ salta tutto, quindi per il momento lasciamol qui -->
 
 
 <div class="event_box" >
-    <img src="{dataURL}" class="image_box"> </img>
+    <img src="{dataURL}" class="image_box" />
     <!-- <label class="id_photographer">{photographer} </label> -->
     <input type="hidden" value="{_id}" class="id_image"> </input>
     <br/>

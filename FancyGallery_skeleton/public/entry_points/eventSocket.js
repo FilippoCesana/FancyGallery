@@ -13,9 +13,11 @@ socket.on('connect', function () {
 
 socket.on('newImage', function(image){
    // writeEvent(image);
-    console.log(image);
-    console.log('HELLO');
-     dust.render('image', image, function(html){
+     dust.render('partials/image', image, function(err, html){
+         if(err){
+             console.log(err);
+         }
+         console.log(html);
          gallery.innerHTML += html;
      });
 });

@@ -5,6 +5,7 @@ const controller = require("./invite_controller");
 
 router.post('/', controller.invite);
 router.delete('/:id', controller.deleteInvitation);
+router.accept('/accept/:id', controller.deleteInvitation);
 
 
 module.exports = router;

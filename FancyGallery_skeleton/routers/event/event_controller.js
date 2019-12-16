@@ -49,7 +49,11 @@ async function createEvent(req, res) {
             user.events.push(saved._id);//Event id added to user
             await user.save();
 
-            res.status(201).json({event: saved, user: user});
+            if(req.accepts('text/html')) {
+                res.redirect(`/event/open/${event._id.toString()}`)
+            } else {
+                res.status(201).json({event: saved, user: user});
+            }
         } catch (e) {
             console.log(e);
             if (e instanceof TypeError) {

@@ -156,6 +156,13 @@ async function start(){
     
 }
 
+async function logout() {
+    await fetch('/auth/logout', {
+        method:"GET"
+    })
+    window.location.href = "http://localhost:3000"
+}
+
 function login(){
     //inviare la password in modo sicuro bisogna fare lo start.js del login
     window.location.href = "http://localhost:3000/auth/login"
