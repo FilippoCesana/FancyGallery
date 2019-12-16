@@ -29,7 +29,7 @@ router.get('/cookie', function (req,res) {
 // }));
 
 
-router.post('/logout', function (req, res) {
+router.get('/logout', function (req, res) {
     req.logOut();
     res.status(301).redirect('/');
 });
