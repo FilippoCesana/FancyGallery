@@ -15,3 +15,5 @@ var checkPassword = function() {
     document.getElementById('message').innerHTML = '<b>NOT MATCHING</b>';
   }
 }
+
+//TODO move in another file
