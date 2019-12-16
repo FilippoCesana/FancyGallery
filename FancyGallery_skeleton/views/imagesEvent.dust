@@ -6,11 +6,50 @@
     <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
     <!-- <link rel="stylesheet" type="text/css" href="/css/stylebrunner.css"> -->
     <link rel="stylesheet" type="text/css" href="/css/index.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!-- <link rel="stylesheet" type="text/css" href="../css/event.css"> -->
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
     <!-- 	To make the website responsive on mobile devices.  -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    .image_close {
+        display: none;
+    }
+
+    .image_open{
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        left: 35vw;
+        z-index: 1000;
+    }
+    .image_open img {
+        width: 600px;
+        height: 600px;
+    }
+
+    .stop_scroll{
+        overflow-y: hidden; 
+        overflow-x: hidden;
+    }
+
+    #background {
+        width: 100vw;
+        height: 100vh;
+        position: fixed;
+        z-index: 500;
+        left: 0;
+        top: 0;
+        z-index: 500;
+    }
+
+
+
+</style>
+    
 
 </head>
 
@@ -48,20 +87,25 @@
     </div>
     {/event}
 
+<div id="clicked_img" class="image_close">
+    <img src=""> </img>
+    <div id="background">
+    
+    </div>
+</div>
 
-<!-- Page Content -->
 <div class="container .fluid">
     <div class="row">
         <div class="col-sm-12">
             <div id="photoGallery">
                 {#event.images}
-                    {> "partials/image" photographer=photographer id_image=id_image dateCreated=dateCreated dataURL=dataURL /}
+                    {> "partials/image" _id=_id dataURL=dataURL dateCreated=dateCreated photographer=photographer /}
                 {/event.images}
                 <div id="open_event_box" class="hidden"></div>
             </div>
         </div>
     </div>
-</div>
+</div> 
 
     {?canPost}
     <!-- da far vedere se fotografo -->
@@ -89,6 +133,9 @@
         </div>
     </div>
 </footer>
+
+
+
 
 
 <script src="/utility/dustjs-linkedin/dust-core.js"></script>

@@ -20,6 +20,7 @@ router.get('/open/:id', controller.openEvent);
 
 router.get('/match?',controller.matchEvent)
 
+router.get('/slideshow?', controller.sendSlideShow)
 
 //fede
 //router.

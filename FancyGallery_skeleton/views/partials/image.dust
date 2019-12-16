@@ -20,10 +20,12 @@ salta tutto, quindi per il momento lasciamol qui -->
 <div class="event_box" >
     <img src="{dataURL}" class="image_box" />
     <!-- <label class="id_photographer">{photographer} </label> -->
-    <!-- <label class="id_image">{_id} </label> -->
-    <br>
-    <!-- <label class="image_timestamp_label">{dateCreated} </label> -->
-    <br>
+    <input type="hidden" value="{_id}" class="id_image"> </input>
+    <br/>
+    <input type="hidden" value="{dateCreated}"> </input>
+    <input type="hidden" value="{photographer}"> </input>
+  
+    <br/>
 </div>
 
 
