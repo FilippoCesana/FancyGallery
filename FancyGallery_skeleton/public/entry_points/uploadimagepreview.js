@@ -55,6 +55,6 @@ document.getElementById("button").addEventListener('click', async (e) => {
         body: JSON.stringify({dataURL: canvas.toDataURL(), eventId: eventId})
     };
 
-    await fetch('http://localhost:3000/event/addImage', options);
-    window.location.href = "http://localhost:3000/event/open/" + eventId;
+    await fetch('/event/addImage', options);
+    window.location.href = "/event/open/" + eventId;
 })

@@ -160,16 +160,16 @@ async function logout() {
     await fetch('/auth/logout', {
         method:"GET"
     })
-    window.location.href = "http://localhost:3000"
+    window.location.href = "/"
 }
 
 function login(){
     //inviare la password in modo sicuro bisogna fare lo start.js del login
-    window.location.href = "http://localhost:3000/auth/login"
+    window.location.href = "/auth/login"
 }
 
 function signUp(){
-    window.location.href = "http://localhost:3000/user/signin"
+    window.location.href = "/user/signin"
 }
 
 function resetResults(){
@@ -192,7 +192,7 @@ function searchEventByName(e){
         return;
     }
 
-    const url = "http://localhost:3000/event/match?name="+value;
+    const url = "/event/match?name="+value;
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
@@ -231,7 +231,7 @@ function showLess(){
 
 function createEvent(){
 
-    const url = "http://localhost:3000/event/create";
+    const url = "/event/create";
     window.location.href = url
 }
 
@@ -241,7 +241,7 @@ function showEvent(e,item){
         method : "get"
     }
 
-    const url = "http://localhost:3000/event/open/"+event_id;
+    const url = "/event/open/"+event_id;
     // fetch(url,options);
     window.location.href = url
 }

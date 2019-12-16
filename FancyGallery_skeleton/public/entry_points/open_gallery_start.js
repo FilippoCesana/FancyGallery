@@ -8,7 +8,7 @@ function start(){
 
 function openImage(e,item){
 
-    window.location.href = "http://localhost:3000/image/open"
+    window.location.href = "/image/open"
 }
 
 
