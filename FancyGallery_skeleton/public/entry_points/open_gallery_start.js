@@ -21,7 +21,7 @@ function openImage(e,item){
 
     document.getElementById("background").onclick = hide;
 
-    window.location.href = "/image/open"
+    // window.location.href = "/image/open"
 
 }
 
