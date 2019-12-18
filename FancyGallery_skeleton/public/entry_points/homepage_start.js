@@ -8,9 +8,9 @@ const show_more_manager = {
     times  : 0,
     user_events : [],
     displayed : [],
-    
+
     init : async ()=>{
-        const url = "http://localhost:3000/events"
+        const url = "/events"
         const options = {
             method : "GET",
             headers : {
@@ -31,7 +31,7 @@ const show_more_manager = {
         }catch(err){
             throw err;
         }
-        
+
     },
     show_already_load : ()=>{
         let finalToBeRendered = "";
@@ -53,28 +53,28 @@ const show_more_manager = {
 
 
     display : ()=>{
-       
+
         const start = this.times * 3;
-     
+
         const end   = (this.times + 1) * 3;
-       
+
         const tmp = this.events.slice(start,end);
-        
-       
+
+
         if(tmp.length === 0){ document.getElementById('show_more_btn').style.display = 'none';return}
-        
+
         this.displayed = this.displayed.concat(tmp);
-        
+
         let finalToBeRendered = "";
         tmp.forEach(event=>{
             dust.render("partials/event",event,(err,out)=>{
                 if(err)throw err;
-    
+
             finalToBeRendered += out;
-             
+
         })
         })
-        
+
         const gallery =  document.getElementById('gallery');
         gallery.innerHTML = gallery.innerHTML + " " + finalToBeRendered;
         setTimeout(()=>{
@@ -82,7 +82,7 @@ const show_more_manager = {
                 box.addEventListener('click', (e)=>showEvent(e,box))
             });
         },10)
-        
+
         this.times = this.times +1;
     },
 
@@ -115,16 +115,16 @@ async function start(){
     if(document.getElementById('log_in_btn')){
         const login_btn = document.getElementById('log_in_btn');
         login_btn.addEventListener('click', (e)=>login(e));
-    
+
         //signin button listen click
         const sign_in_btn = document.getElementById("sign_in_btn");
         sign_in_btn.addEventListener('click', (e)=>signUp(e));
-    
+
     }else{
         const logout_btn = document.getElementById("log_out_btn");
         logout_btn.addEventListener('click',()=>logout());
     }
-   
+
     //search button listen click
     // const search_btn = document.getElementById('search_btn');
     // search_btn.addEventListener('click',(e)=>searchEventByName(e));
@@ -136,7 +136,7 @@ async function start(){
     const show_more_btn = document.getElementById('show_more_btn');
     show_more_btn.addEventListener('click',(e)=>show_more_manager.display());
 
-   
+
     //event open listen click
     const event_boxes = document.querySelectorAll(".event_box");
     event_boxes.forEach(box=>{
@@ -153,7 +153,7 @@ async function start(){
     }
 
     await show_more_manager.init();
-    
+
 }
 
 async function logout() {
@@ -187,7 +187,7 @@ function searchEventByName(e){
     }
 
     if(value == ""){
-       
+
         show_more_manager.show_already_load();
         return;
     }
@@ -196,28 +196,28 @@ function searchEventByName(e){
 
     fetch(url,options)
         .then(res=>res.json().then(result=>{
-        
+
             if(result.length == 0) {return;}
-           
+
             let finalToBeRendered = "";
             result.forEach(event=>{
                 dust.render("partials/event",event,(err,out)=>{
                     if(err)throw err;
                     finalToBeRendered += out;
                 })
-                
+
             });
-            
+
             document.getElementById('gallery').innerHTML = finalToBeRendered;
-           
+
             const event_boxes = document.querySelectorAll(".event_box");
             event_boxes.forEach(box=>{
                 box.addEventListener('click', (e)=>showEvent(e,box))
             });
 
 
-        })) 
-         
+        }))
+
         .catch(err=>{
             console.log("error during searching for event");
             throw err;
@@ -248,11 +248,11 @@ function showEvent(e,item){
 
 function filterUserEvent(e){
     filter_value = !filter_value;
-    
+
     if(filter_value){
-        document.getElementById('show_more_btn').style.display = 'none' 
+        document.getElementById('show_more_btn').style.display = 'none'
         show_more_manager.display_user_events();
-        
+
     }else{
         document.getElementById('show_more_btn').style.display = ''
         show_more_manager.show_already_load();
@@ -262,4 +262,3 @@ function filterUserEvent(e){
 setTimeout(()=>{
   start();
 },10)
-

@@ -8,7 +8,7 @@ const socketServer = require('./socketServer')
 
 
 async function init(){
-var gallery_id = "5df79f810b8be004ad37680b";  //galleria LIVE
+var gallery_id = "5dfa2e6c2f12f4287343ba5f";  //galleria LIVE
 var user_id = "5df23ff7ed0c4f81b5cd33a5"; //brunner
 
 
@@ -32,7 +32,7 @@ watch.createMonitor('./public/images_canon', (monitor) => {
           photographer: user_id
       });
 
-      const event = await Event.findById("5df79f810b8be004ad37680b");
+      const event = await Event.findById(gallery_id);
 
       socketServer.io.to(event._id.toString()).emit('newImage', image)
 
