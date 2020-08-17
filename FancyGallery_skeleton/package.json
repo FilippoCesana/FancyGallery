@@ -15,7 +15,7 @@
     "express-flash": "latest",
     "express-passport-logout": "latest",
     "express-session": "latest",
-    "ftp-srv": "^4.3.0",
+    "ftp-srv": "^4.3.4",
     "klei-dust": "^1.0.0",
     "mongodb": "^3.3.3",
     "mongoose": "^5.7.7",

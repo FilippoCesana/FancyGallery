@@ -861,10 +861,10 @@ fsevents@^1.0.0:
     nan "^2.12.1"
     node-pre-gyp "^0.12.0"
 
-ftp-srv@^4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ftp-srv/-/ftp-srv-4.3.0.tgz#3bef17e7d1192d076c9420a64aadd4596bd1338f"
-  integrity sha512-gBzm3iPfngtG8efFspDurF4EQvi4MpcLgcANr3NSx4fMgoTwkw20qE/5A+hLkcLxRIXd4jLRPAT6TTIUYak77A==
+ftp-srv@^4.3.4:
+  version "4.3.4"
+  resolved "https://registry.yarnpkg.com/ftp-srv/-/ftp-srv-4.3.4.tgz#05bf76fd82e0ce781624d23d46f80746c95fe06e"
+  integrity sha512-q4tPM4n22fgRi0Q4XUDXH3Bqg5+H2xPmBaz5PyipTfAAFLGepY/XIahf4+Vy047LwcjtNerAU9dFjl+fAEbYzA==
   dependencies:
     bluebird "^3.5.1"
     bunyan "^1.8.12"
